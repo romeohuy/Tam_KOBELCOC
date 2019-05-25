@@ -1,0 +1,75 @@
+﻿@inherits RazorFunction
+@using Composite.Data
+@using System.Globalization
+
+@functions {
+    override public string FunctionDescription
+    {
+        get { return "A function that displays top links"; }
+    }
+}
+@{
+	//var breadscrumbs = Sitemap.CurrentHomePageNode.GetPageNodes(SitemapScope.AncestorsAndCurrent).Select(p => p.Id).ToList();
+	var topLinks = Data.Get<Kobelco.DealerLinks>().OrderBy(l => l.Position).ToList();
+	if(!topLinks.Any()) { return;}
+
+    int totalLinks = topLinks.Count;
+    int count = 1;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	</head>
+	<body>
+		<ul class="nav navbar-nav">
+			@foreach(var link in topLinks)
+            {
+                PageNode pageNode = null;
+				var titleInEnglish = string.Empty;
+
+                if (link.Page != null)
+                {
+                    pageNode = Sitemap.GetPageNodeById(link.Page.Value);
+					using (new DataScope(new CultureInfo("en-US")))
+					{
+						titleInEnglish = PageManager.GetPageById(pageNode.Id).Title.ToLower();
+					}
+                }
+                
+
+                <li>
+                    @if (link.ExternalUrl != null && link.ExternalUrl != "" && link.LinkTitle != null && link.LinkTitle != "")
+                    {
+						using (new DataScope(new CultureInfo("en-US")))
+						{
+							var customMenuItem = Data.Get<Kobelco.DealerLinks>().Where(m => m.Id == link.Id).FirstOrDefault();
+							titleInEnglish = customMenuItem.LinkTitle.ToLower();
+						}
+                        <a href="@link.ExternalUrl" target="_blank" onclick="ga('send','event','outbound-@Lang','click','@titleInEnglish')">
+                            @link.LinkTitle
+                        </a>
+                    }
+                    else
+                    {
+                    <a href="@Html.C1().PageUrl(pageNode.Id.ToString())" onclick="ga('send','event','top navigation-@Lang','click','@titleInEnglish')">
+                        @if (link.LinkTitle != null && link.LinkTitle != "")
+                        {
+                            @link.LinkTitle
+                        }
+                        else
+                        {
+                            @(pageNode.MenuTitle ?? pageNode.Title)
+
+                        }
+                    </a>
+                    }
+
+                </li>
+                if (count < totalLinks)
+                {
+                    <li class="separator">|</li>
+                }
+                count++;
+            }
+		</ul>
+	</body>
+</html>

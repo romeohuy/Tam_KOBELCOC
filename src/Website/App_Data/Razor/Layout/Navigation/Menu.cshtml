@@ -1,0 +1,138 @@
+﻿@inherits RazorFunction
+@using Composite.Data
+@using System.Globalization
+		
+@functions {
+	override public string FunctionDescription
+	{
+		get { return "A function that displays a main menu"; }
+	}
+}
+@{
+	//var pagenodes = Sitemap.CurrentHomePageNode.GetPageNodes(SitemapScope.Level2AndSiblings).ToList();
+    var mainnav = Data.Get<Kobelco.MainMenu>().Where(m => m.MobileOnly != true && !(m.CustomLink == "" && m.Page == null)).OrderBy(m => m.LocalOrdering).ToList();
+    
+	if(!mainnav.Any()) { return; }
+	var titleInEnglish = string.Empty;
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <ul id="main-nav" class="nav navbar-nav sf-menu">
+        @foreach (var mainnavitem in mainnav)
+        {
+            if (mainnavitem.Page != null)
+            {
+                var parentpagenode = Sitemap.GetPageNodeById(mainnavitem.Page.Value);
+                if (!string.IsNullOrEmpty(parentpagenode.MenuTitle))
+                {
+                    <li>
+						@using (new DataScope(new CultureInfo("en-US")))
+						{
+							titleInEnglish = PageManager.GetPageById(parentpagenode.Id).Title;
+						}
+                        @if (mainnavitem.CustomLink == "")
+                        {
+                            <a href="@parentpagenode.Url" onclick="ga('send','event','top navigation-@Lang','click','@titleInEnglish.ToLower()')">@parentpagenode.MenuTitle</a>
+                        }
+
+                        @if (Data.Get<Kobelco.MainMenu>().Where(cm => cm.Page.Value == mainnavitem.Page.Value && cm.CustomLink != "").Any())
+                        {
+                            <ul>
+                                @foreach (var customchildmenu in Data.Get<Kobelco.MainMenu>().Where(cm => cm.Page.Value == mainnavitem.Page.Value && cm.CustomLink != "").ToList())
+                                {
+									string customchildmenutarget = string.Empty;
+									if (customchildmenu.TargetOptions != null) {
+										if (customchildmenu.TargetOptions.Contains("New Window"))
+										{
+											customchildmenutarget = "_blank";
+										}
+										else
+										{
+											customchildmenutarget = "";
+										}
+									}
+									else
+									{
+										customchildmenutarget = "";
+									}
+                                    
+                                    <li><a href="@customchildmenu.CustomLink" target="@customchildmenutarget">@customchildmenu.Title</a></li>
+                                }
+                                <li><a href="@parentpagenode.Url" onclick="ga('send','event','top navigation-@Lang','click','@titleInEnglish.ToLower()')">@parentpagenode.MenuTitle</a></li>
+                            </ul>
+                        }
+
+                        @if (parentpagenode.ChildPages.Where(pn => !string.IsNullOrEmpty(pn.MenuTitle)).Any() == true)
+                        {
+                            <ul id="@(parentpagenode.Id.ToString().ToUpper() == "9BDB7B6D-4E4F-41C9-BCC3-95B20BD8D796" ? "excavators-submenu" : "")">
+                                @foreach (var child in parentpagenode.ChildPages)
+                                {
+                                    if (!string.IsNullOrEmpty(child.MenuTitle))
+                                    {
+                                        <li>
+											@using (new DataScope(new CultureInfo("en-US")))
+											{
+												titleInEnglish = PageManager.GetPageById(child.Id).Title;
+											}
+                                            <a href="@child.Url" onclick="ga('send','event','top navigation-@Lang','click','@titleInEnglish.ToLower()')">@child.MenuTitle</a>
+                                            @if (child.ParentPage.Id.ToString().ToUpper() == "9BDB7B6D-4E4F-41C9-BCC3-95B20BD8D796" && child.ChildPages.Any())
+                                            {
+                                                <div style="width: 50%;float:left;" class="subnav-list-image">
+                                                    @if (child.Id.ToString().ToUpper() == "5CD44B54-AE68-47BD-B8C6-014879C6D151")
+                                                    {
+                                                        <img src="~/Frontend/Images/na-menu-icon.png" alt="Image of North America" title="North America" />
+                                                    }
+                                                    else if (child.Id.ToString().ToUpper() == "959C0775-6E05-454B-9696-13051F2AA914")
+                                                    {
+                                                        <img src="~/Frontend/Images/la-menu-icon.png" alt="Image of Latin America" title="Latin America" />
+                                                    }
+                                                </div>
+                                                <div style="width: 50%;float:left;" class="subnav-list-pages">
+                                                    @foreach (var subChild in child.ChildPages)
+                                                    {
+														using (new DataScope(new CultureInfo("en-US")))
+														{
+															titleInEnglish = PageManager.GetPageById(subChild.Id).Title;
+															if (subChild.ParentPage.Id.ToString().ToUpper() == "5CD44B54-AE68-47BD-B8C6-014879C6D151")
+															{
+																titleInEnglish = "na " + titleInEnglish;
+															} else
+															{
+																titleInEnglish = "la " + titleInEnglish;
+															}
+														}
+                                                        <a href="@subChild.Url" onclick="ga('send','event','top navigation-@Lang','click','@titleInEnglish.ToLower()')">@subChild.MenuTitle.Replace(" Excavators", "").Replace("Excavadoras ", "").Replace("Escavadeiras da ", "").Replace("Escavadeiras ", "")</a>
+                                                    }
+                                                </div>
+                                            }
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        }
+                    </li>
+                } else if (!string.IsNullOrEmpty(mainnavitem.Title))
+                {
+                    <li><a href="@parentpagenode.Url">@mainnavitem.Title</a></li>
+                }
+
+            }
+            else if (!string.IsNullOrEmpty(mainnavitem.CustomLink))
+            {
+                using (new DataScope(new CultureInfo("en-US")))
+                {
+                    var customMenuItem = Data.Get<Kobelco.MainMenu>().Where(m => m.Id == mainnavitem.Id).FirstOrDefault();
+                    titleInEnglish = customMenuItem.Title;
+                }
+                <li>
+                    <a href="@mainnavitem.CustomLink" target="_blank" onclick="ga('send','event','outbound-@Lang','click','@titleInEnglish.ToLower()')">@mainnavitem.Title</a>
+                </li>
+            }
+        }
+    </ul>
+</body>
+</html>

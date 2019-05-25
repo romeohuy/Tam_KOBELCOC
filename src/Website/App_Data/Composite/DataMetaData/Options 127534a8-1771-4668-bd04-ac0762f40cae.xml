@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataTypeDescriptor dataTypeId="127534a8-1771-4668-bd04-ac0762f40cae" name="Options" namespace="Kobelco" title="Options" isCodeGenerated="true" cachable="false" searchable="false" labelFieldName="Logo" typeManagerTypeName="Kobelco.Options">
+  <DataAssociations />
+  <DataScopes>
+    <DataScopeIdentifier name="public" />
+  </DataScopes>
+  <KeyPropertyNames>
+    <KeyPropertyName name="Id" />
+  </KeyPropertyNames>
+  <SuperInterfaces>
+    <SuperInterface type="Composite.Data.ProcessControlled.IProcessControlled,Composite" />
+    <SuperInterface type="Composite.Data.ProcessControlled.ILocalizedControlled,Composite" />
+  </SuperInterfaces>
+  <Fields>
+    <DataFieldDescriptor id="75b88344-5ff7-4202-b027-4a16349190af" name="Id" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false">
+      <FormRenderingProfile label="Id" />
+      <DataUrlProfile Order="0" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="c3ce5dda-b691-4e45-9dd8-81a24c1db682" name="Logo" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="false" defaultValue="ValueType='String'Value=''" foreignKeyReferenceTypeName="Composite.Data.Types.IImageFile,Composite">
+      <FormRenderingProfile label="Logo" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.ImageSelector&quot;&gt;&lt;f:param name=&quot;Required&quot; value=&quot;True&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="fb0172ae-3d46-41e5-a859-83e71dee9995" name="LogoRetina" isNullable="true" position="1" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="false" foreignKeyReferenceTypeName="Composite.Data.Types.IImageFile,Composite">
+      <FormRenderingProfile label="Retina Logo" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.ImageSelector&quot;&gt;&lt;f:param name=&quot;Required&quot; value=&quot;False&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="99723c59-35b4-4e59-b4cd-7fa67bef17c9" name="TitlePrefix" isNullable="true" position="2" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Title Prefix" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="53822dde-a23b-4d66-90ea-3dd19ca47a1e" name="TitleSuffix" isNullable="true" position="3" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Title Suffix" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="c351df40-d4ac-4cf5-a283-99c399db6a89" name="SearchButtonText" isNullable="false" position="4" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile label="Search Button Text" helpText="This will be used to translate the search button text." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="1ed9dfaf-b8a0-4ff7-af40-ad06d18a7fd0" name="CompareModelsLabel" isNullable="true" position="5" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Compare Models Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="4bafdbad-351f-4bb8-92d1-69f4dcc66781" name="FullSpecsLabel" isNullable="true" position="6" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='128'" isReadOnly="false">
+      <FormRenderingProfile label="View Full Specs Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="1992a9d3-af59-49c0-b5f1-880e572bda03" name="EngineLabel" isNullable="true" position="7" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Engine Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="eb571ba6-3647-4540-81eb-a6ebed69d8a7" name="OperatingWeightLabel" isNullable="true" position="8" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='128'" isReadOnly="false">
+      <FormRenderingProfile label="Operating Weight Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="5929da2d-8cab-4f22-a5dd-def766c61955" name="OverviewLabel" isNullable="true" position="9" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Overview Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="01fb4b12-bd6e-41e6-b149-f4336a33336c" name="DimensionsLabel" isNullable="true" position="10" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Dimensions Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="d88506a9-4703-4b40-9be1-b15039cf398f" name="MainSpecificationsLabel" isNullable="true" position="11" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Main Specifications Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="97d5c2f6-6317-48f2-b12e-2ad3339b2546" name="WorkingRangesLabel" isNullable="true" position="12" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Working Ranges Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="49ea7dd4-9785-4d1a-b336-3769fdbd93b9" name="DiggingForceLabel" isNullable="true" position="13" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Digging Force Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="78e86d51-d826-4ca4-9a88-3a5fa973bde1" name="CompareLabel" isNullable="true" position="14" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Compare Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="df428a7f-33d6-4af7-98fd-01497a22369d" name="DownloadBrochureLabel" isNullable="true" position="15" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='128'" isReadOnly="false">
+      <FormRenderingProfile label="Download Brochure Label" helpText="Used for translation." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="0456ebb0-7fb1-46cd-9a23-4ae9aa3337fa" name="SourceCultureName" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='16'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+  </Fields>
+</DataTypeDescriptor>

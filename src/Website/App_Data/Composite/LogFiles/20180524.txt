@@ -1,0 +1,95 @@
+﻿20180524 09:53:07.7949 2  1 Critical GlobalInitializerFacade  System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Composite.Core.Sql.SqlConnectionManager.GetConnection(String connectionString)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.TryLoadDataContextClass(Type dataContextClassType)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.TryLoadDataContext(Boolean& forceCompile)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.InitializeExistingStores()
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.set_Context(DataProviderContext value)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetDataProvider(String providerName)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetSupportedInterfaces(String providerName)
+   at Composite.Data.Foundation.DataProviderRegistryImpl.BuildDictionaries()
+   at Composite.Data.Foundation.DataProviderRegistryImpl.InitializeDataTypes()
+   at Composite.Data.Foundation.DataProviderRegistry.InitializeDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+20180524 12:19:29.2603 3 15 Information SqlDataProvider  CREATE TABLE dbo.[Kobelco_MainMenu]([Id]  [UniqueIdentifier]  NOT NULL ,[Title]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_Title] DEFAULT N'',[Page]  [UniqueIdentifier]  NULL ,[CustomUrl]  [NVarChar](128)  NULL ,[TargetOptions]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_TargetOptions] DEFAULT N'',[Placeholder]  [Bit]  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_Placeholder] DEFAULT 0,[PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_PublicationStatus] DEFAULT N'');ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [PK_Kobelco_MainMenu] PRIMARY KEY CLUSTERED ([Id]);
+20180524 12:19:29.6450 3 15 Information SqlDataProvider  CREATE TABLE dbo.[Kobelco_MainMenu_Unpublished]([Id]  [UniqueIdentifier]  NOT NULL ,[Title]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Title] DEFAULT N'',[Page]  [UniqueIdentifier]  NULL ,[CustomUrl]  [NVarChar](128)  NULL ,[TargetOptions]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_TargetOptions] DEFAULT N'',[Placeholder]  [Bit]  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Placeholder] DEFAULT 0,[PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_PublicationStatus] DEFAULT N'');ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [PK_Kobelco_MainMenu_Unpublished] PRIMARY KEY CLUSTERED ([Id]);
+20180524 12:56:20.5475 4 38 Error WorkflowFacade  Workflow terminated - Id = c64e565d-bc69-42e5-9285-810b19e344aa, Exception:
+20180524 12:56:20.5535 4 38 Error WorkflowFacade  System.NotImplementedException: The method or operation is not implemented.
+   at Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvider.AddNewDataWorkflow.GetInterfaceType()
+   at Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvider.AddNewDataWorkflow.initialCodeActivity_Initialize_ExecuteCode(Object sender, EventArgs e)
+   at System.Workflow.ComponentModel.Activity.RaiseEvent(DependencyProperty dependencyEvent, Object sender, EventArgs e)
+   at System.Workflow.Activities.CodeActivity.Execute(ActivityExecutionContext executionContext)
+   at System.Workflow.ComponentModel.ActivityExecutor`1.Execute(T activity, ActivityExecutionContext executionContext)
+   at System.Workflow.ComponentModel.ActivityExecutor`1.Execute(Activity activity, ActivityExecutionContext executionContext)
+   at System.Workflow.ComponentModel.ActivityExecutorOperation.Run(IWorkflowCoreRuntime workflowCoreRuntime)
+   at System.Workflow.Runtime.Scheduler.Run()
+20180524 12:56:20.7029 4 38 Error TreeService  System.NotImplementedException: The method or operation is not implemented.
+   at Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvider.AddNewDataWorkflow.GetInterfaceType()
+   at Composite.Plugins.Elements.ElementProviders.GeneratedDataTypesElementProvider.AddNewDataWorkflow.initialCodeActivity_Initialize_ExecuteCode(Object sender, EventArgs e)
+   at System.Workflow.ComponentModel.Activity.RaiseEvent(DependencyProperty dependencyEvent, Object sender, EventArgs e)
+   at System.Workflow.Activities.CodeActivity.Execute(ActivityExecutionContext executionContext)
+   at System.Workflow.ComponentModel.ActivityExecutor`1.Execute(T activity, ActivityExecutionContext executionContext)
+   at System.Workflow.ComponentModel.ActivityExecutor`1.Execute(Activity activity, ActivityExecutionContext executionContext)
+   at System.Workflow.ComponentModel.ActivityExecutorOperation.Run(IWorkflowCoreRuntime workflowCoreRuntime)
+   at System.Workflow.Runtime.Scheduler.Run()
+System.InvalidOperationException: Error executing workflow c64e565d-bc69-42e5-9285-810b19e344aa 
+   at Composite.C1Console.Workflow.WorkflowFacadeImpl.RunWorkflow(Guid instanceId)
+   at Composite.C1Console.Workflow.WorkflowFacadeImpl.RunWorkflow(WorkflowInstance workflowInstance)
+   at Composite.C1Console.Workflow.WorkflowFacade.RunWorkflow(WorkflowInstance workflowInstance)
+   at Composite.C1Console.Workflow.WorkflowActionExecutor.Execute(String serializedEntityToken, String serializedActionToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+   at Composite.C1Console.Actions.ActionExecutorFacade.Execute(IActionExecutorSerializedParameters actionExecutor, String serializedEntityToken, String serializedActionToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+   at Composite.C1Console.Actions.ActionExecutorFacade.Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer, TaskManagerEvent taskManagerEvent)
+   at Composite.C1Console.Actions.ActionExecutorFacade.Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+   at Composite.Core.WebClient.FlowMediators.ActionExecutionMediator.ExecuteElementAction(ElementHandle elementHandle, ActionHandle actionHandle, String consoleId)
+   at Composite.Core.WebClient.FlowMediators.TreeServicesFacade.ExecuteElementAction(String providerName, String serializedEntityToken, String piggybag, String serializedActionToken, String consoleId)
+   at Composite.Services.TreeServices.ExecuteSingleElementAction(ClientElement clientElement, String serializedActionToken, String consoleId) in C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\Composite\services\Tree\TreeServices.asmx:line 368
+20180524 13:37:55.8216 4 43 Information PackageManagerInstallProcess  Installing package: Orckestra.Social.IconLinks, Version: 1.0.3, Id = e48d51ae-6263-4375-8e27-a5b45ccef3e7
+20180524 13:37:57.1167 4 43 Information PackageManagerInstallProcess  Package successfully installed
+20180524 13:41:31.4126 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_Title];ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_TargetOptions];ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_Placeholder];ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_PublicationStatus];
+20180524 13:41:31.4804 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [DF_Kobelco_MainMenu_Title] DEFAULT N'' FOR [Title];
+20180524 13:41:31.4825 6 34 Information SqlDataProvider  sp_rename 'Kobelco_MainMenu.CustomUrl','CustomLink','COLUMN'
+20180524 13:41:32.5847 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ALTER COLUMN [CustomLink]  [NVarChar](128)  NULL ;
+20180524 13:41:32.6007 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [DF_Kobelco_MainMenu_TargetOptions] DEFAULT N'' FOR [TargetOptions];
+20180524 13:41:32.6042 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [DF_Kobelco_MainMenu_Placeholder] DEFAULT 0 FOR [Placeholder];
+20180524 13:41:32.6112 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [DF_Kobelco_MainMenu_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180524 13:41:32.6681 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Title];ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_TargetOptions];ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Placeholder];ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_PublicationStatus];
+20180524 13:41:32.6738 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Title] DEFAULT N'' FOR [Title];
+20180524 13:41:32.6752 6 34 Information SqlDataProvider  sp_rename 'Kobelco_MainMenu_Unpublished.CustomUrl','CustomLink','COLUMN'
+20180524 13:41:32.7454 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ALTER COLUMN [CustomLink]  [NVarChar](128)  NULL ;
+20180524 13:41:32.7464 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_TargetOptions] DEFAULT N'' FOR [TargetOptions];
+20180524 13:41:32.7479 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Placeholder] DEFAULT 0 FOR [Placeholder];
+20180524 13:41:32.7489 6 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180524 13:46:14.6802 7 16 Information SqlDataProvider  CREATE TABLE dbo.[Kobelco_FooterMenu]([Id]  [UniqueIdentifier]  NOT NULL ,[Title]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_FooterMenu_Title] DEFAULT N'',[Page]  [UniqueIdentifier]  NULL ,[CustomLink]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_FooterMenu_CustomLink] DEFAULT N'',[TargetOptions]  [NVarChar](64)  NULL );ALTER TABLE [Kobelco_FooterMenu] ADD CONSTRAINT [PK_Kobelco_FooterMenu] PRIMARY KEY CLUSTERED ([Id]);
+20180524 14:00:29.6727 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_Title];ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_TargetOptions];ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_Placeholder];ALTER TABLE [Kobelco_MainMenu] DROP CONSTRAINT [DF_Kobelco_MainMenu_PublicationStatus];
+20180524 14:00:29.6882 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [DF_Kobelco_MainMenu_Title] DEFAULT N'' FOR [Title];
+20180524 14:00:29.6907 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ALTER COLUMN [TargetOptions]  [NVarChar](64)  NULL ;
+20180524 14:00:29.6927 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [DF_Kobelco_MainMenu_Placeholder] DEFAULT 0 FOR [Placeholder];
+20180524 14:00:29.6952 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu] ADD CONSTRAINT [DF_Kobelco_MainMenu_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180524 14:00:29.7286 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Title];ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_TargetOptions];ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Placeholder];ALTER TABLE [Kobelco_MainMenu_Unpublished] DROP CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_PublicationStatus];
+20180524 14:00:29.7371 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Title] DEFAULT N'' FOR [Title];
+20180524 14:00:29.7381 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ALTER COLUMN [TargetOptions]  [NVarChar](64)  NULL ;
+20180524 14:00:29.7391 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_Placeholder] DEFAULT 0 FOR [Placeholder];
+20180524 14:00:29.7406 8 34 Information SqlDataProvider  ALTER TABLE [Kobelco_MainMenu_Unpublished] ADD CONSTRAINT [DF_Kobelco_MainMenu_Unpublished_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180524 15:35:26.2742 9  7 Warning PageTemplatePreview  Failed to build preview for page template 'a270f819-0b5c-4f7e-9194-4b554043e4ab'. Reason: Error; Output:
+Opening url: http://localhost:10005//Renderers/TemplatePreview.ashx?p=a3055286-0e90-4b04-99dd-fb1a61dde0bf&t=a270f819-0b5c-4f7e-9194-4b554043e4ab&hash=1668520261
+ERROR: preview.js script is not present in the response body
+END_OF_REPLY
+20180524 15:37:27.8295 9  7 Information MimeTypeInfo  Uploading file 'built-like-no-other.png'. MIME type from extension: 'image/png'
+20180524 18:56:44.7481 9 28 Warning ConsoleFacade  The console 'key7113433344964047' owned by the user 'kobelcoadmin' timed out, closing it
+20180524 18:56:49.8752 9 28 Error WorkflowFacade  Workflow aborted, Id = 4b38249a-d606-4305-b6cd-ea21f4588e07
+20180524 18:56:51.2147 9 28 Error WorkflowFacade  Workflow aborted, Id = c59222fa-7432-42c5-9563-21e5ebd273cd

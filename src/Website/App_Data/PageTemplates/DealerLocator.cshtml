@@ -1,0 +1,536 @@
+﻿@using Newtonsoft.Json
+@using System.Linq
+
+@inherits RazorPageTemplate
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("c31bd261-c986-4095-96c2-0c83224da203");
+        TemplateTitle = "Dealer Locator";
+        Layout = "MasterLayout.cshtml";
+    }
+
+    [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+
+    [Placeholder(Id = "dealerFilterContent", Title = "Dealer Filter Text")]
+    public XhtmlDocument DealerFilterText { get; set; }
+}
+@{
+    var iconUtils = new MapIconUtility();
+    var dealerFeatures =
+        from d in Data.Get<Kobelco.Dealer>()
+        join c in Data.Get<Kobelco.Country>()
+        on d.Country equals c.Id
+        select new
+        {
+            type = "Feature",
+            properties = new { name = d.Name, streetAddress = d.StreetAddress, city = d.City, state = d.State, postalCode = d.PostalCode, country = c.Name, phone = d.Phone, website = d.Website, icon = iconUtils.GetIcon(d.ProductLine) },
+            geometry = new { type = "Point", coordinates = new decimal[] { d.Longitude, d.Latitude } }
+        };
+    var dealerGeoJSON = JsonConvert.SerializeObject(new { type = "FeatureCollection", features = dealerFeatures });
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Kobelco Dealer Locator" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <title>Dealer Locator</title>
+    <style>
+        body {
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            height: 100%;
+            width: 100%;
+        }
+
+        html {
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #map-canvas {
+            position: relative;
+            width: 100%;
+            height: 50%;
+            margin: auto;
+        }
+
+        .map img {
+            max-width: none;
+        }
+
+        .color {
+            height: 12px;
+            width: 12px;
+            margin-right: 3px;
+            float: left;
+            display: block;
+        }
+
+        button, input, select {
+            font-size: 18px;
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        button, input {
+            line-height: normal;
+        }
+
+        .view-filters .text {
+            margin: 0 8px;
+            color: #b9b9b9;
+        }
+
+        .country-header {
+            color: #00bfd6;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+
+        .state-header {
+            clear: left;
+            font-size: 28px;
+            color: #464646;
+            border-bottom: 1px solid #cdcdcd;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .view-filters {
+            align-content: center;
+            text-align: center;
+            background-color: #363636;
+            margin: 0 auto;
+            padding: 20px 20px;
+            font-size: 16px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+			position: relative;
+        }
+
+        .view-filters h4 {
+            color: #fff;
+        }
+
+            .view-filters .form-item {
+                margin: 3px;
+                display: inline-block;
+            }
+
+            .view-filters input[type="text"], .view-filters select {
+                height: 45px;
+                padding-left: 10px;
+            }
+
+            .view-filters .form-submit {
+                padding: 0;
+                color: #fff;
+                padding: 0px 0 0 10px;
+                height: 45px;
+                border: none;
+                background: url(/Frontend/Images/button.png) top right no-repeat;
+                background-color: #00bfd6;
+                text-align: left;
+            }
+
+            .view-filters #distance {
+                width: 50px;
+            }
+
+            .view-filters #distance-origin {
+                width: 300px;
+            }
+
+            .view-filters .find-my-location-button {
+                background: url(/Frontend/Images/my-location-button-icon@2x.png) center left no-repeat;
+                background-size: 11%;
+                background-position: 7%;
+                height: 45px;
+                padding: 12px 15px 15px 35px;
+                color: #fff;
+                background-color: #959595;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                text-decoration: none;
+            }
+		.pline-legend {
+            list-style-type: none;
+            margin: 0;
+            color: #fff;
+            background-color: rgba(35,35,35,0.7);
+            padding: 10px;
+            overflow: auto;
+        }
+
+        .pline-legend li {
+            width: 50%;
+            float:left;
+            line-height: 16px;
+            font-size: 14px;
+            padding-bottom: 3px;
+        }
+
+        .views-legend {
+            position: relative;
+            width: auto;
+            height: auto;
+            text-align: left;
+            top: -10px;
+            left: auto;
+        }
+
+            .views-legend h4 {
+                background-color: #33a2db;
+                margin: 0;
+                padding: 5px;
+            }
+
+        .views-legend img {
+            max-height: 16px;
+            float:left;
+            margin-right: 5px;
+        }
+
+        @@media(min-width: 768px) {
+            .pline-legend li {
+                width: auto;
+                float:none;
+            }
+
+            .views-legend {
+                position: absolute;
+                top: -160px;
+                left: 10px;
+            }
+
+        }
+
+        #reset {
+            width: 90px;
+        }
+
+        #submit {
+            width: 160px;
+        }
+    </style>
+    <![CDATA[
+    <script type="text/javascript" src="//maps.google.com/maps/api/js?key=AIzaSyATHY8OlYnD6UXjOgxDvtAATKDNHID6BM4"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script type="text/javascript">
+        if (!String.prototype.startsWith) {
+            String.prototype.startsWith = function (searchString, position) {
+                position = position || 0;
+                return this.indexOf(searchString, position) === position;
+            };
+        }
+        if (!String.prototype.endsWith) {
+            String.prototype.endsWith = function (search, this_len) {
+                if (this_len === undefined || this_len > this.length) {
+                    this_len = this.length;
+                }
+                return this.substring(this_len - search.length, this_len) === search;
+            };
+        }
+    </script>
+    <script type="text/javascript">
+        var geocoder = new google.maps.Geocoder();
+        var infoWindow = new google.maps.InfoWindow();
+
+        var map;
+        var features;
+        var initialLocation = new google.maps.LatLng(43, -93);;
+        var myLocation = initialLocation;
+        var myLocationMarker;
+
+        function buildInfoWindow(feature) {
+            var postalCode = feature.getProperty("postalCode") || "";
+            var website = feature.getProperty("website");
+            if (!website.startsWith("http")) website = "http://" + website;
+            if (website.endsWith("/")) website = website.substring(0, website.length - 1);
+            var websiteDisplay = website.substring(7);
+            var myHtml = '<div class="googft-info-window" style="width:300px;height:125px;overflow:auto;display:table-cell; vertical-align:middle" align="center"><table align="center" style="vertical-align: middle"><tr><td valign="top" align="left" colspan="2"style="font-weight:bold;font-size:18px;text-decoration: underline">' + feature.getProperty("name") + '<br><tr><td valign="top" style="font-weight:bold;padding-right: 5px;">Location:</td><td>' + feature.getProperty("streetAddress") + '<br>' + feature.getProperty("city") + ', ' + feature.getProperty("state") + '  ' + postalCode + '<br>' + feature.getProperty("country") + '</td></tr><tr><td valign="top" style="font-weight:bold">Phone:</td><td>' + feature.getProperty("phone") + '</td></tr><tr><td valign="top" style="font-weight:bold">Website:</td><td><a href="' + website + '" target="_blank">' + websiteDisplay + '</a></td></tr></table></div>';
+            infoWindow.setContent(myHtml);
+            // position the infowindow on the marker
+            infoWindow.setPosition(feature.getGeometry().get());
+            // anchor the infowindow on the marker
+            infoWindow.setOptions({ pixelOffset: new google.maps.Size(0, -30) });
+            infoWindow.setZIndex(9999);
+            infoWindow.open(map);
+        }
+
+        function constructDealerList(features, isFiltered) {
+            if (isFiltered !== true) {
+                var groupedFeatures = _.chain(_.sortBy(features, function (feature) { return feature.properties.country === "United States" ? "A" : feature.properties.country; })).groupBy(function (feature) { return feature.properties.country; }).map(function (value, key) {
+                    return {
+                        country: key,
+                        states: _.chain(_.sortBy(value, function (feature) { return feature.properties.state; })).groupBy(function (feature) { return feature.properties.state; }).map(function (value, key) {
+                            return {
+                                state: key,
+                                locations: _.sortBy(_.sortBy(value, function (feature) { return feature.properties.name; }), function (feature) { return feature.properties.city; })
+                            };
+                        }).value()
+                    };
+                }).value();
+            } else {
+                groupedFeatures = _.chain(_.sortBy(features, function (feature) { return feature.properties.country === "United States" ? "A" : feature.properties.country; })).groupBy(function (feature) { return feature.properties.country; }).map(function (value, key) {
+                    return {
+                        country: key,
+                        locations: _.sortBy(value, function (feature) { return parseFloat(feature.properties.distance); })
+                    };
+                }).value();
+            }
+
+            var parent = $("#dealer-list");
+            parent.html("");
+
+            if (isFiltered !== true) {
+                $.each(groupedFeatures, function (index, countryFeature) {
+                    var country = countryFeature.country;
+                    var html = '<div class="country-header">' + countryFeature.country + '</div><br/>';
+                    $.each(countryFeature.states, function (index, stateFeature) {
+                        html += '<div class="state-header">' + stateFeature.state + '</div><br/><div class="row">';
+                        $.each(stateFeature.locations, function (index, feature) {
+                            var id = feature.id;
+                            var properties = feature.properties;
+                            var postalCode = properties.postalCode || "";
+                            var website = properties.website;
+                            if (!website.startsWith("http")) website = "http://" + website;
+                            if (website.endsWith("/")) website = website.substring(0, website.length - 1);
+                            var websiteDisplay = website.substring(7);
+                            var distance = properties.distance === null ? '' : '<tr><td valign="top" style="font-weight:bold; padding-right: 5px;">Distance:</td><td>' + properties.distance + '</td></tr>';
+                            html += '<div class="col-xs-12 col-sm-6 col-md-4" id="' + id + '"><table><tr><td valign="top" align="left" colspan="2" style="font-weight:bold;font-size:15px;text-decoration: underline">' + properties.name + '<br><tr><td valign="top" ><input type="image" style="padding-top: 5px;" src="' + properties.icon + '" onclick = "zoomHere(\'' + feature.id + '\')" /></td><td>' + properties.streetAddress + '<br>' + properties.city + ', ' + properties.state + '  ' + postalCode + '<br>' + properties.country + '</td></tr><tr><td valign="top" style="font-weight:bold">Phone:</td><td onclick="ga(\'send\',\'event\',\'phone call-@Lang\',\'click to call\',\'' + properties.phone + '\')">' + properties.phone + '</td></tr><tr><td valign="top" style="font-weight:bold; padding-right: 5px;">Website:</td><td><a href="' + website + '" target="_blank" onclick="ga(\'send\',\'event\',\'outbound-@Lang\',\'click\',\'' + website + '\')">' + websiteDisplay + '</a></td></tr>' + distance + '</table><br/></br></div>';
+                            if ((index + 1) % 3 === 0) {
+                                html += '<div class="clearfix visible-lg visible-md"></div>';
+                            }
+                            else if ((index + 1) % 2 === 0) {
+                                html += '<div class="clearfix visible-sm"></div>';
+                            }
+                        });
+                        html += '</div>';
+                    });
+                    $(html).appendTo(parent);
+                });
+            } else {
+                $.each(groupedFeatures, function (index, countryFeature) {
+                    //var country = countryFeature.country;
+                    var html = '<div class="country-header">' + countryFeature.country + '</div><br/><div class="row">';
+                    //$.each(countryFeature.states, function (index, stateFeature) {
+                        //html += '<div class="state-header">' + stateFeature.state + '</div><br/><div class="row">';
+                        $.each(countryFeature.locations, function (index, feature) {
+                            var id = feature.id;
+                            var properties = feature.properties;
+                            var postalCode = properties.postalCode || "";
+                            var website = properties.website;
+                            if (!website.startsWith("http")) website = "http://" + website;
+                            if (website.endsWith("/")) website = website.substring(0, website.length - 1);
+                            var websiteDisplay = website.substring(7);
+                            var distance = '<tr><td valign="top" style="font-weight:bold; padding-right: 5px;">Distance:</td><td>' + properties.distance + '</td></tr>';
+                            html += '<div class="col-xs-12 col-sm-6 col-md-4" id="' + id + '"><table><tr><td valign="top" align="left" colspan="2" style="font-weight:bold;font-size:15px;text-decoration: underline">' + properties.name + '<br><tr><td valign="top" ><input type="image" style="padding-top: 5px;" src="' + properties.icon + '" onclick = "zoomHere(\'' + feature.id + '\')" /></td><td>' + properties.streetAddress + '<br>' + properties.city + ', ' + properties.state + '  ' + postalCode + '<br>' + properties.country + '</td></tr><tr><td valign="top" style="font-weight:bold">Phone:</td><td onclick="ga(\'send\',\'event\',\'phone call-@Lang\',\'click to call\',\'' + properties.phone + '\')">' + properties.phone + '</td></tr><tr><td valign="top" style="font-weight:bold; padding-right: 5px;">Website:</td><td><a href="' + website + '" target="_blank" onclick="ga(\'send\',\'event\',\'outbound-@Lang\',\'click\',\'' + website + '\')">' + websiteDisplay + '</a></td></tr>' + distance + '</table><br/></br></div>';
+                            if ((index + 1) % 3 === 0) {
+                                html += '<div class="clearfix visible-lg visible-md"></div>';
+                            }
+                            else if ((index + 1) % 2 === 0) {
+                                html += '<div class="clearfix visible-sm"></div>';
+                            }
+                        });
+                        html += '</div>';
+                    $(html).appendTo(parent);
+                });
+            }
+            
+        }
+
+        function filterLocations() {
+            var address = $("#distance-origin").val();
+            if (address) {
+                geocoder.geocode({ 'address': address }, function (results, status) {
+                    if (status == 'OK') {
+                        myLocation = results[0].geometry.location;
+                        getFilteredLocations();
+                    } else {
+                        handleLocationError('You entered an invalid location.', infoWindow, map.getCenter());
+                    }
+                });
+            }
+            else {
+                getFilteredLocations();
+            }
+        }
+
+        function getFilteredLocations() {
+            var distance = $("#distance").val();
+            var distanceUnit = $("#distance-unit").val();
+            var location = myLocation.toJSON();
+            $.get("/api/dealers/?distance=" + distance + "&distanceUnit=" + distanceUnit + "&latitude=" + location.lat + "&longitude=" + location.lng, function (geoJSON) {
+                features.forEach(function (feature) {
+                    map.data.remove(feature);
+                });
+                features = map.data.addGeoJson(geoJSON);
+                myLocationMarker.setPosition(myLocation);
+                map.setCenter(myLocation);
+                map.setZoom(distance <= 150 ? 7 : distance <= 300 ? 6 : 5);
+                constructDealerList(geoJSON.features, true);
+            });
+        }
+
+        function getMyLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    myLocationMarker.setPosition(myLocation);
+                    map.setCenter(myLocation);
+                    $("#distance-origin").val("");
+                }, function (error) {
+                    console.log(error);
+                    handleLocationError('You have not granted permission to access to your location.', infoWindow, map.getCenter());
+                });
+            } else {
+                handleLocationError('Your browser doesn\'t support geolocation.', infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(message, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(message);
+            infoWindow.open(map);
+        }
+
+        function initialize() {
+            map = new google.maps.Map(document.getElementById('map-canvas'), {
+                center: myLocation,
+                panControl: true,
+                scaleControl: true,
+                overviewMapContro: false,
+                zoom: 4,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            myLocationMarker = new google.maps.Marker({
+                clickable: false,
+                icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
+                    new google.maps.Size(22, 22),
+                    new google.maps.Point(0, 18),
+                    new google.maps.Point(11, 11)),
+                shadow: null,
+                zIndex: 999,
+                map: map
+            });
+
+            resetLocations();
+			
+			map.data.setStyle(function (feature) {
+                return { icon: feature.getProperty('icon') };
+            });
+
+            map.data.addListener('click', function (event) {
+                buildInfoWindow(event.feature);
+            });
+
+            map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById("controls"));
+        }
+
+        function resetLocations() {
+            $.get("/api/dealers/", function (geoJSON) {
+                myLocationMarker.setPosition(null);
+                $("#distance-origin").val("");
+                features = map.data.addGeoJson(geoJSON);
+                constructDealerList(geoJSON.features, false);
+                map.setCenter(initialLocation);
+                map.setZoom(4);
+            });
+        }
+
+        function zoomHere(id) {
+            var selectedFeature;
+            $.each(features, function (index, feature) {
+                if (feature.getId() === id) {
+                    selectedFeature = feature;
+                    return false;
+                }
+            });
+
+            if (selectedFeature) {
+                buildInfoWindow(selectedFeature);
+                map.setCenter(selectedFeature.getGeometry().get());
+                map.setZoom(10);
+            }
+        };
+
+        // Open the info window at the clicked location
+        function windowControl(e, infoWindow, map) {
+            infoWindow.setOptions({
+                content: e.infoWindowHtml,
+                position: e.latLng,
+                pixelOffset: e.pixelOffset
+            });
+            infoWindow.open(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    ]]>
+</head>
+<body>
+    <noscript> You need to have javascript enabled in your browser to view this map.</noscript>
+    <div id="map-canvas">
+    </div>
+    <div class="view-filters">
+	<div class="views-legend">
+            <h4>DEALER LEGEND</h4>
+            <ul class="pline-legend">
+                <li><img src="~/Frontend/Images/icons/fullline.png" />Full Line Dealer</li>
+                <li><img src="~/Frontend/Images/icons/mini.png" />Mini Dealer</li>
+                <li><img src="~/Frontend/Images/icons/parts.png" />Parts Only</li>
+                <li><img src="~/Frontend/Images/icons/latinamerica.png" />Latin America Dealer</li>
+            </ul>
+        </div>
+        <div class="views-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        @Markup(DealerFilterText)
+                    </div>
+                </div>
+            </div>
+            <input type="text" id="distance" name="distance" value="200" size="60" maxlength="128" class="form-item" />
+            <select id="distance-unit" name="distance-unit" class="form-item">
+                <option value="km">Kilometers</option>
+                <option value="miles" selected="selected">Miles</option>
+                <option value="nm">Nautical Miles</option>
+            </select>
+            <div class="form-item text">from</div>
+            <a href="#" class="form-item find-my-location-button" onclick='getMyLocation(); return false;'>MY LOCATION</a>
+            <div class="form-item text">or</div>
+            <input class="form-item form-text" type="text" id="distance-origin" name="distance-origin" size="60" maxlength="128" placeholder="Enter city, state or postal code" />
+            <input type="button" id="submit" name="submit" value="FIND A DEALER" class="form-item form-submit" onclick="filterLocations()" />                            
+            <input type="button" id="reset" name="reset" value="RESET" class="form-item form-submit" onclick="resetLocations()" />
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                @Markup(Content)
+            </div>
+        </div>
+        <div id="dealer-list">
+        </div>
+    </div>
+</body>
+</html>

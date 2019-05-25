@@ -1,0 +1,29 @@
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+
+  <ElementStructure.AutoAttachments>
+    <NamedParent Name="Content" Position="Bottom"/>
+  </ElementStructure.AutoAttachments>
+
+	<ElementRoot>
+		<Children>
+      <Element Id="MainSort" Label="Sort Main Nav" ToolTip="Galleries" Icon="bookmark">
+        <Children>
+          <DataElements Type="Kobelco.MainMenu" Icon="website-create-website-file">
+            <OrderBy>
+              <Field FieldName="LocalOrdering" Direction="ascending"/>
+            </OrderBy>
+            <Actions>
+              <EditDataAction Label="Edit Main Menu Item" Icon="website-edit-website-file"/>
+              <DeleteDataAction Label="Delete Main Menu Item" Icon="website-delete-website-file"/>
+            </Actions>
+          </DataElements>
+        </Children>
+        <Actions>
+          <AddDataAction Type="Kobelco.MainMenu" Label="Add Main Menu Item" Icon="website-create-website-file"/>
+          <CustomUrlAction Label="Sort Main Menu Items" Url="~/Composite/InstalledPackages/CompositeC1Contrib.Sorting/Sort.aspx?Type=Kobelco.MainMenu" />
+        </Actions>
+      </Element>
+		</Children>
+	</ElementRoot>
+	
+</ElementStructure>

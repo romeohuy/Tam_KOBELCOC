@@ -1,0 +1,76 @@
+﻿@inherits RazorPageTemplate
+
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("b190b5bd-f003-4230-8c39-92487f1468be");
+        TemplateTitle = "Contact Page";
+        Layout = "MasterLayout.cshtml";
+    }
+
+    [Placeholder(Id = "header", Title = "Header Content")]
+    public XhtmlDocument HeaderContent { get; set; }
+
+    [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+
+    [Placeholder(Id = "contactform", Title = "Contact Form")]
+    public XhtmlDocument ContactForm { get; set; }
+
+    [Placeholder(Id = "thankyou", Title = "Thank You")]
+    public XhtmlDocument ThankYou { get; set; }
+
+    [Placeholder(Id = "submiterror", Title = "Submission Error")]
+    public XhtmlDocument SubmissionError { get; set; }
+
+}
+
+@{
+    var headerMedia = Data.Get<Kobelco.HeaderMedia>().Where(m => m.PageId == CurrentPageNode.Id).FirstOrDefault();
+	string[] parts = headerMedia.File.Split(new[] { ':' });
+    string mediaStore = parts[0];
+    Guid mediaId = new Guid(parts[1]);
+    var backgroundImageUrl = "/Renderers/ShowMedia.ashx?id=" + mediaId.ToString();
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @*you can add template specific head elements here*@
+</head>
+<body>
+    @if (headerMedia != null)
+    {
+    <div class="outer-header-wrapper">
+        <div class="header-wrapper" style="background-image: url(@backgroundImageUrl);background-repeat:no-repeat;background-size:cover;background-position:center center;">
+        </div>
+        <div class="header-content-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        @Markup(HeaderContent)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    <div class="container">
+        @Markup(Content)
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                @Markup(ContactForm)
+                
+                <div id="contactThankYou" style="display: none;">
+                    @Markup(ThankYou)
+                </div>
+                <div id="contactError" style="display:none;">
+                    @Markup(SubmissionError)
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@section scripts
+{
+    <script src="~/Frontend/Scripts/ContactRequest.js"></script>
+}

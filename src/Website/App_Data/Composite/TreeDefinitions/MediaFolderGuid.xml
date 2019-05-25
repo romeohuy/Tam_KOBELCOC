@@ -1,0 +1,13 @@
+﻿<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0"
+                  xmlns:f="http://www.composite.net/ns/function/1.0"> 
+  <ElementStructure.AutoAttachments> 
+    <DataType Type="Composite.Data.Types.IMediaFileFolder" /> 
+  </ElementStructure.AutoAttachments> 
+  <ElementRoot> 
+    <Actions> 
+      <MessageBoxAction Label="GUID"
+                        MessageBoxTitle="${C1:Data:Composite.Data.Types.IMediaFileFolder:Path}"
+                        MessageBoxMessage="${C1:Data:Composite.Data.Types.IMediaFileFolder:Id}" /> 
+    </Actions> 
+  </ElementRoot> 
+</ElementStructure>

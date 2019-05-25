@@ -1,0 +1,77 @@
+@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get  { return "Shortly describe this function here"; }
+    }
+
+    [FunctionParameter(Label = "Slider Content Overlay", Help = "Text that sits on top of the slider and never changes", DefaultValue = "")]
+    public XhtmlDocument SliderContent { get; set; }
+}
+
+@{ 
+    var slides = Data.Get<Kobelco.Slides>().Where(s => s.PageId == CurrentPageNode.Id).ToList();
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <head>
+    </head>
+    <body>
+
+        <div class="swiper-container home-slider">
+            <!-- Additional required wrapper -->
+
+
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach (var slide in slides)
+                {
+                    if (slide.Media != null && slide.Media != "")
+                    {
+                        <div class="swiper-slide @(slide.IsVideo ? "video" : "")" >
+                            @if (slide.IsVideo)
+                            {
+                                //<video class="slider-video" preload="auto" autoplay="autoplay" muted="muted" poster="@(slide.VideoPoster != null ? "~/media(" + slide.VideoPoster + ")" : "")">
+                                <div class="video-contain hidden-xs">
+                                    <video class="slider-video" id="slider-video" autoplay="autoplay" muted="muted">
+                                        <source src="~/media(@slide.Media)" type="video/mp4" />
+                                    </video>
+                                </div>
+
+                                <img src="~/media(@slide.VideoPoster)" />
+
+                            }
+                            else
+                            {
+                                <img src="~/media(@slide.Media)" />
+
+                            }
+
+                        </div>
+                    }
+
+
+                }
+
+            </div>
+            <!-- If we need pagination -->
+            @*<div class="swiper-pagination"></div>*@
+
+            <!-- If we need navigation buttons -->
+            @*<div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>*@
+
+            <!-- If we need scrollbar -->
+            @*<div class="swiper-scrollbar"></div>*@
+
+        </div>
+        <div class="container-fluid slider-content-overlay">
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.Raw(SliderContent)
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

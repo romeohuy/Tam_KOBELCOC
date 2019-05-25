@@ -1,0 +1,41 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Shows a search icon button and a dropdown search box."; }
+    }
+
+    [FunctionParameter(Label = "Search Result Page", Help = "Select the page where search results will be displayed. This should be a page which contains the 'Search Results' function.")]
+    public DataReference<Composite.Data.Types.IPage> SearchResultPage { get; set; }
+
+}
+@{
+    var pageNode = Data.SitemapNavigator.GetPageNodeById((Guid)SearchResultPage.KeyValue);
+
+    if (pageNode == null)
+    {
+        return;
+    }
+
+    var options = Data.Get<Kobelco.Options>().FirstOrDefault();
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    <div class="navbar-search-form dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon glyphicon glyphicon-search"></span></a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <form action="@pageNode.Url" method="get" role="search" class="search-form form-inline" >
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@options.SearchButtonText" id="searchText" name="q" value="@Request.QueryString["q"]" />
+                </div>
+                <button type="submit" class="btn btn-default btn-orange">
+                    @options.SearchButtonText
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

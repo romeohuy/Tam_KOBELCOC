@@ -1,0 +1,76 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Returns a selector of NA excavators that overlay the slider."; }
+    }
+
+    [FunctionParameter(Label = "Mini Media")]
+    public DataReference<IMediaFile> MiniMedia { get; set; }
+
+    [FunctionParameter(Label = "Mini Alt", DefaultValue = "")]
+    public string MiniAlt { get; set; }
+
+    [FunctionParameter(Label = "Mini Title", DefaultValue ="")]
+    public string MiniTitle { get; set; }
+
+    [FunctionParameter(Label = "Mini Page")]
+    public DataReference<IPage> MiniPage { get; set; }
+
+    [FunctionParameter(Label = "Mini Label")]
+    public string MiniLabel { get; set; }
+
+    [FunctionParameter(Label = "SR Series Media")]
+    public DataReference<IMediaFile> SRMedia { get; set; }
+
+    [FunctionParameter(Label = "SR Series Alt", DefaultValue = "")]
+    public string SRAlt { get; set; }
+
+    [FunctionParameter(Label = "SR Series Title", DefaultValue = "")]
+    public string SRTitle { get; set; }
+
+    [FunctionParameter(Label = "SR Series Page")]
+    public DataReference<IPage> SRPage { get; set; }
+
+    [FunctionParameter(Label = "SR Series Label")]
+    public string SRLabel { get; set; }
+
+    [FunctionParameter(Label = "Conventional Media")]
+    public DataReference<IMediaFile> ConventionalMedia { get; set; }
+
+    [FunctionParameter(Label = "Conventional Alt", DefaultValue = "")]
+    public string ConventionalAlt { get; set; }
+
+    [FunctionParameter(Label = "Conventional Title", DefaultValue = "")]
+    public string ConventionalTitle { get; set; }
+
+    [FunctionParameter(Label = "Conventional Page")]
+    public DataReference<IPage> ConventionalPage { get; set; }
+
+    [FunctionParameter(Label = "Conventional Label")]
+    public string ConventionalLabel { get; set; }
+
+    [FunctionParameter(Label = "Specialty Media")]
+    public DataReference<IMediaFile> SpecialtyMedia { get; set; }
+
+    [FunctionParameter(Label = "Specialty Alt", DefaultValue = "")]
+    public string SpecialtyAlt { get; set; }
+
+    [FunctionParameter(Label = "Specialty Title", DefaultValue = "")]
+    public string SpecialtyTitle { get; set; }
+
+    [FunctionParameter(Label = "Specialty Page")]
+    public DataReference<IPage> SpecialtyPage { get; set; }
+
+    [FunctionParameter(Label = "Specialty Label")]
+    public string SpecialtyLabel { get; set; }
+}
+<div class="es-wrapper">
+    <div class="es-container">
+        <div class="es-selector col-md-2 col-sm-2 col-xs-2"><a href="~/page(@MiniPage)" onclick="ga('send','event','excavator-selector-@Lang','click','mini')"><img src="~/media(@MiniMedia)" alt="@MiniAlt" title="@MiniTitle" class="img-responsive" /></a><h4><a href="~/page(@MiniPage)" onclick="ga('send','event','excavator-selector-@Lang','click','mini')">@MiniLabel</a></h4></div>
+        <div class="es-selector col-md-3 col-sm-3 col-xs-3"><a href="~/page(@SRPage)" onclick="ga('send','event','excavator-selector-@Lang','click','sr series')"><img src="~/media(@SRMedia)" alt="@SRAlt" title="@SRTitle" class="img-responsive" /></a><h4><a href="~/page(@SRPage)" onclick="ga('send','event','excavator-selector-@Lang','click','sr series')">@SRLabel</a></h4></div>
+        <div class="es-selector col-md-3 col-sm-3 col-xs-3"><a href="~/page(@ConventionalPage)" onclick="ga('send','event','excavator-selector-@Lang','click','conventional')"><img src="~/media(@ConventionalMedia)" alt="@ConventionalAlt" title="@ConventionalTitle" class="img-responsive" /></a><h4><a href="~/page(@ConventionalPage)" onclick="ga('send','event','excavator-selector-@Lang','click','conventional')">@ConventionalLabel</a></h4></div>
+        <div class="es-selector col-md-3 col-sm-3 col-xs-4"><a href="~/page(@SpecialtyPage)" onclick="ga('send','event','excavator-selector-@Lang','click','specialty')"><img src="~/media(@SpecialtyMedia)" alt="@SpecialtyAlt" title="@SpecialtyTitle" class="img-responsive" /></a><h4><a href="~/page(@SpecialtyPage)" onclick="ga('send','event','excavator-selector-@Lang','click','specialty')">@SpecialtyLabel</a></h4></div>
+    </div>
+</div>

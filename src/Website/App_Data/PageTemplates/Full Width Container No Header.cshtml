@@ -1,0 +1,23 @@
+﻿@inherits RazorPageTemplate
+
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("a932f404-b144-49ec-ba54-bca45d49dcf9");
+        TemplateTitle = "Full Width, Container, No Header";
+        Layout = "MasterLayout.cshtml";
+    }
+
+    [Placeholder(Id = "content", Title="Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        @*you can add template specific head elements here*@
+    </head>
+    <body>
+        <div class="container">
+            @Markup(Content)
+        </div>
+    </body>
+</html>

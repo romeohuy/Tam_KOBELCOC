@@ -1,0 +1,1317 @@
+﻿20180508 11:58:30.3028 2 53 Information SetupServiceFacade RGB(255, 55, 85) Downloading packages
+20180508 11:58:51.5376 2 53 Information SetupServiceFacade RGB(255, 55, 85) Setting up the system for the first time
+20180508 11:58:55.9115 2 53 Information SetupServiceFacade RGB(255, 55, 85) Creating first locale: en-US
+20180508 11:58:57.1221 2 53 Information SetupServiceFacade RGB(255, 55, 85) Creating first user: kobelcoadmin
+20180508 11:58:58.9071 2 53 Information PackageManagerInstallProcess  Installing package: Base Configuration for C1, Version: 2.0.2, Id = 01292282-3cb3-4d87-851f-da49ef547f8a
+20180508 11:58:58.9383 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:58:59.0165 2 53 Information PackageManagerInstallProcess  Installing package: Basic Usergroup Configuration for C1, Version: 2.0.1, Id = 9b6b0ea9-1f21-4692-aff8-bc9dd33cabec
+20180508 11:58:59.1102 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:00.5683 2 53 Information PackageManagerInstallProcess  Installing package: Composite.Navigation.LanguageSwitcher.Razor, Version: 2.0.5, Id = e899e5e7-bbeb-40bd-b236-b77102718772
+20180508 11:59:00.5995 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:00.9590 2 53 Information PackageManagerInstallProcess  Installing package: Composite.Navigation.Distributed.Razor, Version: 2.0.1, Id = 8b5441b9-4622-4392-a413-5a8f79c17032
+20180508 11:59:00.9902 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:01.0527 2 53 Information PackageManagerInstallProcess  Installing package: Composite.Navigation.Sitemap.Razor, Version: 3.0.0, Id = 4956d27e-3b71-40a8-9f4f-f72a8caa1dfe
+20180508 11:59:01.1621 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:01.2833 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Css.Less, Version: 1.3.2, Id = b1b27757-a065-41fd-91b0-e8e5f2a0e8d0
+20180508 11:59:28.6154 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:28.6607 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.BundlingAndMinification, Version: 1.2.1, Id = 83472ca2-e38e-44f3-9d10-8194b23fdee8
+20180508 11:59:29.2874 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:29.3968 2 53 Information PackageManagerInstallProcess  Installing package: Composite.Media.BootstrapCarousel.Razor, Version: 2.0.5, Id = 47c974eb-acee-42b1-9e5c-a292644dd4a6
+20180508 11:59:29.5218 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:29.5687 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.Web.Html.FontAwesome, Version: 1.0.0, Id = 41a3542b-41fb-4c42-984d-4b92f66b2088
+20180508 11:59:30.1468 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:30.1937 2 53 Information PackageManagerInstallProcess  Installing package: Composite.Web.Config.Html5MimeTypes, Version: 1.0.7, Id = 00a9f643-684c-4fec-ae45-2d9d9547d747
+20180508 11:59:30.2295 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:30.3934 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.SampleImages, Version: 2.0.0, Id = e9233fb0-75c3-47f5-9b91-97d4b632826e
+20180508 11:59:31.1155 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:31.1467 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Bootstrap.Templates.Razor, Version: 2.0.0, Id = 8c8bcde7-bef0-4be3-87c8-ff42165d33d7
+20180508 11:59:31.3391 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:31.4953 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Bootstrap.Core, Version: 2.0.2, Id = 0f8684e9-fcf9-4053-a67d-669180fc0f07
+20180508 11:59:43.1299 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:43.2803 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Bootstrap.Content, Version: 2.0.1, Id = 26489170-b5e4-4da0-ac98-c9e0835ea214
+20180508 11:59:44.1976 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:44.2867 2 53 Information PackageManagerInstallProcess  Installing package: Orckestra.StarterSite.Components, Version: 1.0.5, Id = 12b53b71-a829-4972-b7e8-8ecd8c99841b
+20180508 11:59:44.4270 2 53 Information PackageManagerInstallProcess  Package successfully installed
+20180508 11:59:44.7864 2 53 Information SetupServiceFacade RGB(255, 55, 85) Done setting up the system for the first time! Enjoy!
+20180508 13:27:53.3156 3  6 Information PackageManagerInstallProcess  Installing package: Composite.Tools.SqlServerDataProvider, Version: 1.1.1, Id = c2ab3d31-d7c4-4ce2-9710-954ff6da903e
+20180508 13:27:55.9514 3  6 Information PackageManagerInstallProcess  Package successfully installed
+20180508 13:30:47.5565 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ICompositionContainer]([Id]  [UniqueIdentifier]  NOT NULL ,[Label]  [NVarChar](256)  NOT NULL );ALTER TABLE [Composite_Data_Types_ICompositionContainer] ADD CONSTRAINT [PK_Composite_Data_Types_ICompositionContainer] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:47.9957 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ICustomFunctionCallEditorMapping]([FunctionName]  [NVarChar](255) COLLATE Latin1_General_CS_AS NOT NULL ,[CustomEditorPath]  [NVarChar](255)  NOT NULL ,[Width]  [Int]  NULL ,[Height]  [Int]  NULL );ALTER TABLE [Composite_Data_Types_ICustomFunctionCallEditorMapping] ADD CONSTRAINT [PK_Composite_Data_Types_ICustomFunctionCallEditorMapping] PRIMARY KEY CLUSTERED ([FunctionName]);
+20180508 13:30:48.0417 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IDataItemTreeAttachmentPoint]([Id]  [UniqueIdentifier]  NOT NULL ,[TreeId]  [NVarChar](max)  NOT NULL ,[Position]  [NVarChar](64)  NOT NULL ,[InterfaceType]  [NVarChar](max)  NOT NULL ,[KeyValue]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Data_Types_IDataItemTreeAttachmentPoint] ADD CONSTRAINT [PK_Composite_Data_Types_IDataItemTreeAttachmentPoint] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.2678 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IFlowInformation]([Id]  [UniqueIdentifier]  NOT NULL ,[Username]  [NVarChar](64) COLLATE Latin1_General_CS_AS NOT NULL ,[ConsoleId]  [NVarChar](64)  NOT NULL ,[SerializedFlowToken]  [NVarChar](max)  NOT NULL ,[SerializedEntityToken]  [NVarChar](max)  NOT NULL ,[SerializedActionToken]  [NVarChar](max)  NOT NULL ,[TimeStamp]  [DateTime]  NOT NULL );ALTER TABLE [Composite_Data_Types_IFlowInformation] ADD CONSTRAINT [PK_Composite_Data_Types_IFlowInformation] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.2908 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IFolderWhiteList_Unpublished]([KeyName]  [NVarChar](128) COLLATE Latin1_General_CS_AS NOT NULL ,[TildeBasedPath]  [NVarChar](512) COLLATE Latin1_General_CS_AS NOT NULL );ALTER TABLE [Composite_Data_Types_IFolderWhiteList_Unpublished] ADD CONSTRAINT [PK_Composite_Data_Types_IFolderWhiteList_Unpublished] PRIMARY KEY CLUSTERED ([KeyName],[TildeBasedPath]);
+20180508 13:30:48.3778 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IGeneratedTypeWhiteList_Unpublished]([TypeManagerTypeName]  [NVarChar](256) COLLATE Latin1_General_CS_AS NOT NULL );ALTER TABLE [Composite_Data_Types_IGeneratedTypeWhiteList_Unpublished] ADD CONSTRAINT [PK_Composite_Data_Types_IGeneratedTypeWhiteList_Unpublished] PRIMARY KEY CLUSTERED ([TypeManagerTypeName]);
+20180508 13:30:48.3988 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IHostnameBinding]([Id]  [UniqueIdentifier]  NOT NULL ,[Hostname]  [NVarChar](255)  NOT NULL ,[Culture]  [NVarChar](64)  NOT NULL ,[HomePageId]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IHostnameBinding_HomePageId] DEFAULT N'00000000-0000-0000-0000-000000000000',[PageNotFoundUrl]  [NVarChar](255)  NULL ,[Aliases]  [NVarChar](512)  NULL ,[IncludeHomePageInUrl]  [Bit]  NOT NULL ,[IncludeCultureInUrl]  [Bit]  NOT NULL ,[EnforceHttps]  [Bit]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IHostnameBinding_EnforceHttps] DEFAULT 0);ALTER TABLE [Composite_Data_Types_IHostnameBinding] ADD CONSTRAINT [PK_Composite_Data_Types_IHostnameBinding] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.4639 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IInlineFunction]([Id]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](128)  NOT NULL ,[Namespace]  [NVarChar](128)  NOT NULL ,[Description]  [NVarChar](max)  NOT NULL ,[CodePath]  [NVarChar](512)  NOT NULL );ALTER TABLE [Composite_Data_Types_IInlineFunction] ADD CONSTRAINT [PK_Composite_Data_Types_IInlineFunction] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.4819 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IInlineFunctionAssemblyReference]([Id]  [UniqueIdentifier]  NOT NULL ,[Function]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](128)  NOT NULL ,[Location]  [NVarChar](128)  NOT NULL );ALTER TABLE [Composite_Data_Types_IInlineFunctionAssemblyReference] ADD CONSTRAINT [PK_Composite_Data_Types_IInlineFunctionAssemblyReference] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.5079 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ILockingInformation]([Id]  [UniqueIdentifier]  NOT NULL ,[SerializedEntityToken]  [NVarChar](max)  NOT NULL ,[SerializedOwnerId]  [NVarChar](max)  NOT NULL ,[Username]  [NVarChar](64)  NOT NULL );ALTER TABLE [Composite_Data_Types_ILockingInformation] ADD CONSTRAINT [PK_Composite_Data_Types_ILockingInformation] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.5579 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IMediaFileData]([Id]  [UniqueIdentifier]  NOT NULL ,[FolderPath]  [NVarChar](2048)  NOT NULL ,[FileName]  [NVarChar](2048)  NOT NULL ,[Title]  [NVarChar](256)  NULL ,[Description]  [NVarChar](max)  NULL ,[Tags]  [NVarChar](max)  NULL ,[CultureInfo]  [NVarChar](128)  NULL ,[MimeType]  [NVarChar](256)  NULL ,[Length]  [Int]  NULL CONSTRAINT [DF_Composite_Data_Types_IMediaFileData_Length] DEFAULT -1,[CreationTime]  [DateTime]  NULL CONSTRAINT [DF_Composite_Data_Types_IMediaFileData_CreationTime] DEFAULT getdate(),[LastWriteTime]  [DateTime]  NULL CONSTRAINT [DF_Composite_Data_Types_IMediaFileData_LastWriteTime] DEFAULT getdate());ALTER TABLE [Composite_Data_Types_IMediaFileData] ADD CONSTRAINT [PK_Composite_Data_Types_IMediaFileData] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.5829 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IMediaFolderData]([Id]  [UniqueIdentifier]  NOT NULL ,[Path]  [NVarChar](2048)  NOT NULL ,[Title]  [NVarChar](256)  NULL ,[Description]  [NVarChar](max)  NULL );ALTER TABLE [Composite_Data_Types_IMediaFolderData] ADD CONSTRAINT [PK_Composite_Data_Types_IMediaFolderData] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.6189 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IMethodBasedFunctionInfo]([Id]  [UniqueIdentifier]  NOT NULL ,[Type]  [NVarChar](512)  NOT NULL ,[MethodName]  [NVarChar](64)  NOT NULL ,[Namespace]  [NVarChar](512)  NOT NULL ,[UserMethodName]  [NVarChar](64)  NOT NULL );ALTER TABLE [Composite_Data_Types_IMethodBasedFunctionInfo] ADD CONSTRAINT [PK_Composite_Data_Types_IMethodBasedFunctionInfo] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.6479 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_INamedFunctionCall]([XsltFunctionId]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](256) COLLATE Latin1_General_CS_AS NOT NULL ,[SerializedFunction]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Data_Types_INamedFunctionCall] ADD CONSTRAINT [PK_Composite_Data_Types_INamedFunctionCall] PRIMARY KEY CLUSTERED ([XsltFunctionId],[Name]);
+20180508 13:30:48.6809 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPackageServerSource]([Id]  [UniqueIdentifier]  NOT NULL ,[Url]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Data_Types_IPackageServerSource] ADD CONSTRAINT [PK_Composite_Data_Types_IPackageServerSource] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.7090 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPage_en_US]([PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_PublicationStatus] DEFAULT N'',[ChangeDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_ChangeDate] DEFAULT getdate(),[CreationDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_CreationDate] DEFAULT getdate(),[ChangedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_ChangedBy] DEFAULT N'',[CreatedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_CreatedBy] DEFAULT N'',[Id]  [UniqueIdentifier]  NOT NULL ,[TemplateId]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_PageTypeId] DEFAULT N'00000000-0000-0000-0000-000000000000',[Title]  [NVarChar](255)  NOT NULL ,[MenuTitle]  [NVarChar](64)  NULL ,[UrlTitle]  [NVarChar](192)  NOT NULL ,[FriendlyUrl]  [NVarChar](192)  NULL ,[Description]  [NVarChar](1024)  NULL ,[SourceCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_SourceCultureName] DEFAULT N'',[VersionId]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_en_US_VersionId] DEFAULT newid());ALTER TABLE [Composite_Data_Types_IPage_en_US] ADD CONSTRAINT [PK_Composite_Data_Types_IPage_en_US] PRIMARY KEY CLUSTERED ([Id],[VersionId]);
+20180508 13:30:48.7440 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPage_Unpublished_en_US]([PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_PublicationStatus] DEFAULT N'',[ChangeDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_ChangeDate] DEFAULT getdate(),[CreationDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_CreationDate] DEFAULT getdate(),[ChangedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_ChangedBy] DEFAULT N'',[CreatedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_CreatedBy] DEFAULT N'',[Id]  [UniqueIdentifier]  NOT NULL ,[TemplateId]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_PageTypeId] DEFAULT N'00000000-0000-0000-0000-000000000000',[Title]  [NVarChar](255)  NOT NULL ,[MenuTitle]  [NVarChar](64)  NULL ,[UrlTitle]  [NVarChar](192)  NOT NULL ,[FriendlyUrl]  [NVarChar](192)  NULL ,[Description]  [NVarChar](1024)  NULL ,[SourceCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_SourceCultureName] DEFAULT N'',[VersionId]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPage_Unpublished_en_US_VersionId] DEFAULT newid());ALTER TABLE [Composite_Data_Types_IPage_Unpublished_en_US] ADD CONSTRAINT [PK_Composite_Data_Types_IPage_Unpublished_en_US] PRIMARY KEY CLUSTERED ([Id],[VersionId]);
+20180508 13:30:48.7830 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageFolderDefinition]([Id]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPageFolderDefinition_Id] DEFAULT newid(),[PageId]  [UniqueIdentifier]  NOT NULL ,[FolderTypeId]  [UniqueIdentifier]  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageFolderDefinition] ADD CONSTRAINT [PK_Composite_Data_Types_IPageFolderDefinition] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:48.8180 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageMetaDataDefinition]([Id]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPageMetaDataDefinition_Id] DEFAULT newid(),[DefiningItemId]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](128)  NOT NULL ,[Label]  [NVarChar](256)  NOT NULL ,[MetaDataContainerId]  [UniqueIdentifier]  NOT NULL ,[MetaDataTypeId]  [UniqueIdentifier]  NOT NULL ,[StartLevel]  [Int]  NOT NULL ,[Levels]  [Int]  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageMetaDataDefinition] ADD CONSTRAINT [PK_Composite_Data_Types_IPageMetaDataDefinition] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.0411 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPagePlaceholderContent_en_US]([PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_en_US_PublicationStatus] DEFAULT N'',[ChangeDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_en_US_ChangeDate] DEFAULT getdate(),[CreationDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_en_US_CreationDate] DEFAULT getdate(),[ChangedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_en_US_ChangedBy] DEFAULT N'',[CreatedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_en_US_CreatedBy] DEFAULT N'',[PageId]  [UniqueIdentifier]  NOT NULL ,[PlaceHolderId]  [NVarChar](255) COLLATE Latin1_General_CS_AS NOT NULL ,[Content]  [NVarChar](max)  NOT NULL ,[SourceCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_en_US_SourceCultureName] DEFAULT N'',[VersionId]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_en_US_VersionId] DEFAULT newid());ALTER TABLE [Composite_Data_Types_IPagePlaceholderContent_en_US] ADD CONSTRAINT [PK_Composite_Data_Types_IPagePlaceholderContent_en_US] PRIMARY KEY CLUSTERED ([PageId],[PlaceHolderId],[VersionId]);
+20180508 13:30:49.0491 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US]([PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US_PublicationStatus] DEFAULT N'',[ChangeDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US_ChangeDate] DEFAULT getdate(),[CreationDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US_CreationDate] DEFAULT getdate(),[ChangedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US_ChangedBy] DEFAULT N'',[CreatedBy]  [NVarChar](64)  NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US_CreatedBy] DEFAULT N'',[PageId]  [UniqueIdentifier]  NOT NULL ,[PlaceHolderId]  [NVarChar](255) COLLATE Latin1_General_CS_AS NOT NULL ,[Content]  [NVarChar](max)  NOT NULL ,[SourceCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US_SourceCultureName] DEFAULT N'',[VersionId]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US_VersionId] DEFAULT newid());ALTER TABLE [Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US] ADD CONSTRAINT [PK_Composite_Data_Types_IPagePlaceholderContent_Unpublished_en_US] PRIMARY KEY CLUSTERED ([PageId],[PlaceHolderId],[VersionId]);
+20180508 13:30:49.1903 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageStructure]([Id]  [UniqueIdentifier]  NOT NULL ,[ParentId]  [UniqueIdentifier]  NOT NULL ,[LocalOrdering]  [Int]  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageStructure] ADD CONSTRAINT [PK_Composite_Data_Types_IPageStructure] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.2363 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IXmlPageTemplate]([Id]  [UniqueIdentifier]  NOT NULL ,[Title]  [NVarChar](249)  NOT NULL ,[PageTemplateFilePath]  [NVarChar](255)  NOT NULL );ALTER TABLE [Composite_Data_Types_IXmlPageTemplate] ADD CONSTRAINT [PK_Composite_Data_Types_IXmlPageTemplate] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.2694 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageType]([Id]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](256)  NOT NULL ,[Description]  [NVarChar](max)  NOT NULL ,[Available]  [Bit]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPageType_Available] DEFAULT 1,[PresetMenuTitle]  [Bit]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPageType_PresetMenuTitle] DEFAULT 1,[DefaultTemplateId]  [UniqueIdentifier]  NOT NULL ,[HomepageRelation]  [NVarChar](64)  NOT NULL ,[DefaultChildPageType]  [UniqueIdentifier]  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageType] ADD CONSTRAINT [PK_Composite_Data_Types_IPageType] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.3074 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageTypeDataFolderTypeLink]([Id]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL ,[DataTypeId]  [UniqueIdentifier]  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageTypeDataFolderTypeLink] ADD CONSTRAINT [PK_Composite_Data_Types_IPageTypeDataFolderTypeLink] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.3414 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageTypeDefaultPageContent]([Id]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL ,[PlaceHolderId]  [NVarChar](255)  NOT NULL ,[Content]  [NVarChar](max)  NOT NULL ,[ContainerClasses]  [NVarChar](64)  NULL );ALTER TABLE [Composite_Data_Types_IPageTypeDefaultPageContent] ADD CONSTRAINT [PK_Composite_Data_Types_IPageTypeDefaultPageContent] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.3774 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageTypeMetaDataTypeLink]([Id]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL ,[DataTypeId]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](128)  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageTypeMetaDataTypeLink] ADD CONSTRAINT [PK_Composite_Data_Types_IPageTypeMetaDataTypeLink] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.4124 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageTypePageTemplateRestriction]([Id]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL ,[PageTemplateId]  [UniqueIdentifier]  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageTypePageTemplateRestriction] ADD CONSTRAINT [PK_Composite_Data_Types_IPageTypePageTemplateRestriction] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.5164 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageTypeParentRestriction]([Id]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL ,[AllowedParentPageTypeId]  [UniqueIdentifier]  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageTypeParentRestriction] ADD CONSTRAINT [PK_Composite_Data_Types_IPageTypeParentRestriction] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.5525 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPageTypeTreeLink]([Id]  [UniqueIdentifier]  NOT NULL ,[PageTypeId]  [UniqueIdentifier]  NOT NULL ,[TreeId]  [NVarChar](2048)  NOT NULL );ALTER TABLE [Composite_Data_Types_IPageTypeTreeLink] ADD CONSTRAINT [PK_Composite_Data_Types_IPageTypeTreeLink] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.5945 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IPublishSchedule_Unpublished]([PublishDate]  [DateTime]  NOT NULL ,[Id]  [UniqueIdentifier]  NOT NULL ,[DataTypeId]  [UniqueIdentifier]  NOT NULL ,[DataId]  [NVarChar](512)  NOT NULL ,[WorkflowInstanceId]  [UniqueIdentifier]  NOT NULL ,[LocaleCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IPublishSchedule_Unpublished_LocaleCultureName] DEFAULT N'');ALTER TABLE [Composite_Data_Types_IPublishSchedule_Unpublished] ADD CONSTRAINT [PK_Composite_Data_Types_IPublishSchedule_Unpublished] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.6675 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUnpublishSchedule_Unpublished]([UnpublishDate]  [DateTime]  NOT NULL ,[Id]  [UniqueIdentifier]  NOT NULL ,[DataTypeId]  [UniqueIdentifier]  NOT NULL ,[DataId]  [NVarChar](512)  NOT NULL ,[WorkflowInstanceId]  [UniqueIdentifier]  NOT NULL ,[LocaleCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUnpublishSchedule_Unpublished_LocaleCultureName] DEFAULT N'');ALTER TABLE [Composite_Data_Types_IUnpublishSchedule_Unpublished] ADD CONSTRAINT [PK_Composite_Data_Types_IUnpublishSchedule_Unpublished] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.7135 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IParameter]([OwnerId]  [UniqueIdentifier]  NOT NULL ,[ParameterId]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](128)  NOT NULL ,[Label]  [NVarChar](128)  NOT NULL ,[HelpText]  [NVarChar](512)  NOT NULL ,[Position]  [Int]  NOT NULL ,[TypeManagerName]  [NVarChar](512)  NOT NULL ,[WidgetFunctionMarkup]  [NVarChar](max)  NULL ,[DefaultValueFunctionMarkup]  [NVarChar](max)  NULL ,[TestValueFunctionMarkup]  [NVarChar](max)  NULL );ALTER TABLE [Composite_Data_Types_IParameter] ADD CONSTRAINT [PK_Composite_Data_Types_IParameter] PRIMARY KEY CLUSTERED ([OwnerId],[ParameterId]);
+20180508 13:30:49.7525 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ISearchEngineOptimizationKeyword_en_US]([Keyword]  [NVarChar](128) COLLATE Latin1_General_CS_AS NOT NULL ,[SourceCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_ISearchEngineOptimizationKeyword_en_US_SourceCultureName] DEFAULT N'');ALTER TABLE [Composite_Data_Types_ISearchEngineOptimizationKeyword_en_US] ADD CONSTRAINT [PK_Composite_Data_Types_ISearchEngineOptimizationKeyword_en_US] PRIMARY KEY CLUSTERED ([Keyword]);
+20180508 13:30:49.7945 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Plugins_WebClient_SessionStateProviders_DefaultSessionStateProvider_ISessionStateEntry_Unpublished]([Id]  [UniqueIdentifier]  NOT NULL ,[ExpirationDate]  [DateTime]  NOT NULL ,[SerializedValue]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Plugins_WebClient_SessionStateProviders_DefaultSessionStateProvider_ISessionStateEntry_Unpublished] ADD CONSTRAINT [PK_Composite_Plugins_WebClient_SessionStateProviders_DefaultSessionStateProvider_ISessionStateEntry_Unpublished] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:49.8496 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ISqlConnection]([Id]  [UniqueIdentifier]  NOT NULL ,[IsMsSql]  [Bit]  NOT NULL ,[EncryptedConnectionString]  [NVarChar](1024)  NOT NULL ,[Name]  [NVarChar](255)  NOT NULL );ALTER TABLE [Composite_Data_Types_ISqlConnection] ADD CONSTRAINT [PK_Composite_Data_Types_ISqlConnection] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:50.3995 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ISqlFunctionInfo]([Id]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](255)  NOT NULL ,[ConnectionId]  [UniqueIdentifier]  NOT NULL ,[IsStoredProcedure]  [Bit]  NOT NULL ,[ReturnsXml]  [Bit]  NOT NULL ,[IsQuery]  [Bit]  NOT NULL ,[Command]  [NVarChar](max)  NOT NULL ,[Namespace]  [NVarChar](255)  NOT NULL ,[Description]  [NVarChar](512)  NOT NULL );ALTER TABLE [Composite_Data_Types_ISqlFunctionInfo] ADD CONSTRAINT [PK_Composite_Data_Types_ISqlFunctionInfo] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:51.9862 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ISystemActiveLocale]([Id]  [UniqueIdentifier]  NOT NULL ,[CultureName]  [NVarChar](16)  NOT NULL ,[UrlMappingName]  [NVarChar](64)  NOT NULL ,[IsDefault]  [Bit]  NOT NULL );ALTER TABLE [Composite_Data_Types_ISystemActiveLocale] ADD CONSTRAINT [PK_Composite_Data_Types_ISystemActiveLocale] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:52.1583 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_ITaskItem]([Id]  [UniqueIdentifier]  NOT NULL ,[TaskId]  [NVarChar](255)  NOT NULL ,[TaskManagerType]  [NVarChar](2048)  NOT NULL ,[SerializedFlowToken]  [NVarChar](max)  NOT NULL ,[StartTime]  [DateTime]  NOT NULL );ALTER TABLE [Composite_Data_Types_ITaskItem] ADD CONSTRAINT [PK_Composite_Data_Types_ITaskItem] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:52.1943 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUrlConfiguration]([Id]  [UniqueIdentifier]  NOT NULL ,[PageUrlSuffix]  [NVarChar](255)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUrlConfiguration] ADD CONSTRAINT [PK_Composite_Data_Types_IUrlConfiguration] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:52.4164 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUser]([Id]  [UniqueIdentifier]  NOT NULL ,[Username]  [NVarChar](64)  NOT NULL ,[Name]  [NVarChar](128)  NULL ,[Email]  [NVarChar](128)  NULL ,[Group]  [NVarChar](64)  NULL ,[IsLocked]  [Bit]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUser_IsLocked] DEFAULT 0,[LockoutReason]  [Int]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUser_LockoutReason] DEFAULT 0,[EncryptedPassword]  [NVarChar](256)  NULL ,[PasswordHashSalt]  [NVarChar](128)  NULL ,[LastPasswordChangeDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUser_LastPasswordChangeDate] DEFAULT getdate());ALTER TABLE [Composite_Data_Types_IUser] ADD CONSTRAINT [PK_Composite_Data_Types_IUser] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:52.5034 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserPasswordHistory]([Id]  [UniqueIdentifier]  NOT NULL ,[UserId]  [UniqueIdentifier]  NOT NULL ,[PasswordHash]  [NVarChar](256)  NOT NULL ,[PasswordSalt]  [NVarChar](128)  NOT NULL ,[SetDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUserPasswordHistory_SetDate] DEFAULT getdate());ALTER TABLE [Composite_Data_Types_IUserPasswordHistory] ADD CONSTRAINT [PK_Composite_Data_Types_IUserPasswordHistory] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:52.8425 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserActiveLocale]([Id]  [UniqueIdentifier]  NOT NULL ,[Username]  [NVarChar](64) COLLATE Latin1_General_CS_AS NOT NULL ,[CultureName]  [NVarChar](16)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserActiveLocale] ADD CONSTRAINT [PK_Composite_Data_Types_IUserActiveLocale] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:52.8955 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserActivePerspective]([Id]  [UniqueIdentifier]  NOT NULL ,[Username]  [NVarChar](128) COLLATE Latin1_General_CS_AS NOT NULL ,[SerializedEntityToken]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserActivePerspective] ADD CONSTRAINT [PK_Composite_Data_Types_IUserActivePerspective] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:53.0028 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserConsoleInformation]([Id]  [UniqueIdentifier]  NOT NULL ,[Username]  [NVarChar](64) COLLATE Latin1_General_CS_AS NOT NULL ,[ConsoleId]  [NVarChar](64)  NOT NULL ,[TimeStamp]  [DateTime]  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserConsoleInformation] ADD CONSTRAINT [PK_Composite_Data_Types_IUserConsoleInformation] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:53.0548 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserDeveloperSettings]([Username]  [NVarChar](64) COLLATE Latin1_General_CS_AS NOT NULL ,[LastSpecifiedNamespace]  [NVarChar](256)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserDeveloperSettings] ADD CONSTRAINT [PK_Composite_Data_Types_IUserDeveloperSettings] PRIMARY KEY CLUSTERED ([Username]);
+20180508 13:30:53.1095 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserFormLogin]([UserId]  [UniqueIdentifier]  NOT NULL ,[Folder]  [NVarChar](64)  NOT NULL ,[IsLocked]  [Bit]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUserFormLogin_IsLocked] DEFAULT 0,[LockoutReason]  [Int]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUserFormLogin_LockoutReason] DEFAULT 0,[PasswordHash]  [NVarChar](256)  NOT NULL ,[PasswordHashSalt]  [NVarChar](128)  NOT NULL ,[LastPasswordChangeDate]  [DateTime]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUserFormLogin_LastPasswordChangeDate] DEFAULT getdate());ALTER TABLE [Composite_Data_Types_IUserFormLogin] ADD CONSTRAINT [PK_Composite_Data_Types_IUserFormLogin] PRIMARY KEY CLUSTERED ([UserId]);
+20180508 13:30:54.5612 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserGroup]([Id]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](64)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserGroup] ADD CONSTRAINT [PK_Composite_Data_Types_IUserGroup] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:54.5973 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserGroupActivePerspective]([Id]  [UniqueIdentifier]  NOT NULL ,[UserGroupId]  [UniqueIdentifier]  NOT NULL ,[SerializedEntityToken]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserGroupActivePerspective] ADD CONSTRAINT [PK_Composite_Data_Types_IUserGroupActivePerspective] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:54.6363 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserGroupPermissionDefinition]([Id]  [UniqueIdentifier]  NOT NULL ,[UserGroupId]  [UniqueIdentifier]  NOT NULL ,[SerializedEntityToken]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserGroupPermissionDefinition] ADD CONSTRAINT [PK_Composite_Data_Types_IUserGroupPermissionDefinition] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:54.6773 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserGroupPermissionDefinitionPermissionType]([Id]  [UniqueIdentifier]  NOT NULL ,[UserGroupPermissionDefinitionId]  [UniqueIdentifier]  NOT NULL ,[PermissionTypeName]  [NVarChar](64)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserGroupPermissionDefinitionPermissionType] ADD CONSTRAINT [PK_Composite_Data_Types_IUserGroupPermissionDefinitionPermissionType] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:54.7163 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserPermissionDefinition]([Id]  [UniqueIdentifier]  NOT NULL ,[Username]  [NVarChar](64) COLLATE Latin1_General_CS_AS NOT NULL ,[SerializedEntityToken]  [NVarChar](max)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserPermissionDefinition] ADD CONSTRAINT [PK_Composite_Data_Types_IUserPermissionDefinition] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:54.7704 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserPermissionDefinitionPermissionType]([Id]  [UniqueIdentifier]  NOT NULL ,[UserPermissionDefinitionId]  [UniqueIdentifier]  NOT NULL ,[PermissionTypeName]  [NVarChar](64)  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserPermissionDefinitionPermissionType] ADD CONSTRAINT [PK_Composite_Data_Types_IUserPermissionDefinitionPermissionType] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:54.8544 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserSettings]([Username]  [NVarChar](64) COLLATE Latin1_General_CS_AS NOT NULL ,[CultureName]  [NVarChar](16)  NOT NULL ,[C1ConsoleUiLanguage]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IUserSettings_C1ConsoleUiLanguage] DEFAULT N'en-US',[CurrentActiveLocaleCultureName]  [NVarChar](16)  NULL ,[ForeignLocaleCultureName]  [NVarChar](16)  NULL );ALTER TABLE [Composite_Data_Types_IUserSettings] ADD CONSTRAINT [PK_Composite_Data_Types_IUserSettings] PRIMARY KEY CLUSTERED ([Username]);
+20180508 13:30:55.2887 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IUserUserGroupRelation]([UserId]  [UniqueIdentifier]  NOT NULL ,[UserGroupId]  [UniqueIdentifier]  NOT NULL );ALTER TABLE [Composite_Data_Types_IUserUserGroupRelation] ADD CONSTRAINT [PK_Composite_Data_Types_IUserUserGroupRelation] PRIMARY KEY CLUSTERED ([UserId],[UserGroupId]);
+20180508 13:30:55.3407 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IVisualFunction]([Id]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](256)  NOT NULL ,[Namespace]  [NVarChar](512)  NOT NULL ,[Description]  [NVarChar](512)  NOT NULL ,[TypeManagerName]  [NVarChar](256)  NOT NULL ,[XhtmlTemplate]  [NVarChar](max)  NOT NULL ,[MaximumItemsToList]  [Int]  NOT NULL ,[OrderbyFieldName]  [NVarChar](64)  NOT NULL ,[OrderbyAscending]  [Bit]  NOT NULL CONSTRAINT [DF_Composite_Data_Types_IVisualFunction_OrderbyAscending] DEFAULT 1);ALTER TABLE [Composite_Data_Types_IVisualFunction] ADD CONSTRAINT [PK_Composite_Data_Types_IVisualFunction] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:55.4237 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Composite_Data_Types_IXsltFunction]([Id]  [UniqueIdentifier]  NOT NULL ,[Name]  [NVarChar](256)  NOT NULL ,[Namespace]  [NVarChar](512)  NOT NULL ,[Description]  [NVarChar](512)  NOT NULL ,[OutputXmlSubType]  [NVarChar](32)  NOT NULL ,[XslFilePath]  [NVarChar](1024)  NOT NULL );ALTER TABLE [Composite_Data_Types_IXsltFunction] ADD CONSTRAINT [PK_Composite_Data_Types_IXsltFunction] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:56.3231 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Content_ContentSpot]([Id]  [UniqueIdentifier]  NOT NULL ,[Title]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Content_ContentSpot_Title] DEFAULT N'',[Content]  [NVarChar](max)  NOT NULL CONSTRAINT [DF_Content_ContentSpot_Content] DEFAULT N'',[PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Content_ContentSpot_PublicationStatus] DEFAULT N'');ALTER TABLE [Content_ContentSpot] ADD CONSTRAINT [PK_Content_ContentSpot] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:56.3301 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Content_ContentSpot_Unpublished]([Id]  [UniqueIdentifier]  NOT NULL ,[Title]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Content_ContentSpot_Unpublished_Title] DEFAULT N'',[Content]  [NVarChar](max)  NOT NULL CONSTRAINT [DF_Content_ContentSpot_Unpublished_Content] DEFAULT N'',[PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Content_ContentSpot_Unpublished_PublicationStatus] DEFAULT N'');ALTER TABLE [Content_ContentSpot_Unpublished] ADD CONSTRAINT [PK_Content_ContentSpot_Unpublished] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:30:56.3801 5 30 Information SqlDataProvider  CREATE TABLE dbo.[Layout_Navigation_TopLink_en_US]([Page]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Layout_Navigation_TopLink_en_US_Page] DEFAULT N'00000000-0000-0000-0000-000000000000',[Position]  [Int]  NOT NULL CONSTRAINT [DF_Layout_Navigation_TopLink_en_US_Position] DEFAULT 0,[SourceCultureName]  [NVarChar](16)  NOT NULL CONSTRAINT [DF_Layout_Navigation_TopLink_en_US_SourceCultureName] DEFAULT N'',[PageId]  [UniqueIdentifier]  NOT NULL ,[Id]  [UniqueIdentifier]  NOT NULL );ALTER TABLE [Layout_Navigation_TopLink_en_US] ADD CONSTRAINT [PK_Layout_Navigation_TopLink_en_US] PRIMARY KEY CLUSTERED ([Id]);
+20180508 13:31:09.9917 5 31 Warning XmlDataProvider  Failed to save file 'C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\App_Data\Composite\DataStores\Composite.Data.Types.IUserConsoleInformation.xml' as the underlying directory does not exist.
+20180508 13:47:09.0176 8 50 Information ConsoleMessageServiceFacade  Console 'key29904453725286295' has a last known change numer of 9, but server current number is 1.
+20180508 13:51:51.5565 9 87 Information PackageManagerInstallProcess  Installing package: Composite.AspNet.MvcFunctions, Version: 1.0.14, Id = 1a8895f2-280d-4fec-b8b0-f124b4198e3d
+20180508 13:51:51.6745 9 87 Information DllPackageFragmentInstaller  Skipping installation for file '~\Bin\System.Web.Mvc.dll' version '5.2.3.0', as a file with a newer version '5.2.4.0' already exists.
+20180508 13:51:52.1337 9 87 Information PackageManagerInstallProcess  Package successfully installed
+20180508 13:51:59.1060 10 25 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:52:00.4555 10 25 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:52:14.2445 11 25 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:52:16.3629 11 25 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:52:29.1939 12 25 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:52:31.2426 12 25 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:52:44.1481 13 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:52:46.1393 13 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:52:59.1711 14  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:53:01.1377 14  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:53:14.1220 15  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:53:15.9616 15  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:53:29.1259 16 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:53:31.3437 16 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:53:44.1480 17 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:53:46.1407 17 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:53:59.2352 18 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:54:01.2956 18 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:54:14.1334 19 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:54:16.0095 19 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:54:29.9980 20 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:54:33.8781 20 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:54:49.2966 21 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:54:51.2286 21 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:55:04.1193 22  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:55:06.0188 22  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:55:19.1650 23  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:55:21.1948 23  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:55:34.1111 24  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:55:36.3389 24  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:55:49.1252 25  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:55:51.2546 25  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:56:04.1143 26  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:56:06.0120 26  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:56:19.1769 27 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:56:21.0545 27 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:56:35.7404 28  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:56:39.9277 28  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:56:55.0888 29  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:56:58.4675 29  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:57:09.1118 30  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:57:11.2933 30  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:57:24.1246 31  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:57:26.0413 31  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:57:39.2434 32  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:57:41.3231 32  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:57:54.1081 33  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:57:56.0011 33  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:58:09.1176 34  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:58:11.0783 34  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:58:24.1524 35 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:58:26.3192 35 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:58:39.1364 36  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:58:41.2111 36  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:58:54.1191 37 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:58:56.0346 37 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:59:09.1411 38  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:59:11.4880 38  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:59:24.1886 39  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:59:26.3574 39  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:59:39.1846 40 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:59:41.3662 40 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 13:59:54.1182 41 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 13:59:56.1377 41 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:00:09.8208 42 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:00:11.7306 42 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:00:24.7710 43 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:00:26.6076 43 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:00:39.1865 44  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:00:41.2410 44  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:00:54.1305 45  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:00:56.1514 45  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:01:09.1187 46 29 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:01:11.5296 46 29 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:01:22.7519 47  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:01:24.9561 47  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:09:16.4442 48  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+=== Pre-bind state information ===
+LOG: DisplayName = System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+ (Fully-specified)
+LOG: Appbase = file:///C:/Source/KOBELCO/Development/Kobelco-2018/Website/Website/
+LOG: Initial PrivatePath = C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\bin
+Calling assembly : Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\web.config
+LOG: Using host configuration file: C:\Users\Oliphant\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Post-policy reference: System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+LOG: Attempting download of new URL file:///C:/Users/Oliphant/AppData/Local/Temp/Temporary ASP.NET Files/vs/b4d2be0e/f7eef1a2/System.Web.Mvc.DLL.
+LOG: Attempting download of new URL file:///C:/Users/Oliphant/AppData/Local/Temp/Temporary ASP.NET Files/vs/b4d2be0e/f7eef1a2/System.Web.Mvc/System.Web.Mvc.DLL.
+LOG: Attempting download of new URL file:///C:/Source/KOBELCO/Development/Kobelco-2018/Website/Website/bin/System.Web.Mvc.DLL.
+WRN: Comparing the assembly name resulted in the mismatch: Build Number
+ERR: Failed to complete setup of assembly (hr = 0x80131040). Probing terminated.
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:09:18.3759 48  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+=== Pre-bind state information ===
+LOG: DisplayName = System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+ (Fully-specified)
+LOG: Appbase = file:///C:/Source/KOBELCO/Development/Kobelco-2018/Website/Website/
+LOG: Initial PrivatePath = C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\bin
+Calling assembly : Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\web.config
+LOG: Using host configuration file: C:\Users\Oliphant\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Post-policy reference: System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+LOG: Attempting download of new URL file:///C:/Users/Oliphant/AppData/Local/Temp/Temporary ASP.NET Files/vs/b4d2be0e/f7eef1a2/System.Web.Mvc.DLL.
+LOG: Attempting download of new URL file:///C:/Users/Oliphant/AppData/Local/Temp/Temporary ASP.NET Files/vs/b4d2be0e/f7eef1a2/System.Web.Mvc/System.Web.Mvc.DLL.
+LOG: Attempting download of new URL file:///C:/Source/KOBELCO/Development/Kobelco-2018/Website/Website/bin/System.Web.Mvc.DLL.
+WRN: Comparing the assembly name resulted in the mismatch: Build Number
+ERR: Failed to complete setup of assembly (hr = 0x80131040). Probing terminated.
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.Initialize(Boolean dynamicTypes)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:20:30.8919 49  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:20:33.2206 49  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:26:08.0938 50  1 Error AttributeBasedApplicationStartupHandler  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' ---> System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+=== Pre-bind state information ===
+LOG: DisplayName = System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+ (Fully-specified)
+LOG: Appbase = file:///C:/Source/KOBELCO/Development/Kobelco-2018/Website/Website/
+LOG: Initial PrivatePath = C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\bin
+Calling assembly : Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\web.config
+LOG: Using host configuration file: C:\Users\Oliphant\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Redirect found in application configuration file: 5.2.3.0 redirected to 5.2.4.0.
+LOG: Post-policy reference: System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+LOG: Attempting download of new URL file:///C:/Users/Oliphant/AppData/Local/Temp/Temporary ASP.NET Files/vs/b4d2be0e/f7eef1a2/System.Web.Mvc.DLL.
+LOG: Attempting download of new URL file:///C:/Users/Oliphant/AppData/Local/Temp/Temporary ASP.NET Files/vs/b4d2be0e/f7eef1a2/System.Web.Mvc/System.Web.Mvc.DLL.
+LOG: Attempting download of new URL file:///C:/Source/KOBELCO/Development/Kobelco-2018/Website/Website/bin/System.Web.Mvc.DLL.
+WRN: Comparing the assembly name resulted in the mismatch: Build Number
+ERR: Failed to complete setup of assembly (hr = 0x80131040). Probing terminated.
+
+
+
+System.Exception: Failed to load assembly 'Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null' 
+20180508 14:26:10.6282 50  1 Critical GlobalInitializerFacade  System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' ---> System.IO.FileLoadException: Could not load file or assembly 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+File name: 'System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+
+=== Pre-bind state information ===
+LOG: DisplayName = System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+ (Fully-specified)
+LOG: Appbase = file:///C:/Source/KOBELCO/Development/Kobelco-2018/Website/Website/
+LOG: Initial PrivatePath = C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\bin
+Calling assembly : Composite.AspNet.MvcFunctions, Version=1.0.14.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\web.config
+LOG: Using host configuration file: C:\Users\Oliphant\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Redirect found in application configuration file: 5.2.3.0 redirected to 5.2.4.0.
+LOG: Post-policy reference: System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+LOG: The same bind was seen before, and was failed with hr = 0x80131040.
+
+   at Composite.AspNet.MvcFunctions.MvcFunctionRegistry..cctor()
+
+
+System.TypeInitializationException: The type initializer for 'Composite.AspNet.MvcFunctions.MvcFunctionRegistry' threw an exception. 
+   at Composite.Plugins.Functions.FunctionProviders.MvcFunctions.MvcFunctionProvider.get_Functions()
+   at Composite.Functions.Foundation.PluginFacades.FunctionProviderPluginFacade.Functions(String providerName)
+   at Composite.Functions.Foundation.FunctionContainer.OnGetFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeFunctionsFromProvider(String providerName, FunctionTypesToReturn functionTypesToReturn, Boolean fireEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.InitializeAllFunctions(FunctionTypesToReturn functionTypesToReturn, Boolean fireUpdateEvents)
+   at Composite.Functions.Foundation.MetaFunctionContainer.Initialize(Boolean dynamicTypes)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.Initialize_PostDataTypes()
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.Initialize_PostDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+20180508 14:33:09.3340 51 47 Information PackageUninstaller  Uninstalling package 'Composite.AspNet.MvcFunctions', Id = 1a8895f2-280d-4fec-b8b0-f124b4198e3d
+20180508 14:33:09.5588 51 47 Information PackageUninstaller  Package uninstalled successfully.
+20180508 14:33:09.8219 51 47 Information PackageManagerUninstallProcess  Package successfully uninstalled
+20180508 14:34:25.1374 52 102 Information PackageManagerInstallProcess  Installing package: Composite.AspNet.MvcFunctions, Version: 1.0.14, Id = 1a8895f2-280d-4fec-b8b0-f124b4198e3d
+20180508 14:34:25.2334 52 102 Information DllPackageFragmentInstaller  Skipping installation for file '~\Bin\System.Web.Mvc.dll' version '5.2.3.0', as a file with a newer version '5.2.5.0' already exists.
+20180508 14:34:25.7619 52 102 Information PackageManagerInstallProcess  Package successfully installed
+20180508 14:58:59.4266 105 102 Warning ConsoleFacade  The console 'key29904453725286295' owned by the user 'kobelcoadmin' timed out, closing it
+20180508 14:58:59.4426 105 102 Warning ConsoleFacade  The console 'key9049698843263563' owned by the user 'kobelcoadmin' timed out, closing it
+20180508 15:53:18.4639 231 158 Information ConsoleMessageServiceFacade  Console 'key6122815184735608' has a last known change numer of 8, but server current number is 1.

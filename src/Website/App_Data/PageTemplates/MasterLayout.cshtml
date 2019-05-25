@@ -1,0 +1,235 @@
+﻿@inherits CompositeC1WebPage
+@{
+    string stylesFolder = "~/Frontend/Styles";
+    string jsFolder = "~/Frontend/Scripts";
+    string websiteTitle = HomePageNode.Title;
+    var _options = Data.Get<Kobelco.Options>().FirstOrDefault();
+    var _seoSettings = Data.Get<Kobelco.SeoSettings>().Where(p => p.PageId == CurrentPageNode.Id).FirstOrDefault();
+
+    string pageTitle = "";
+    string pageDescription = "";
+
+    if (_seoSettings != null)
+    {
+        if (!string.IsNullOrEmpty(_seoSettings.Title))
+        {
+            pageTitle = _seoSettings.Title;
+        } else
+        {
+            pageTitle = CurrentPageNode.Title;
+        }
+
+        if (!string.IsNullOrEmpty(_seoSettings.Description))
+        {
+            pageDescription = _seoSettings.Description;
+        } else
+        {
+            pageDescription = CurrentPageNode.Description;
+        }
+
+        if (_seoSettings.ShowTitlePrefix)
+        {
+            pageTitle = _options.TitlePrefix + pageTitle;
+        }
+
+        if (_seoSettings.ShowTitleSuffix)
+        {
+            pageTitle = pageTitle + _options.TitleSuffix;
+        }
+    } else
+    {
+        pageTitle = CurrentPageNode.Title;
+        pageDescription = CurrentPageNode.Description;
+    }
+
+}
+<!DOCTYPE html>
+<f:function name="Composite.Web.BundlingAndMinification" xmlns:f="http://www.composite.net/ns/function/1.0">
+    <f:param name="Page">
+        <html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="@Lang">
+        <head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <title>@pageTitle</title>
+            <meta name="description" content="@pageDescription" />
+            <link rel="shortcut icon" href="/favicon.ico" />
+            @PageTemplateFeature("Descriptive HTML head elements")
+			<![CDATA[
+				<!-- Google Tag Manager -->
+				<script>
+				(function (w, d, s, l, i) {
+					w[l] = w[l] || []; w[l].push({
+						'gtm.start':
+							new Date().getTime(), event: 'gtm.js'
+					}); var f = d.getElementsByTagName(s)[0],
+						j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+							'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+				})(window, document, 'script', 'dataLayer', 'GTM-TD2DTGC');</script>
+				<!-- End Google Tag Manager -->
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+				<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45687500-1"></script>
+				<script>
+				  window.dataLayer = window.dataLayer || [];
+				  function gtag(){dataLayer.push(arguments);}
+				  gtag('js', new Date());
+
+				  gtag('config', 'UA-45687500-1');
+				</script>-->
+				<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-45687500-1', 'kobelco-usa.com');
+				ga('send', 'pageview');
+
+			  </script>
+			  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+				<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+				<script>
+				var doclang = document.documentElement.lang;
+				var cookiemessage, cookielink, cookiedismiss = "";
+				if (doclang == "es") { 
+					cookiemessage = "Para personalizar el contenido, adaptar y medir anuncios, y proporcionar una experiencia más segura, utilizamos cookies. Al tocar en el sitio, acepta el uso de cookies dentro y fuera de Kobelco USA.";
+					cookielink = "Aprende más";
+					cookiedismiss = "¡Lo tengo!";
+				} else if (doclang == "pt") {
+					cookiemessage = "Para personalizar o conteúdo, personalizar e medir anúncios e fornecer uma experiência mais segura, usamos cookies. Ao tocar no site, você concorda com o uso de cookies dentro e fora da Kobelco USA.";
+					cookielink = "Saber mais";
+					cookiedismiss = "Consegui!";
+				} else {
+					cookiemessage = "To personalize content, tailor and measure ads, and provide a safer experience, we use cookies. By tapping on the site, you agree to our use of cookies on and off Kobelco USA."
+					cookielink = "Learn more";
+					cookiedismiss = "Got it!";
+				}
+
+				
+				
+				window.addEventListener("load", function(){
+					window.cookieconsent.initialise({
+					  "palette": {
+						"popup": {
+						  "background": "#edeff5",
+						  "text": "#838391"
+						},
+						"button": {
+						  "background": "#4b81e8"
+						}
+					  },
+					  "content": {
+						"message": cookiemessage,
+						"href": "https://kobelco-usa.com/excavators/personal-information-protection-policy",
+						"dismiss": cookiedismiss,
+						"link": cookielink,
+						"target": "_blank"
+					  }
+					})});
+				</script>
+				<!-- Facebook Pixel Code -->
+				<script>
+				!function(f,b,e,v,n,t,s)
+				{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+				n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t,s)}(window,document,'script',
+				'https://connect.facebook.net/en_US/fbevents.js');
+				 fbq('init', '1830204463694539'); 
+				fbq('track', 'PageView');
+				</script>
+				<noscript>
+				 <img height="1" width="1" 
+				src="https://www.facebook.com/tr?id=1830204463694539&ev=PageView
+				&noscript=1"/>
+				</noscript>
+				<!-- End Facebook Pixel Code -->
+			]]>
+			 
+        </head>
+        <body>
+		<noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD2DTGC"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+            <header class="navbar navbar-default navbar-static-top kobelco-header" role="banner">
+                <div class="navbar-header">
+                    <!--<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>-->
+                    <div class="mobile-button-container" id="toggle">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </div>
+                    <a href="@HomePageNode.Url" class="navbar-brand" onclick="ga('send','event','top navigation-@Lang','click', 'logo')">
+                        @if (_options.Logo != null && _options.Logo != "")
+                        {
+                        <img src="~/media(@_options.Logo)" class="logo" />
+                        }
+                        else
+                        {
+                        @websiteTitle
+                        }
+                    </a>
+                    <div class="dealer-nav">
+                        @PageTemplateFeature("Service Menu")
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse bs-navbar-collapse main-nav" role="navigation">
+                    @PageTemplateFeature("Main Navigation")
+                    <f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Navigation.LanguageSwitcher">
+                        <f:param name="Mode" value="TranslatedOrHomePages" />
+                        <f:param name="ShowCurrent" value="False" />
+                        <f:param name="Format" value="NativeName" />
+                        <f:param name="Style" value="Inline" />
+                    </f:function>
+                    @PageTemplateFeature("Navigation Search")
+
+
+                </div>
+                <div class="mobile-nav" role="navigation">
+                    @PageTemplateFeature("Mobile Navigation")
+                </div>
+            </header>
+            @* renders the sub template: *@
+            @RenderBody()
+
+            @PageTemplateFeature("Content Footer")
+            <footer role="contentinfo">
+                <div class="container-fluid">
+                    <div class="row">
+						<div class="col-md-3">
+							<img src="~/Frontend/Images/AEM_logo.png" alt="AEM Pillar Award" title="AEM Pillar Award" />
+						</div>
+						<div class="col-md-4">
+                            <a href="https://www.imakeamerica.com/" target="_blank"><img src="~/Frontend/Images/I-Make-America-logo-2.png" alt="I Make America" title="I Make America" /></a>
+                        </div>
+                        <div class="col-md-5">
+                            @PageTemplateFeature("Social Icons")
+                            @PageTemplateFeature("Page Footer")
+                            <p>Copyright &#169; @DateTime.Now.Year.ToString() Kobelco Construction Machinery U.S.A Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <script src="@jsFolder/swiper.min.js"></script>
+            <script src="@jsFolder/jquery.fancybox.min.js"></script>
+            <script src="@jsFolder/excavator-selector.js"></script>
+            <script type="text/javascript" src="@jsFolder/script.js?v=1.1.0.0"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/validator.min.js"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/spin.min.js"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/ladda.min.js"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/ladda.jquery.min.js"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/hoverIntent.js"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/superfish.js"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/supersubs.js"></script>
+            <script type="text/javascript" src="@Href(jsFolder)/equalheights.js"></script>
+			<script src="https://www.youtube.com/iframe_api"></script>
+            @RenderSection("scripts", false)
+        </body>
+    </html>
+</f:param>
+</f:function>

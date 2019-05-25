@@ -1,0 +1,418 @@
+﻿20180712 00:15:16.8239 2  1 Critical GlobalInitializerFacade  System.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) ---> System.ComponentModel.Win32Exception (0x80004005): No process is on the other end of the pipe
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Composite.Core.Sql.SqlConnectionManager.GetConnection(String connectionString)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.TryLoadDataContextClass(Type dataContextClassType)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.TryLoadDataContext(Boolean& forceCompile)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.InitializeExistingStores()
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.set_Context(DataProviderContext value)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetDataProvider(String providerName)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetSupportedInterfaces(String providerName)
+   at Composite.Data.Foundation.DataProviderRegistryImpl.BuildDictionaries()
+   at Composite.Data.Foundation.DataProviderRegistryImpl.InitializeDataTypes()
+   at Composite.Data.Foundation.DataProviderRegistry.InitializeDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+ClientConnectionId:0fee9d60-9e5c-4ffb-b670-82ffd8d76961
+Error Number:233,State:0,Class:20
+20180712 00:15:51.0728 3  5 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:15:51.0768 3  5 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:15:57.6122 3  9 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:17:11.8044 3 43 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:20:07.9575 4  5 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:20:07.9615 4  5 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:20:11.2097 4 37 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:21:46.9412 5 21 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:21:46.9452 5 21 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:22:45.6815 6 36 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:22:45.6825 6 36 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:27:35.6231 6 15 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:28:37.0786 6 17 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:35:57.7778 7  1 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:35:57.7808 7  1 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:36:00.0700 7 65 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:40:14.6285 8 41 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:40:14.6325 8 41 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:48:35.8902 9  5 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:48:35.8942 9  5 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:48:43.2116 9 73 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:53:54.5354 9 44 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 00:59:41.4093 10  5 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 00:59:41.4133 10  5 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 00:59:43.7504 10 47 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 01:05:50.5164 10  9 Error Error sending notification email. re: toliphant5@gmail.com  System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\email\4977cfb7-295a-46e0-86bc-60ed94f4e364.eml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Net.Mail.SmtpClient.GetFileMailWriter(String pickupDirectory)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+System.Net.Mail.SmtpException: Failure sending mail. 
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at MailUtility.SendContactRequestEmail(String fromAddress, String toAddress, String subject, String messageBody) in C:\Source\Kobelco\Development\Kobelco-2018\Website\Website\App_Code\Library\MailUtility.cs:line 23
+   at ContactRequestDataLogic.SendNotificationEmail(ContactRequestDTO entity) in C:\Source\Kobelco\Development\Kobelco-2018\Website\Website\App_Code\Data\ContactRequestDataLogic.cs:line 65
+20180712 01:06:32.6948 10 29 Error Error sending notification email. re: toliphant5@gmail.com  System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\email\e59c0581-9353-45a4-b848-08d6e8a41df0.eml'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Net.Mail.SmtpClient.GetFileMailWriter(String pickupDirectory)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+System.Net.Mail.SmtpException: Failure sending mail. 
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at MailUtility.SendContactRequestEmail(String fromAddress, String toAddress, String subject, String messageBody) in C:\Source\Kobelco\Development\Kobelco-2018\Website\Website\App_Code\Library\MailUtility.cs:line 23
+   at ContactRequestDataLogic.SendNotificationEmail(ContactRequestDTO entity) in C:\Source\Kobelco\Development\Kobelco-2018\Website\Website\App_Code\Data\ContactRequestDataLogic.cs:line 65
+20180712 02:06:52.9389 2  1 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 02:06:52.9479 2  1 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 02:06:55.0040 2 17 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:08:20.0298 2 33 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:08:43.3532 2 42 Warning UserValidation  Login as [kobelcoadmin] failed. Incorrect password. IP address: ::1
+20180712 02:08:52.3197 2 43 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Childpages'
+20180712 02:08:52.3197 2 43 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Sort'
+20180712 02:08:52.3757 2 44 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Childpages'
+20180712 02:08:52.3757 2 44 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Sort'
+20180712 02:08:52.6837 2 44 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:09:10.8388 2 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Media];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Alt];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Title];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Attachment];
+20180712 02:09:10.8488 2 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Media] DEFAULT N'' FOR [Media];
+20180712 02:09:10.8498 2 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Alt] DEFAULT N'' FOR [Alt];
+20180712 02:09:10.8508 2 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Title] DEFAULT N'' FOR [Title];
+20180712 02:09:10.8518 2 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Attachment] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Attachment];
+20180712 02:09:10.8568 2 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD [LocalOrdering]  [Int]  NOT NULL CONSTRAINT [DF_Kobelco_GalleryItem_LocalOrdering] DEFAULT 0;
+20180712 02:09:20.1713 3 25 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 02:09:20.1763 3 25 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 02:09:55.5023 3 11 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:13:47.2766 3 13 Error TreeService  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Composite.C1Console.Trees.CustomUrlActionNodeActionExecutor.Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+   at Composite.C1Console.Actions.ActionExecutorFacade.Execute(IActionExecutor actionExecutor, EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer)
+   at Composite.C1Console.Actions.ActionExecutorFacade.Execute(EntityToken entityToken, ActionToken actionToken, FlowControllerServicesContainer flowControllerServicesContainer, TaskManagerEvent taskManagerEvent)
+   at Composite.Core.WebClient.FlowMediators.ActionExecutionMediator.ExecuteElementAction(ElementHandle elementHandle, ActionHandle actionHandle, String consoleId)
+   at Composite.Core.WebClient.FlowMediators.TreeServicesFacade.ExecuteElementAction(String providerName, String serializedEntityToken, String piggybag, String serializedActionToken, String consoleId)
+   at Composite.Services.TreeServices.ExecuteSingleElementAction(ClientElement clientElement, String serializedActionToken, String consoleId) in C:\Source\Kobelco\Development\Kobelco-2018\Website\Website\Composite\services\Tree\TreeServices.asmx:line 368
+20180712 02:13:47.4026 3 64 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Childpages'
+20180712 02:13:47.4026 3 64 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Sort'
+20180712 02:13:49.6297 3 56 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Childpages'
+20180712 02:13:49.6297 3 56 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Sort'
+20180712 02:14:18.5213 3 66 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Childpages'
+20180712 02:14:18.5223 3 66 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Sort'
+20180712 02:15:34.3177 3 44 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:Reorder'
+20180712 02:15:34.3187 3 44 Critical StringResourceSystemFacade  Localization section not defined 'CompositeC1Contrib.Sorting:ReorderText'
+20180712 02:16:20.2243 4 58 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 02:16:20.2293 4 58 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 02:16:53.1642 4 28 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:18:55.0632 5 13 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 02:18:55.0642 5 13 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 02:19:27.6140 5 77 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:20:56.0051 6  1 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 02:20:56.0061 6  1 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 02:21:28.5779 6 12 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:22:01.1728 6 53 Error TreeFacade: Failed to load the tree Tasks.xml  System.Xml.XmlException: '=' is an unexpected token. The expected token is ';'. Line 31, position 168.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken(String expectedToken1, String expectedToken2)
+   at System.Xml.XmlTextReaderImpl.HandleEntityReference(Boolean isInAttributeValue, EntityExpandType expandType, Int32& charRefEndPos)
+   at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow(Int32 curPos, Char quoteChar, NodeData attr)
+   at System.Xml.XmlTextReaderImpl.ParseAttributes()
+   at System.Xml.XmlTextReaderImpl.ParseElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.Linq.XContainer.ReadContentFrom(XmlReader r)
+   at System.Xml.Linq.XContainer.ReadContentFrom(XmlReader r, LoadOptions o)
+   at System.Xml.Linq.XDocument.Load(XmlReader reader, LoadOptions options)
+   at System.Xml.Linq.XDocument.Load(String uri, LoadOptions options)
+   at Composite.Core.Xml.XDocumentUtils.Load(String inputUri, LoadOptions loadOptions)
+   at Composite.C1Console.Trees.TreeFacadeImpl.LoadTreeFromFile(String treeId)
+   at Composite.C1Console.Trees.TreeFacadeImpl.LoadAllTrees()
+20180712 02:31:26.2901 6 15 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Media];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Alt];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Title];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Attachment];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_LocalOrdering];
+20180712 02:31:26.2991 6 15 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Media] DEFAULT N'' FOR [Media];
+20180712 02:31:26.3001 6 15 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Alt] DEFAULT N'' FOR [Alt];
+20180712 02:31:26.3011 6 15 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Title] DEFAULT N'' FOR [Title];
+20180712 02:31:26.3021 6 15 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Attachment] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Attachment];
+20180712 02:31:26.3031 6 15 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_LocalOrdering] DEFAULT 0 FOR [LocalOrdering];
+20180712 02:31:26.3071 6 15 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD [ExternalMediaUrl]  [NVarChar](128)  NULL ;
+20180712 02:31:35.3987 7 58 Critical SqlDataProvider  The data interface 'Kobelco.Machines' will not work for the SqlDataProvider 'DynamicSqlDataProvider'
+20180712 02:31:35.4027 7 58 Critical SqlDataProvider  Table 'Kobelco_Machines_en_US' does not exist
+Table 'Kobelco_Machines_Unpublished_en_US' does not exist
+
+20180712 02:32:09.5786 7 11 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:45:41.0320 8 27 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:46:01.9162 10 41 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:46:15.4940 10 10 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:46:28.0027 10  8 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:46:45.0137 10 19 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Media];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Alt];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Title];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Attachment];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_LocalOrdering];
+20180712 02:46:45.0227 10 19 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Media] DEFAULT N'' FOR [Media];
+20180712 02:46:45.0257 10 19 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ALTER COLUMN [Alt]  [NVarChar](256)  NULL ;
+20180712 02:46:45.0267 10 19 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ALTER COLUMN [Title]  [NVarChar](256)  NULL ;
+20180712 02:46:45.0277 10 19 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Attachment] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Attachment];
+20180712 02:46:45.0287 10 19 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_LocalOrdering] DEFAULT 0 FOR [LocalOrdering];
+20180712 02:47:27.8941 11 19 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:49:09.4999 11 12 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 02:49:19.2825 11 66 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 13:48:05.9336 2  8 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 13:49:27.8128 2 15 Warning UserValidation  Login as [koblecoadmin] failed. User does not exist. IP address: ::1
+20180712 13:49:37.2820 2 22 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 13:59:34.9590 3 62 Error Orckestra.Web.Css.Less.LessHttpModule  System.InvalidOperationException: Compiling less caused a scripting host error. '"C:\Source\Kobelco\Development\Kobelco-2018\Website\Website\Frontend\Orckestra\Web\Css\Less\node.exe"' is not recognized as an internal or external command,
+operable program or batch file.
+
+   at Orckestra.Web.Css.Less.LessCssCompiler.GetOutput(Process process)
+   at Orckestra.Web.Css.Less.LessCssCompiler.CompileCss(String lessFilePath, String cssFilePath, DateTime folderLastUpdatedUtc)
+   at Orckestra.Web.Css.Less.CssCompilationHttpModule.context_BeginRequest(HttpContext context)
+20180712 13:59:36.4081 3 66 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:02:38.1412 3 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Media];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_Attachment];ALTER TABLE [Kobelco_GalleryItem] DROP CONSTRAINT [DF_Kobelco_GalleryItem_LocalOrdering];
+20180712 14:02:38.1568 3 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] DROP COLUMN [LocalOrdering];
+20180712 14:02:38.1568 3 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Media] DEFAULT N'' FOR [Media];
+20180712 14:02:38.1724 3 43 Information SqlDataProvider  ALTER TABLE [Kobelco_GalleryItem] ADD CONSTRAINT [DF_Kobelco_GalleryItem_Attachment] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Attachment];
+20180712 14:03:21.4625 4 43 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:16:28.0801 5 31 Information ConsoleMessageServiceFacade  Console 'key7746216813349038' has a last known change numer of 44, but server current number is 1.
+20180712 14:16:41.2351 6 47 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:17:04.7428 6 28 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:17:16.1688 6 68 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:21:03.2202 7 72 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:24:38.9977 7 42 Information SqlDataProvider  DROP TABLE [Content_ContentSpot];
+20180712 14:24:39.0077 7 42 Information SqlDataProvider  DROP TABLE [Content_ContentSpot_Unpublished];
+20180712 14:25:23.2789 8 68 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:26:37.4434 8 29 Information SqlDataProvider  CREATE TABLE dbo.[Kobelco_TestDataType]([Id]  [UniqueIdentifier]  NOT NULL ,[Media]  [NVarChar](2048) COLLATE Latin1_General_CS_AS NOT NULL CONSTRAINT [DF_Kobelco_TestDataType_Media] DEFAULT N'',[ExternalMedia]  [NVarChar](128)  NULL ,[Alt]  [NVarChar](128)  NULL ,[Title]  [NVarChar](64)  NULL ,[Attachment]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Kobelco_TestDataType_Attachment] DEFAULT N'00000000-0000-0000-0000-000000000000');ALTER TABLE [Kobelco_TestDataType] ADD CONSTRAINT [PK_Kobelco_TestDataType] PRIMARY KEY CLUSTERED ([Id]);
+20180712 14:27:23.4177 9 57 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:29:20.9159 10 25 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:32:08.5094 10 42 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:32:21.8802 10 45 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 14:34:17.2621 11 63 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 15:02:41.1884 12 47 Information ConsoleMessageServiceFacade  Console 'key6561371423678477' has a last known change numer of 22, but server current number is 1.
+20180712 15:03:13.5987 12 28 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)
+20180712 15:47:19.9144 13 68 Error Function:   System.ArgumentException: The Function named 'Content.ShowContentSpots' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Core.WebClient.Renderings.Page.PageRenderer.ExecuteEmbeddedFunctions(XElement element, FunctionContextContainer contextContainer)

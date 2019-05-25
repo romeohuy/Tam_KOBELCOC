@@ -1,0 +1,69 @@
+﻿@inherits RazorFunction
+@using Composite.Data
+@using System.Globalization
+
+@functions {
+    override public string FunctionDescription
+    {
+        get { return "A function that displays footer links"; }
+    }
+}
+@{
+	//var breadscrumbs = Sitemap.CurrentHomePageNode.GetPageNodes(SitemapScope.AncestorsAndCurrent).Select(p => p.Id).ToList();
+	var footerLinks = Data.Get<Kobelco.FooterMenu>().OrderBy(l => l.Sort).ToList();
+	if(!footerLinks.Any()) { return;}
+
+    int totalLinks = footerLinks.Count;
+    int count = 1;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	</head>
+	<body>
+		<ul class="footer-nav">
+			@foreach(var link in footerLinks)
+            {
+			    var titleInEnglish = string.Empty;
+                PageNode pageNode = null;
+                if (link.Page != null)
+                {
+                    pageNode = Sitemap.GetPageNodeById(link.Page.Value);
+					using (new DataScope(new CultureInfo("en-US")))
+                    {
+                        titleInEnglish = PageManager.GetPageById(pageNode.Id).Title;
+                    }
+                }
+                
+
+                <li>
+                    @if (!string.IsNullOrEmpty(link.CustomLink) && !string.IsNullOrEmpty(link.Title))
+                    {
+                        <a href="@link.CustomLink" target="_blank">
+                            @link.Title
+                        </a>
+                    }
+                    else
+                    {
+                    <a href="@Html.C1().PageUrl(pageNode.Id.ToString())" onclick="ga('send','event','footer-@Lang','click','@titleInEnglish.ToLower()')">
+                        @if (!string.IsNullOrEmpty(link.Title))
+                        {
+                            @link.Title
+                        }
+                        else
+                        {
+                            @(pageNode.MenuTitle ?? pageNode.Title)
+
+                        }
+                    </a>
+                    }
+
+                </li>
+                if (count < totalLinks)
+                {
+                    <li class="separator">|</li>
+                }
+                count++;
+            }
+		</ul>
+	</body>
+</html>

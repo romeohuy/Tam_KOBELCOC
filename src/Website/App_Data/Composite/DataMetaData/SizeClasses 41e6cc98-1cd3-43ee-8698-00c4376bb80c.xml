@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataTypeDescriptor dataTypeId="41e6cc98-1cd3-43ee-8698-00c4376bb80c" name="SizeClasses" namespace="Kobelco" title="Size Classes" isCodeGenerated="true" cachable="false" searchable="true" labelFieldName="Name" typeManagerTypeName="Kobelco.SizeClasses">
+  <DataAssociations />
+  <DataScopes>
+    <DataScopeIdentifier name="public" />
+    <DataScopeIdentifier name="administrated" />
+  </DataScopes>
+  <KeyPropertyNames>
+    <KeyPropertyName name="Id" />
+  </KeyPropertyNames>
+  <SuperInterfaces>
+    <SuperInterface type="Composite.Data.ProcessControlled.IProcessControlled,Composite" />
+    <SuperInterface type="Composite.Data.ProcessControlled.IPublishControlled,Composite" />
+  </SuperInterfaces>
+  <Fields>
+    <DataFieldDescriptor id="bb2eed16-7acc-42aa-934a-ebb892eaa22e" name="Id" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false">
+      <FormRenderingProfile label="Id" />
+      <DataUrlProfile Order="0" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="eba97b59-047d-4180-8ca1-bd68b93fd5cd" name="Name" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile label="Name" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="4f329325-ba71-441b-96d3-f3d155c971a3" name="Parent" isNullable="true" position="1" groupByPriority="0" inherited="false" instanceType="&lt;t n=&quot;System.Nullable`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" storeType="PhysicalStoreType='Guid'" isReadOnly="false" foreignKeyReferenceTypeName="Kobelco.SizeClasses">
+      <FormRenderingProfile label="Parent" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.DataReference.KobelcoSizeClasses.OptionalSelector&quot; /&gt;" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="0025b965-14ce-4e07-8bba-befe65744216" name="Image" isNullable="true" position="2" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="false" foreignKeyReferenceTypeName="Composite.Data.Types.IImageFile,Composite">
+      <FormRenderingProfile label="Image" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.ImageSelector&quot;&gt;&lt;f:param name=&quot;Required&quot; value=&quot;False&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="b0319478-587e-406b-b0c1-1d0451e0b9d1" name="HeaderImage" isNullable="true" position="3" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="false" foreignKeyReferenceTypeName="Composite.Data.Types.IImageFile,Composite">
+      <FormRenderingProfile label="HeaderImage" helpText="This header image will be displayed when a category is clicked and shown on the product list." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.ImageSelector&quot;&gt;&lt;f:param name=&quot;Required&quot; value=&quot;False&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="fab1cf0c-66b0-11dc-a47e-cf6356d89593" name="PublicationStatus" isNullable="false" position="50" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+  </Fields>
+</DataTypeDescriptor>

@@ -1,0 +1,1 @@
+﻿20180517 13:11:29.3006 2 15 Warning ConsoleFacade  The console 'key8211830529291497' owned by the user 'kobelcoadmin' timed out, closing it

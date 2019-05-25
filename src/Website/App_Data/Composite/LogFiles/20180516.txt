@@ -1,0 +1,222 @@
+﻿20180516 10:27:17.4764 3 15 Information SqlDataProvider  ALTER TABLE [Layout_Navigation_TopLink_en_US] DROP CONSTRAINT [DF_Layout_Navigation_TopLink_en_US_Page];ALTER TABLE [Layout_Navigation_TopLink_en_US] DROP CONSTRAINT [DF_Layout_Navigation_TopLink_en_US_Position];ALTER TABLE [Layout_Navigation_TopLink_en_US] DROP CONSTRAINT [DF_Layout_Navigation_TopLink_en_US_SourceCultureName];
+20180516 10:27:19.6110 3 15 Information SqlDataProvider  sp_rename 'Layout_Navigation_TopLink_en_US','Kobelco_DealerLinks_en_US'
+20180516 10:27:23.1574 3 15 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Page] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Page];
+20180516 10:27:23.2331 3 15 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Position] DEFAULT 0 FOR [Position];
+20180516 10:27:23.2691 3 15 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_SourceCultureName] DEFAULT N'' FOR [SourceCultureName];
+20180516 10:29:13.4854 4 23 Error Function: Composite.Web.BundlingAndMinification  System.Web.HttpCompileException (0x80004005): C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\App_Data\Razor\Layout\Navigation\TopLinks.cshtml(11): error CS0246: The type or namespace name 'Layout' could not be found (are you missing a using directive or an assembly reference?)
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   at System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath, IVirtualPathFactory virtualPathFactory)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.InitializeParameters()
+   at Composite.Plugins.Functions.FunctionProviders.FileBasedFunctionProvider.FileBasedFunction`1.<get_ParameterProfiles>d__29.MoveNext()
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+System.InvalidOperationException: Failed to get value for function 'Layout.Navigation.TopLinks' 
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.ExecuteInnerFunctions(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.BaseRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer, Type type)
+   at Composite.Functions.ParameterList.EvaluateTreeNode(Object node, Type type, FunctionContextContainer functionContextContainer)
+   at Composite.Functions.ParameterList.TryGetParameter(String parameterName, Object& value)
+   at Composite.Functions.ParameterList.GetParameter(String parameterName)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.<>c__DisplayClass3_0.<Execute>b__0(WebPageBase webPageBase)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(WebPageBase webPage, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(String virtualPath, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.Execute(ParameterList parameters, FunctionContextContainer context)
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.<>c__DisplayClass15_0.<Execute>b__0()
+   at <C1 function> Composite.Web.BundlingAndMinification(Func`1 )
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.Execute(ParameterList parameters, FunctionContextContainer context)
+20180516 10:33:02.0108 4 23 Error Function: Composite.Web.BundlingAndMinification  System.ArgumentException: The Function named 'Kobelco.DealerLinks' is not known. Ensure it exists with the exact spelling and casing you provided.
+   at Composite.Functions.Foundation.MetaFunctionContainer.GetFunction(String functionName)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistryImpl.GetFunction(String name)
+   at Composite.Functions.Foundation.MetaFunctionProviderRegistry.GetFunction(String name)
+   at Composite.Functions.FunctionFacade.GetFunction(String name)
+   at Composite.Functions.FunctionTreeBuilder.BuildFunctionRuntimeNode(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element, Boolean ignoreUnusedParameters)
+   at Composite.Functions.FunctionTreeBuilder.Build(XElement element)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.ExecuteInnerFunctions(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.BaseRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer, Type type)
+   at Composite.Functions.ParameterList.EvaluateTreeNode(Object node, Type type, FunctionContextContainer functionContextContainer)
+   at Composite.Functions.ParameterList.TryGetParameter(String parameterName, Object& value)
+   at Composite.Functions.ParameterList.GetParameter(String parameterName)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.<>c__DisplayClass3_0.<Execute>b__0(WebPageBase webPageBase)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(WebPageBase webPage, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(String virtualPath, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.Execute(ParameterList parameters, FunctionContextContainer context)
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.<>c__DisplayClass15_0.<Execute>b__0()
+   at <C1 function> Composite.Web.BundlingAndMinification(Func`1 )
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.Execute(ParameterList parameters, FunctionContextContainer context)
+20180516 10:37:10.4958 4 110 Warning PageTemplatePreview  Failed to build preview for page template 'a270f819-0b5c-4f7e-9194-4b554043e4ab'. Reason: Error; Output:
+Opening url: http://localhost:10005//Renderers/TemplatePreview.ashx?p=a3055286-0e90-4b04-99dd-fb1a61dde0bf&t=a270f819-0b5c-4f7e-9194-4b554043e4ab&hash=270570167
+ERROR: preview.js script is not present in the response body
+END_OF_REPLY
+20180516 10:40:31.9140 4 141 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] DROP CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Page];ALTER TABLE [Kobelco_DealerLinks_en_US] DROP CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Position];ALTER TABLE [Kobelco_DealerLinks_en_US] DROP CONSTRAINT [DF_Kobelco_DealerLinks_en_US_SourceCultureName];
+20180516 10:40:31.9220 4 141 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Page] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Page];
+20180516 10:40:31.9540 4 141 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Position] DEFAULT 0 FOR [Position];
+20180516 10:40:31.9660 4 141 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_SourceCultureName] DEFAULT N'' FOR [SourceCultureName];
+20180516 10:40:32.0007 4 141 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD [LinkTitle]  [NVarChar](64)  NULL ;
+20180516 10:40:32.2274 4 141 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD [ExternalUrl]  [NVarChar](64)  NULL ;
+20180516 10:41:46.2995 5 122 Warning WorkflowFacade  The workflow 0f7f8a78-885f-42d9-a0b7-069914c646d2 contained one or more bindings where data was deleted or data type changed
+20180516 10:41:46.3055 5 122 Warning WorkflowFacade  Composite.Data.DataSerilizationException: The data type 'Kobelco.DealerLinks' does not contain a property named 'LinkTitle', type might have changed sinse this serialized data was created
+   at Composite.Core.Serialization.SystemCollectionValueXmlSerializer.TryDeserialize(XElement serializedObject, IXmlSerializer xmlSerializer, Object& deserializedObject)
+   at Composite.Core.Serialization.XmlSerializer.Deserialize(XElement serializedObject)
+   at Composite.C1Console.Workflow.Foundation.FormData.Deserialize(XElement serializedData)
+   at Composite.C1Console.Workflow.WorkflowFacadeImpl.TryLoadPersistedFormData(String filename)
+20180516 10:54:52.7371 5 14 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] DROP CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Page];ALTER TABLE [Kobelco_DealerLinks_en_US] DROP CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Position];ALTER TABLE [Kobelco_DealerLinks_en_US] DROP CONSTRAINT [DF_Kobelco_DealerLinks_en_US_SourceCultureName];
+20180516 10:54:52.7781 5 14 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ALTER COLUMN [Page]  [UniqueIdentifier]  NULL ;
+20180516 10:54:52.8800 5 14 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_Position] DEFAULT 0 FOR [Position];
+20180516 10:54:52.9109 5 14 Information SqlDataProvider  ALTER TABLE [Kobelco_DealerLinks_en_US] ADD CONSTRAINT [DF_Kobelco_DealerLinks_en_US_SourceCultureName] DEFAULT N'' FOR [SourceCultureName];
+20180516 10:55:27.0408 6 17 Warning WorkflowFacade  The workflow 0f7f8a78-885f-42d9-a0b7-069914c646d2 contained one or more bindings where data was deleted or data type changed
+20180516 10:55:27.0478 6 17 Warning WorkflowFacade  Composite.Data.DataSerilizationException: The data type 'Kobelco.DealerLinks' does not contain a property named 'LinkTitle', type might have changed sinse this serialized data was created
+   at Composite.Core.Serialization.SystemCollectionValueXmlSerializer.TryDeserialize(XElement serializedObject, IXmlSerializer xmlSerializer, Object& deserializedObject)
+   at Composite.Core.Serialization.XmlSerializer.Deserialize(XElement serializedObject)
+   at Composite.C1Console.Workflow.Foundation.FormData.Deserialize(XElement serializedData)
+   at Composite.C1Console.Workflow.WorkflowFacadeImpl.TryLoadPersistedFormData(String filename)
+20180516 10:55:49.8158 6 118 Error Function: Composite.Web.BundlingAndMinification  System.Web.HttpCompileException (0x80004005): C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\App_Data\Razor\Layout\Navigation\TopLinks.cshtml(21): error CS1503: Argument 1: cannot convert from 'System.Guid?' to 'System.Guid'
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   at System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath, IVirtualPathFactory virtualPathFactory)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.InitializeParameters()
+   at Composite.Plugins.Functions.FunctionProviders.FileBasedFunctionProvider.FileBasedFunction`1.<get_ParameterProfiles>d__29.MoveNext()
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+System.InvalidOperationException: Failed to get value for function 'Layout.Navigation.TopLinks' 
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.ExecuteInnerFunctions(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.BaseRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer, Type type)
+   at Composite.Functions.ParameterList.EvaluateTreeNode(Object node, Type type, FunctionContextContainer functionContextContainer)
+   at Composite.Functions.ParameterList.TryGetParameter(String parameterName, Object& value)
+   at Composite.Functions.ParameterList.GetParameter(String parameterName)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.<>c__DisplayClass3_0.<Execute>b__0(WebPageBase webPageBase)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(WebPageBase webPage, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(String virtualPath, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.Execute(ParameterList parameters, FunctionContextContainer context)
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.<>c__DisplayClass15_0.<Execute>b__0()
+   at <C1 function> Composite.Web.BundlingAndMinification(Func`1 )
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.Execute(ParameterList parameters, FunctionContextContainer context)
+20180516 10:56:02.5499 6 113 Error Function: Composite.Web.BundlingAndMinification  System.Web.HttpCompileException (0x80004005): C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\App_Data\Razor\Layout\Navigation\TopLinks.cshtml(21): error CS1503: Argument 1: cannot convert from 'System.Guid?' to 'System.Guid'
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   at System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath, IVirtualPathFactory virtualPathFactory)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.InitializeParameters()
+   at Composite.Plugins.Functions.FunctionProviders.FileBasedFunctionProvider.FileBasedFunction`1.<get_ParameterProfiles>d__29.MoveNext()
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+System.InvalidOperationException: Failed to get value for function 'Layout.Navigation.TopLinks' 
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.ExecuteInnerFunctions(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.BaseRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer, Type type)
+   at Composite.Functions.ParameterList.EvaluateTreeNode(Object node, Type type, FunctionContextContainer functionContextContainer)
+   at Composite.Functions.ParameterList.TryGetParameter(String parameterName, Object& value)
+   at Composite.Functions.ParameterList.GetParameter(String parameterName)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.<>c__DisplayClass3_0.<Execute>b__0(WebPageBase webPageBase)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(WebPageBase webPage, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(String virtualPath, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.Execute(ParameterList parameters, FunctionContextContainer context)
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.<>c__DisplayClass15_0.<Execute>b__0()
+   at <C1 function> Composite.Web.BundlingAndMinification(Func`1 )
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.Execute(ParameterList parameters, FunctionContextContainer context)
+20180516 10:57:01.5092 6 15 Error Function: Composite.Web.BundlingAndMinification  System.Web.HttpCompileException (0x80004005): C:\Source\KOBELCO\Development\Kobelco-2018\Website\Website\App_Data\Razor\Layout\Navigation\TopLinks.cshtml(21): error CS1503: Argument 1: cannot convert from 'System.Guid?' to 'System.Guid'
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(String virtualPath, Type requiredBaseType)
+   at System.Web.WebPages.BuildManagerWrapper.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryManager.CreateInstanceOfType[T](String virtualPath)
+   at System.Web.WebPages.VirtualPathFactoryExtensions.CreateInstance[T](IVirtualPathFactory factory, String virtualPath)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath, IVirtualPathFactory virtualPathFactory)
+   at System.Web.WebPages.WebPageBase.CreateInstanceFromVirtualPath(String virtualPath)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.InitializeParameters()
+   at Composite.Plugins.Functions.FunctionProviders.FileBasedFunctionProvider.FileBasedFunction`1.<get_ParameterProfiles>d__29.MoveNext()
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+System.InvalidOperationException: Failed to get value for function 'Layout.Navigation.TopLinks' 
+   at Composite.Functions.FunctionRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.ExecuteInnerFunctions(FunctionContextContainer contextContainer)
+   at Composite.Functions.XElementParameterRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer)
+   at Composite.Functions.BaseRuntimeTreeNode.GetValue(FunctionContextContainer contextContainer, Type type)
+   at Composite.Functions.ParameterList.EvaluateTreeNode(Object node, Type type, FunctionContextContainer functionContextContainer)
+   at Composite.Functions.ParameterList.TryGetParameter(String parameterName, Object& value)
+   at Composite.Functions.ParameterList.GetParameter(String parameterName)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.<>c__DisplayClass3_0.<Execute>b__0(WebPageBase webPageBase)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(WebPageBase webPage, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.AspNet.Razor.RazorHelper.ExecuteRazorPage(String virtualPath, Action`1 setParameters, Type resultType, FunctionContextContainer functionContextContainer)
+   at Composite.Plugins.Functions.FunctionProviders.RazorFunctionProvider.RazorBasedFunction.Execute(ParameterList parameters, FunctionContextContainer context)
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.<>c__DisplayClass15_0.<Execute>b__0()
+   at <C1 function> Composite.Web.BundlingAndMinification(Func`1 )
+   at Composite.Functions.Foundation.PluginFacades.FunctionWrapper.Execute(ParameterList parameters, FunctionContextContainer context)
+20180516 12:53:03.9186 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_ModelName];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_Category];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_PublicationStatus];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_OperatingWeight];
+20180516 12:53:04.9867 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] DROP COLUMN [MachineType];ALTER TABLE [Kobelco_Model] DROP COLUMN [STDBucketCapacity];ALTER TABLE [Kobelco_Model] DROP COLUMN [Engine];ALTER TABLE [Kobelco_Model] DROP COLUMN [OperatingWeight];
+20180516 12:53:05.9867 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_ModelName] DEFAULT N'' FOR [ModelName];
+20180516 12:53:05.9877 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180516 12:53:06.0909 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180516 12:53:06.1358 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD [Brochure]  [NVarChar](2048) COLLATE Latin1_General_CS_AS NULL ;
+20180516 12:53:06.3846 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelName];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_Category];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_OperatingWeight];
+20180516 12:53:06.5784 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] DROP COLUMN [MachineType];ALTER TABLE [Kobelco_Model_Unpublished] DROP COLUMN [STDBucketCapacity];ALTER TABLE [Kobelco_Model_Unpublished] DROP COLUMN [Engine];ALTER TABLE [Kobelco_Model_Unpublished] DROP COLUMN [OperatingWeight];
+20180516 12:53:06.5814 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelName] DEFAULT N'' FOR [ModelName];
+20180516 12:53:06.6737 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180516 12:53:06.6757 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180516 12:53:06.7217 6 43 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD [Brochure]  [NVarChar](2048) COLLATE Latin1_General_CS_AS NULL ;
+20180516 13:05:24.0896 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_ModelName];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_Category];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_PublicationStatus];
+20180516 13:05:24.1635 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_ModelName] DEFAULT N'' FOR [ModelName];
+20180516 13:05:24.2095 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180516 13:05:24.2235 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180516 13:05:24.2455 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD [Overview]  [NVarChar](max)  NOT NULL CONSTRAINT [DF_Kobelco_Model_Overview] DEFAULT N'';
+20180516 13:05:24.6522 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelName];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_Category];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus];
+20180516 13:05:24.6771 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelName] DEFAULT N'' FOR [ModelName];
+20180516 13:05:24.6791 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180516 13:05:24.6811 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180516 13:05:24.6901 7  8 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD [Overview]  [NVarChar](max)  NOT NULL CONSTRAINT [DF_Kobelco_Model_Unpublished_Overview] DEFAULT N'';
+20180516 14:01:43.3771 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_ModelName];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_Category];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_PublicationStatus];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_Overview];
+20180516 14:01:43.6308 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_ModelName] DEFAULT N'' FOR [ModelName];
+20180516 14:01:43.6748 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180516 14:01:43.6888 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_Overview] DEFAULT N'' FOR [Overview];
+20180516 14:01:43.7277 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180516 14:01:43.7357 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD [Gallery]  [NVarChar](64)  NULL ;
+20180516 14:01:43.7837 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelName];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_Category];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_Overview];
+20180516 14:01:43.7927 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelName] DEFAULT N'' FOR [ModelName];
+20180516 14:01:43.7967 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180516 14:01:43.7987 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_Overview] DEFAULT N'' FOR [Overview];
+20180516 14:01:43.8126 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180516 14:01:43.8336 8 23 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD [Gallery]  [NVarChar](64)  NULL ;

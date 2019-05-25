@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInstaller xmlns="http://www.composite.net/ns/management/packageinstaller/1.0">
+  <PackageFragmentUninstallers>
+    <Add uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller,Composite">
+      <Files xmlns="">
+        <File filename="~\App_Data/Razor/Composite/Social/IconLinks.cshtml" />
+        <File filename="~\App_Data/Components/Orckestra/Social/IconLinks.xml" />
+        <File filename="~\Frontend\Composite\Social\IconLinks\colored-theme.less" />
+        <File filename="~\Frontend\Composite\Social\IconLinks\socialiconLinks.png" />
+        <File filename="~\Frontend\Composite\Social\IconLinks\style.less" />
+      </Files>
+    </Add>
+  </PackageFragmentUninstallers>
+</PackageInstaller>

@@ -1,0 +1,30 @@
+﻿@inherits RazorPageTemplate
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("f043bfa0-8dde-43cd-88a2-c3276776ea1b");
+        TemplateTitle = "Activity Template - Iframe";
+        Layout = "MasterLayout.cshtml";
+    }
+
+
+    [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        .activity {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    
+</head>
+<body>
+
+    @Markup(Content)
+
+
+</body>
+</html>

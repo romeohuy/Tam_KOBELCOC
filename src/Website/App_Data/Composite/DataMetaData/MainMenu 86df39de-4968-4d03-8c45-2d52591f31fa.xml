@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataTypeDescriptor dataTypeId="86df39de-4968-4d03-8c45-2d52591f31fa" name="MainMenu" namespace="Kobelco" title="Main Menu" isCodeGenerated="true" cachable="false" searchable="false" labelFieldName="Title" typeManagerTypeName="Kobelco.MainMenu">
+  <DataAssociations />
+  <DataScopes>
+    <DataScopeIdentifier name="public" />
+    <DataScopeIdentifier name="administrated" />
+  </DataScopes>
+  <KeyPropertyNames>
+    <KeyPropertyName name="Id" />
+  </KeyPropertyNames>
+  <SuperInterfaces>
+    <SuperInterface type="CompositeC1Contrib.Sorting.IGenericSortable,CompositeC1Contrib.Sorting" />
+    <SuperInterface type="Composite.Data.ProcessControlled.IPublishControlled,Composite" />
+    <SuperInterface type="Composite.Data.ProcessControlled.IProcessControlled,Composite" />
+    <SuperInterface type="Composite.Data.ProcessControlled.ILocalizedControlled,Composite" />
+  </SuperInterfaces>
+  <Fields>
+    <DataFieldDescriptor id="c6e93ddb-75ac-4e28-800b-cf3502f0b77b" name="Id" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false" newInstanceDefaultFieldValue="&lt;f:function name=&quot;Composite.Utils.Guid.NewGuid&quot; xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; /&gt;">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="14ca4675-4564-4bce-ba7a-4e47dea51470" name="Title" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile label="Link Title" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="f51befb8-59cc-4af2-bb48-a0799c5ac7be" name="Page" isNullable="true" position="1" groupByPriority="0" inherited="false" instanceType="&lt;t n=&quot;System.Nullable`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" storeType="PhysicalStoreType='Guid'" isReadOnly="false" foreignKeyReferenceTypeName="Composite.Data.Types.IPage,Composite">
+      <FormRenderingProfile label="Page Link" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.DataReference.OptionalPageSelector&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="f99bb8ee-6680-4eab-bb8a-0a608126668f" name="CustomLink" isNullable="true" position="2" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='128'" isReadOnly="false">
+      <FormRenderingProfile label="Custom Link" helpText="Use this instead of Page Link if you are trying to navigate to a custom link or external website." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="b07d75bb-6c8d-4116-81b7-65af62370ad0" name="TargetOptions" isNullable="true" position="3" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false">
+      <FormRenderingProfile label="Target" helpText="If nothing is selected, it will default to open in the current frame." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.Selector&quot;&gt;&lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Options&quot;&gt;&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Utils.String.Split&quot;&gt;&lt;f:param name=&quot;String&quot; value=&quot;New Window,Parent Frame,Full Body of The Window&quot; /&gt;&lt;/f:function&gt;&lt;/f:param&gt;&lt;f:param name=&quot;Required&quot; value=&quot;False&quot; /&gt;&lt;/f:widgetfunction&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="ac3a03bb-60da-488d-8310-2916d3131f25" name="Placeholder" isNullable="false" position="4" groupByPriority="0" inherited="false" instanceType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Boolean'" isReadOnly="false" defaultValue="ValueType='Boolean'Value='False'">
+      <FormRenderingProfile label="Use as a placeholder?" helpText="Check this if you want to show something in the navigation but without a link. This CAN house links under it though." widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.Bool.CheckBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="48981654-4b4d-4a3e-837b-7bc2c690b495" name="MobileOnly" isNullable="false" position="5" groupByPriority="0" inherited="false" instanceType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Boolean'" isReadOnly="false" defaultValue="ValueType='Boolean'Value='False'">
+      <FormRenderingProfile label="Displayed on mobile only?" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.Bool.CheckBox&quot; /&gt;" />
+      <ValidationFunctionMarkups />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="fab1cf0c-66b0-11dc-a47e-cf6356d89593" name="PublicationStatus" isNullable="false" position="50" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='64'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="b90baf57-f085-41e8-af18-3d470a752f5f" name="LocalOrdering" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Integer'" isReadOnly="false" defaultValue="ValueType='Integer'Value='0'">
+      <FormRenderingProfile />
+      <TreeOrderingProfile orderPriority="999" orderDescending="false" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="0456ebb0-7fb1-46cd-9a23-4ae9aa3337fa" name="SourceCultureName" isNullable="false" position="1000" groupByPriority="0" inherited="true" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='16'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+  </Fields>
+</DataTypeDescriptor>

@@ -1,0 +1,5 @@
+﻿20180529 13:23:17.2688 3 65 Information ConsoleMessageServiceFacade  Console 'key582068942175804' has a last known change numer of 2, but server current number is 1.
+20180529 13:23:17.2688 3 75 Information ConsoleMessageServiceFacade  Console 'key582068942175804' has a last known change numer of 2, but server current number is 1.
+20180529 13:27:22.7475 3 62 Information PackageManagerInstallProcess  Installing package: Composite.AspNet.MvcFunctions, Version: 1.0.14, Id = 1a8895f2-280d-4fec-b8b0-f124b4198e3d
+20180529 13:27:23.0157 3 62 Information DllPackageFragmentInstaller  Skipping installation for file '~\Bin\System.Web.Mvc.dll' version '5.2.3.0', as a file with a newer version '5.2.4.0' already exists.
+20180529 13:27:23.9574 3 62 Information PackageManagerInstallProcess  Package successfully installed

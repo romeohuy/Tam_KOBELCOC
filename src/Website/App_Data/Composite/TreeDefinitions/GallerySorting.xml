@@ -1,0 +1,44 @@
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+
+  <ElementStructure.AutoAttachments>
+    <NamedParent Name="Content" Position="Bottom"/>
+  </ElementStructure.AutoAttachments>
+
+	<ElementRoot>
+		<Children>
+      <Element Id="GalleryRootsId" Label="Galleries" ToolTip="Galleries" Icon="bookmark">
+        <Children>
+          <DataElements Type="Kobelco.Gallery" Icon="website-create-website-file">
+            <OrderBy>
+              <Field FieldName="Title" Direction="ascending"/>
+            </OrderBy>
+            <Actions>
+              <EditDataAction Label="Edit Gallery" Icon="website-edit-website-file"/>
+              <DeleteDataAction Label="Delete Gallery" Icon="website-delete-website-file"/>
+              <AddDataAction Type="Kobelco.GalleryItem" Label="Add Gallery Item" Icon="website-create-website-file"/>
+              <CustomUrlAction Label="Sort Gallery Items" Url="~/Composite/InstalledPackages/CompositeC1Contrib.Sorting/Sort.aspx?Type=Kobelco.GalleryItem&amp;filter=Attachment=${C1:Data:Kobelco.Gallery:Id}" />
+            </Actions>
+            <Children>
+                <DataElements Type="Kobelco.GalleryItem" Icon="validationrule">
+                  <Filters>
+                    <ParentIdFilter ParentType="Kobelco.Gallery" ReferenceFieldName="Attachment"/>
+                  </Filters>
+                  <OrderBy>
+                    <Field FieldName="Attachment" Direction="descending"/>
+                  </OrderBy>
+                  <Actions>
+                    <EditDataAction Label="Edit Item" Icon="website-edit-website-file"/>
+                    <DeleteDataAction Label="Delete Item" Icon="website-delete-website-file"/>
+                  </Actions>
+                </DataElements>
+            </Children>
+          </DataElements>
+        </Children>
+        <Actions>
+          <AddDataAction Type="Kobelco.Gallery" Label="Add Gallery" Icon="website-create-website-file"/>
+        </Actions>
+      </Element>
+		</Children>
+	</ElementRoot>
+	
+</ElementStructure>

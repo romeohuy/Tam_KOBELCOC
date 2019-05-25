@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Frontend/Composite/Social/IconLinks/colored-theme.css",
+    "inputFile": "Frontend/Composite/Social/IconLinks/colored-theme.less"
+  },
+  {
+    "outputFile": "Frontend/Styles/style.css",
+    "inputFile": "Frontend/Styles/style.less"
+  }
+]

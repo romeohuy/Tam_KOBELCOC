@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataTypeDescriptor dataTypeId="2ef94fc1-9a9f-4bc3-9f5f-d6177d1c6269" name="ProductLine" namespace="Kobelco" title="Product Line" isCodeGenerated="true" cachable="true" searchable="true" labelFieldName="Name" internalUrlPrefix="ProductLine" typeManagerTypeName="Kobelco.ProductLine">
+  <DataAssociations />
+  <DataScopes>
+    <DataScopeIdentifier name="public" />
+  </DataScopes>
+  <KeyPropertyNames>
+    <KeyPropertyName name="Id" />
+  </KeyPropertyNames>
+  <SuperInterfaces />
+  <Fields>
+    <DataFieldDescriptor id="96c85e77-ab90-4bf7-9b7f-d5d9b2f70bcf" name="Id" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="false">
+      <FormRenderingProfile label="Id" />
+      <DataUrlProfile Order="0" />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="a20d025b-e3ca-4ba5-a336-4b3b10fe0a78" name="Name" isNullable="false" position="0" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='16'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile label="Name" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.TextBox&quot; /&gt;" />
+    </DataFieldDescriptor>
+  </Fields>
+</DataTypeDescriptor>

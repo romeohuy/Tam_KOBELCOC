@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataTypeDescriptor dataTypeId="76c4d9d8-2558-4475-801b-fb56c5e923a3" name="IMediaFileFolder" namespace="Composite.Data.Types" title="C1 Media Folder" isCodeGenerated="false" cachable="false" searchable="false" labelFieldName="CompositePath" typeManagerTypeName="Composite.Data.Types.IMediaFileFolder,Composite">
+  <DataAssociations />
+  <DataScopes>
+    <DataScopeIdentifier name="public" />
+  </DataScopes>
+  <KeyPropertyNames>
+    <KeyPropertyName name="KeyPath" />
+  </KeyPropertyNames>
+  <SuperInterfaces />
+  <Fields>
+    <DataFieldDescriptor id="84c8046c-a53c-42dd-bd54-b64c6f7511c1" name="Id" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Guid'" isReadOnly="true">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="e03e1acb-b5bd-4354-bfd4-5e2626381d82" name="KeyPath" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="true">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="adb2660d-bab3-499a-ae12-50aa703fa3b0" name="CompositePath" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="false">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="814d45c9-d424-4420-8dbb-3f93e4ef24e2" name="StoreId" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='32'" isReadOnly="false">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="a71332bc-f6e5-4e1b-8bb6-7c6aa57becc6" name="Path" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='2048'" isReadOnly="false">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="e4dbb69f-b1f6-46a1-a8a6-bddd4cb344d6" name="Title" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='String'Length='256'" isReadOnly="false">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="51cf6efa-66c3-413e-9fcd-06ea52871182" name="Description" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='LargeString'" isReadOnly="false">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+    <DataFieldDescriptor id="fa03f9d5-c8af-469c-bc02-f11118d21a0f" name="IsReadOnly" isNullable="false" position="1000" groupByPriority="0" inherited="false" instanceType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='Boolean'" isReadOnly="true">
+      <FormRenderingProfile />
+    </DataFieldDescriptor>
+  </Fields>
+</DataTypeDescriptor>

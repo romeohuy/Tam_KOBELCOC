@@ -1,0 +1,114 @@
+﻿@inherits RazorFunction
+@using System.Globalization
+
+
+@functions {
+    override public string FunctionDescription
+    {
+        get { return "A function that displays a main menu"; }
+    }
+}
+@{
+    var mainnav = Data.Get<Kobelco.MainMenu>().Where(m => !(m.CustomLink == "" && m.Page == null)).OrderBy(m => m.LocalOrdering).ToList();
+
+    if (!mainnav.Any()) { return; }
+
+    var options = Data.Get<Kobelco.Options>().FirstOrDefault();
+    var titleInEnglish = string.Empty;
+
+   }
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="mobile-logo"><a href="/"><img src="~/media(@options.Logo)" /></a></div>
+        <f:function xmlns:f="http://www.composite.net/ns/function/1.0" name="Composite.Navigation.LanguageSwitcher">
+          <f:param name="Mode" value="TranslatedOrHomePages" />
+          <f:param name="ShowCurrent" value="False" />
+          <f:param name="Format" value="EnglishName" />
+          <f:param name="Style" value="Inline" />
+          <f:param name="Description" value="" />
+        </f:function>
+        <div class="mobile-search-form">
+            <form id="SearchForm" action="/search" class="search-form form-inline" method="get" role="search">
+                <span class="glyphicon glyphicon-search"></span>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="@options.SearchButtonText" id="searchText" name="q" value="@Request.QueryString["q"]" />
+                </div>
+                <button type="submit" class="btn btn-default">@options.SearchButtonText</button>
+            </form>
+        </div>
+
+        <nav class="overlay-menu">
+            <ul id="mobile-nav" class="sf-menu">
+                @foreach (var mainnavitem in mainnav)
+                {
+
+                    if (mainnavitem.Page != null)
+                    {
+                        var parentpagenode = Sitemap.GetPageNodeById(mainnavitem.Page.Value);
+                        if (!string.IsNullOrEmpty(parentpagenode.MenuTitle))
+                        {
+                            <li>
+                                 @using (new DataScope(new CultureInfo("en-US")))
+                                {
+                                    titleInEnglish = PageManager.GetPageById(parentpagenode.Id).Title;
+                                }
+                                @if (mainnavitem.CustomLink == "")
+                                {
+                                <a href="@parentpagenode.Url">@(!string.IsNullOrEmpty(parentpagenode.MenuTitle) ? parentpagenode.MenuTitle : mainnavitem.Title)</a>
+                                }
+
+                                @if (Data.Get<Kobelco.MainMenu>().Where(cm => cm.Page.Value == mainnavitem.Page.Value && cm.CustomLink != "").Any())
+                                {
+                                    <ul>
+                                        @foreach (var customchildmenu in Data.Get<Kobelco.MainMenu>().Where(cm => cm.Page.Value == mainnavitem.Page.Value && cm.CustomLink != "").ToList())
+                                        {
+                                            <li><a href="@customchildmenu.CustomLink" target="_blank">@customchildmenu.Title</a></li>
+                                        }
+                                        <li><a href="@parentpagenode.Url" onclick="ga('send','event','top navigation-@Lang','click','@titleInEnglish.ToLower()')">@parentpagenode.MenuTitle</a></li>
+                                    </ul>
+                                }
+
+                                @if (parentpagenode.ChildPages.Where(pn => !string.IsNullOrEmpty(pn.MenuTitle)).Any() == true)
+                                {
+                                    <ul>
+                                        @foreach (var child in parentpagenode.ChildPages)
+                                        {
+                                            <li>
+                                                <a href="@child.Url">@child.MenuTitle</a>
+                                                @if (child.ChildPages.Any())
+                                                {
+                                                    <ul>
+                                                        @foreach (var subChild in child.ChildPages)
+                                                        {
+                                                            <li><a href="@subChild.Url">@subChild.MenuTitle.Replace(" Excavators", "").Replace("Excavadoras ", "").Replace("Escavadeiras da ", "").Replace("Escavadeiras ", "")</a></li>
+                                                        }
+                                                    </ul>
+
+                                                }
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+
+                            </li>
+                        }
+                        else if (!string.IsNullOrEmpty(mainnavitem.Title))
+                        {
+                            <li><a href="@parentpagenode.Url">@mainnavitem.Title</a></li>
+                        }
+                    }
+                    else if (!string.IsNullOrEmpty(mainnavitem.CustomLink))
+                    {
+                        <li>
+                            <a href="@mainnavitem.CustomLink" target="_blank">@mainnavitem.Title</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

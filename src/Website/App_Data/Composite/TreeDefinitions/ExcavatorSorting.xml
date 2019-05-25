@@ -1,0 +1,36 @@
+<ElementStructure xmlns="http://www.composite.net/ns/management/trees/treemarkup/1.0" xmlns:f="http://www.composite.net/ns/function/1.0">
+  <ElementStructure.AutoAttachments>
+    <NamedParent Name="Content" Position="Bottom"/>
+  </ElementStructure.AutoAttachments>
+  <ElementRoot>
+    <Children>
+      <Element Id="ModelsRootsId" Label="Models" ToolTip="Models" Icon="bookmark">
+        <Children>
+          <DataElements Type="Kobelco.SizeClasses" Icon="website-create-website-file">
+            <OrderBy>
+              <Field FieldName="Name" Direction="ascending"/>
+            </OrderBy>
+            <Actions>
+              <AddDataAction Type="Kobelco.Models" Label="Add Model" Icon="website-create-website-file"/>
+              <CustomUrlAction Label="Sort Models" Url="~/Composite/InstalledPackages/CompositeC1Contrib.Sorting/Sort.aspx?Type=Kobelco.Models&amp;filter=SizeClass=${C1:Data:Kobelco.SizeClasses:Id}" />
+            </Actions>
+            <Children>
+              <DataElements Type="Kobelco.Models" Icon="validationrule">
+                <Filters>
+                  <ParentIdFilter ParentType="Kobelco.SizeClasses" ReferenceFieldName="SizeClass"/>
+                </Filters>
+                <OrderBy>
+                  <Field FieldName="Label" Direction="descending"/>
+                </OrderBy>
+                <Actions>
+                  <EditDataAction Label="Edit Model" Icon="website-edit-website-file"/>
+                  <DeleteDataAction Label="Delete Model" Icon="website-delete-website-file"/>
+                </Actions>
+              </DataElements>
+            </Children>
+          </DataElements>
+        </Children>
+      </Element>
+    </Children>
+  </ElementRoot>
+</ElementStructure>

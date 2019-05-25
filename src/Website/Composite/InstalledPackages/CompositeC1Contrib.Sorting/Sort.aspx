@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="CompositeC1Contrib.Sorting.Web.UI.SortData" MasterPageFile="_Default.master" %>

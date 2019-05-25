@@ -1,0 +1,723 @@
+@inherits RazorFunction
+@using Kobelco.Utils
+@using Composite.Core
+@using Composite.Core.Routing.Pages
+@using Composite.Data
+
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Returns a list of excavators based on region and category"; }
+    }
+
+    [FunctionParameter(Label = "Display by Category", Help = "Select which category of excavators you want to display. Will display in 3 column grid layout.")]
+    public NullableDataReference<Kobelco.SizeClasses> SizeClassification { get; set; }
+
+    private const string regionMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+<f:param name=""Options"">
+    <f:function name=""Composite.Utils.String.Split"">
+        <f:param name=""String"" value=""North America,Latin America"" />
+    </f:function>
+</f:param>
+<f:param name=""Required"" value=""True"" />
+<f:param name=""Multiple"" value=""False"" />
+</f:widgetfunction>";
+    [FunctionParameter(Label = "Region", DefaultValue = "", WidgetMarkup = regionMarkup)]
+    public string Region { get; set; }
+
+    private const string displayOptionMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+    <f:param name=""Options"">
+        <f:function name=""Composite.Utils.String.Split"">
+            <f:param name=""String"" value=""Display All Models"" />
+        </f:function>
+    </f:param>
+    <f:param name=""Required"" value=""False"" />
+    </f:widgetfunction>";
+    [FunctionParameter(Label = "Display Options", DefaultValue = "", WidgetMarkup = displayOptionMarkup)]
+    public string DisplayOptions { get; set; }
+
+    //[FunctionParameter(Label = "Display Machine Details", DefaultValue = "")]
+    //public DataReference<Kobelco.Models> Model { get; set; }
+
+}
+
+
+@{
+    string specialtyClassList = "demolition, high-wide, hybrid, long-reach, mass-excavator, super-short-arm";
+
+    var _options = Data.Get<Kobelco.Options>().FirstOrDefault();
+
+    bool isSingleItem = false;
+
+    string pathInfo = C1PageRoute.GetPathInfo();
+    Kobelco.Models singleModel = null;
+    if (!string.IsNullOrEmpty(pathInfo)) {
+        isSingleItem = true;
+        //string[] pathInfoSplit = pathInfo.Split('/');
+        singleModel = string.IsNullOrEmpty(pathInfo) ?
+        Model.Data :
+        //Data.Get<Kobelco.Models>().Where(f => f.Label.Replace(' ', '-').ToLower() == pathInfo.Substring(1) || (specialtyClassList.Contains(pathInfoSplit[1]) && f.Label.Replace(' ', '-').ToLower() == pathInfoSplit[2]) && f.SizeClass == SizeClassification.Data.Id && f.Region == Region).FirstOrDefault();
+        Data.Get<Kobelco.Models>().Where(f => f.Label.Replace(" ", "-").Replace("&","").Replace("--","-").ToLower() == pathInfo.Substring(1) && f.SizeClass == SizeClassification.Data.Id && f.Region == Region).FirstOrDefault();
+        if (singleModel == null) { return; }
+
+        C1PageRoute.RegisterPathInfoUsage();
+    }
+
+
+
+    var displayAllModels = DisplayOptions.Contains("Display All Models");
+    //var models = new List<Kobelco.Models>();
+    //if (SizeClassification != null)
+    //{
+    //    var models = from content in Data.Get<Kobelco.Models>()
+    //             where content.SizeClass == SizeClassification.Data.Id && content.Region == Region
+    //             orderby content.Label
+    //             select new { content.Label, content.ModelImage, content.ModelImageAlt, content.ModelImageTitle, content.Engine, content.OperatingWeight };
+    //}
+    //else
+    //{
+    //    var models = Data.Get<Kobelco.Models>().ToList();
+    //}
+
+
+
+    //List<MachineDetailsSC> response = new List<MachineDetailsSC>();
+    MachineSpecsModel response = new MachineSpecsModel();
+
+    if (isSingleItem && singleModel.MachineID != "") {
+        try
+        {
+            response = SpecCheckUtils.GetMachineData(singleModel.MachineID);
+        }
+        catch (Exception e)
+        {
+            Log.LogError("SpecCheck Error", "An error occured: " + e);
+        }
+    }
+
+
+    }
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+    @*@if (!displayAllModels)
+        {
+            if (ModelData.IsItem)
+            {
+                <title>@ModelData.Item.Label</title>
+            }
+        }*@
+    @if (isSingleItem && singleModel.SpecCheckLiteId != null)
+    {
+        <script src="https://lite.speccheck.com/lib/knockout-3.4.2.js"></script>
+        <script src="https://lite.speccheck.com/lib/promise-polyfill.js"></script>
+        <script src="https://lite.speccheck.com/js/SpecCheckLite.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded",
+                function() {
+                    new SpecCheckLite({
+                        promise: Promise,
+                        knockout: ko,
+                        container: document.getElementById("jsEmbed"),
+                        embedId: @singleModel.SpecCheckLiteId
+                    }).create();
+                });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                let hash = document.location.hash;
+                let prefix = "!#";
+
+                //change hash url on page reload
+                if (hash) {
+                    $('.nav-tabs a[href=\"' + hash.replace(prefix, "") + '\"]').tab('show');
+                }
+
+                // change hash url on switch tab
+                //$('.nav-tabs a').on('shown.bs.tab', function (e) {
+                //    window.location.hash = e.target.hash.replace("#", "#" + prefix);
+                //});
+            });
+        </script>
+    }
+
+
+</head>
+<body class="@(isSingleItem ? "single-machine": "")">
+    @if (!isSingleItem)
+    {
+        <div class="container">
+            <div class="row">
+                @{
+                    if (SizeClassification != null)
+                    {
+                        var models = from content in Data.Get<Kobelco.Models>()
+                                     where content.SizeClass == SizeClassification.Data.Id && content.Region == Region
+                                     orderby content.LocalOrdering
+                                     select new { content.Label, content.ModelImage, content.ModelImageAlt, content.ModelImageTitle, content.Engine, content.OperatingWeight, content.Brochure, content.SizeClass };
+
+                        if (SizeClassification.Data.Id.ToString() == "87E1724E-541A-473B-B4C5-0DDF571DBCD1".ToLower())
+                        {
+                            <div class="col-md-12">
+                                <ul class="legacy-list">
+                                    @foreach (var model in models)
+                                    {
+                                        <li>
+                                            @if (model.Brochure != null)
+                                            {
+                                                <a href="~/media(@model.Brochure)" onclick="ga('send','event','brochure-@Lang','download','@model.Label.ToLower()')">@model.Label</a>
+                                            }
+                                            else
+                                            {
+                                                @model.Label
+                                            }
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+
+                        }
+                        else
+                        {
+
+                            foreach (var model in models)
+                            {
+
+                                var singleModelSizeClass = Data.Get<Kobelco.SizeClasses>().Where(sc => sc.Id == model.SizeClass).FirstOrDefault();
+
+                                <div class="col-md-4 col-sm-6 col-xs-12 model-wrapper">
+                                    <img src="~/media(@model.ModelImage)" class="model-list-image" />
+                                    <div class="model-list-details">
+                                        <div class="model-title">
+                                            <h2>@model.Label</h2>
+                                        </div>
+                                        <ul class="model-quick-specs">
+                                            <li>
+                                                <strong>@_options.EngineLabel:</strong> @model.Engine
+                                            </li>
+                                            <li>
+                                                <strong>@_options.OperatingWeightLabel:</strong> @model.OperatingWeight
+                                            </li>
+                                        </ul>
+                                        <div class="model-links">
+                                            @if (specialtyClassList.Contains(singleModelSizeClass.Name.Replace(" ", "-").Replace("&", "").Replace("--", "-").ToLower()))
+                                            {
+                                                <div class="full-specs-link spec-link">
+                                                    <a href="@this.CurrentPageNode.Url/@model.Label.Replace(" ", "-").Replace("&", "").Replace("--", "-").ToLower()" onclick="ga('send','event','buttons-@Lang','click','@model.Label.ToLower() view full specs')">@_options.FullSpecsLabel</a>
+                                                </div>
+                                                <div class="compare-models-link spec-link">
+                                                    <a href="@this.CurrentPageNode.Url/@model.Label.Replace(" ", "-").Replace("&", "").Replace("--", "-").ToLower()#compare" onclick="ga('send','event','buttons-@Lang','click','@model.Label.ToLower() compare models')">@_options.CompareModelsLabel</a>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="full-specs-link spec-link">
+
+                                                    <a href="@this.CurrentPageNode.Url/@model.Label.Replace(' ', '-').ToLower()" onclick="ga('send','event','buttons-@Lang','click','@model.Label.ToLower() view full specs')">@_options.FullSpecsLabel</a>
+                                                </div>
+                                                <div class="compare-models-link spec-link"><a href="@this.CurrentPageNode.Url/@model.Label.Replace(' ', '-').ToLower()#compare" onclick="ga('send','event','buttons-@Lang','click','@model.Label.ToLower() compare models')">@_options.CompareModelsLabel</a></div>
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                }
+
+
+
+
+            </div>
+        </div>
+    }
+    else
+    {
+
+        var galleryImages = Data.Get<Kobelco.GalleryItem>().Where(i => i.Attachment == singleModel.Gallery).OrderBy(g => g.LocalOrdering).ToList();
+        string[] parts = singleModel.ModelHeaderImage.Split(new[] { ':' });
+        string mediaStore = parts[0];
+        Guid mediaId = new Guid(parts[1]);
+        var backgroundImageUrl = "/Renderers/ShowMedia.ashx?id=" + mediaId.ToString();
+
+        var posterImageUrl = string.Empty;
+
+                        var localizationScope = C1PageRoute.PageUrlData.LocalizationScope.TwoLetterISOLanguageName.ToString();
+
+        
+        <div class="single-header-wrapper" style="background-image: url(@backgroundImageUrl)">
+            @if (singleModel.ModelHeaderVideo != null)
+            {
+                <div class="video-contain">
+                    <video id="single-header-video" autoplay="autoplay" preload="auto" poster="~/media(@singleModel.ModelHeaderImage)" src="~/media(@singleModel.ModelHeaderVideo)">
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>
+                </div>
+            }
+            <div class="header-content-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h1>@singleModel.Label</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="slider-overlay img-responsive" src="~/Frontend/Images/kobelco_selector_bg.png" />
+
+        </div>
+        <div class="sub-header-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6 col-xs-6">
+                        <ul>
+                            <li><strong>Engine Power</strong> - @singleModel.Engine</li>
+                            <li><strong>Operating Weight</strong> - @singleModel.OperatingWeight</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+
+                        @if (localizationScope == "pt" && singleModel.BrochurePortuguese != null)
+                        {
+                            string[] brochureparts = singleModel.BrochurePortuguese.Split(new[] { ':' });
+                            string mediaStoreBrochure = brochureparts[0];
+                            Guid brochureMediaId = new Guid(brochureparts[1]);
+                            var brochureFileName = string.Empty;
+                            using (var conn = new DataConnection())
+                            {
+                                brochureFileName = conn.Get<IMediaFile>().Where(b => b.Id == brochureMediaId).FirstOrDefault().FileName;
+                            }
+
+                            <a href="~/media(@singleModel.BrochurePortuguese)?download=false" target="_blank" class="btn btn-orange btn-text-white btn-pill" onclick="ga('send','event','brochure-@Lang','download','@brochureFileName')">@_options.DownloadBrochureLabel</a>
+                        }
+                        else if (localizationScope == "es" && singleModel.BrochureSpanish != null)
+                        {
+                            string[] brochureparts = singleModel.BrochureSpanish.Split(new[] { ':' });
+                            string mediaStoreBrochure = brochureparts[0];
+                            Guid brochureMediaId = new Guid(brochureparts[1]);
+                            var brochureFileName = string.Empty;
+                            using (var conn = new DataConnection())
+                            {
+                                brochureFileName = conn.Get<IMediaFile>().Where(b => b.Id == brochureMediaId).FirstOrDefault().FileName;
+                            }
+                            <a href="~/media(@singleModel.BrochureSpanish)?download=false" target="_blank" class="btn btn-orange btn-text-white btn-pill" onclick="ga('send','event','brochure-@Lang','download','@brochureFileName')">@_options.DownloadBrochureLabel</a>
+                        }
+                        else
+                        {
+                            string[] brochureparts = singleModel.Brochure.Split(new[] { ':' });
+                            string mediaStoreBrochure = brochureparts[0];
+                            Guid brochureMediaId = new Guid(brochureparts[1]);
+                            var brochureFileName = string.Empty;
+                            using (var conn = new DataConnection())
+                            {
+                                brochureFileName = conn.Get<IMediaFile>().Where(b => b.Id == brochureMediaId).FirstOrDefault().FileName;
+                            }
+                            <a href="~/media(@singleModel.Brochure)?download=false" target="_blank" class="btn btn-orange btn-text-white btn-pill" onclick="ga('send','event','brochure-@Lang','download','@brochureFileName')">@_options.DownloadBrochureLabel</a>
+
+                        }
+                    </div>
+                    <div class="col-md-3 hidden-sm hidden-xs">
+                        <img src="~/media(@singleModel.ModelImage)" class="img-responsive pull-right model-cob" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="machine-details-tab-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab" onclick="ga('send','event','product navigation-@Lang','click','overview')">@_options.OverviewLabel</a></li>
+                            <li role="presentation"><a href="#dimensions" aria-controls="dimensions" role="tab" data-toggle="tab" onclick="ga('send','event','product navigation-@Lang','click','dimensions')">@_options.DimensionsLabel</a></li>
+                            <li role="presentation"><a href="#main-specs" aria-controls="main specifications" role="tab" data-toggle="tab" onclick="ga('send','event','product navigation-@Lang','click','main specifications')">@_options.MainSpecificationsLabel</a></li>
+                            <li role="presentation"><a href="#working-ranges" aria-controls="working ranges" role="tab" data-toggle="tab" onclick="ga('send','event','product navigation-@Lang','click','working ranges')">@_options.WorkingRangesLabel</a></li>
+                            <li role="presentation"><a href="#digging-force" aria-controls="digging force" role="tab" data-toggle="tab" onclick="ga('send','event','product navigation-@Lang','click','digging force')">@_options.DiggingForceLabel</a></li>
+                            <li role="presentation"><a href="#compare" aria-controls="compare" role="tab" data-toggle="tab" onclick="ga('send','event','product navigation-@Lang','click','compare')">@_options.CompareLabel</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row tab-content">
+                <div role="tabpanel" class="tab-pane active" id="overview">
+                    <div class="col-md-6">
+                        @Html.Raw(singleModel.Overview)
+                    </div>
+                    <div class="col-md-6">
+                        @if (galleryImages.Any())
+                        {
+                            <div class="swiper-container product-gallery">
+                                <div class="swiper-wrapper">
+                                    @foreach (var galleryImage in galleryImages)
+                                    {
+                                        <div class="swiper-slide">
+                                            <a href="@(!String.IsNullOrEmpty(galleryImage.ExternalMediaUrl) ? galleryImage.ExternalMediaUrl : "~/media(" + galleryImage.Media + ")")" data-fancybox="@singleModel.Label" onclick="@(!string.IsNullOrEmpty(galleryImage.ExternalMediaUrl) ? "ga('send','event','lightbox-" + Lang + "','click','" + singleModel.Label.ToLower() + " " + galleryImage.ExternalMediaUrl + "')" : "ga('send','event','lightbox-" + Lang + "','click','" + singleModel.Label.ToLower() + " gallery image')")"><img src="~/media(@galleryImage.Media)" title="@galleryImage.Title" alt="@galleryImage.Alt" /></a>
+                                        </div>
+                                    }
+
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+
+                        }
+
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="dimensions">
+                    <div class="col-md-8">
+                        @if (response != null)
+                        {
+                            <table class="table table-striped" style="width: 100%;">
+                                @if (!string.IsNullOrEmpty(response.OverallLength))
+                                {
+                                    <tr>
+                                        <td style="width:60%">Overall Length</td>
+                                        <td style="width:40%">@response.OverallLength</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.OverallHeight))
+                                {
+                                    <tr>
+                                        <td>Overall Height (to top of boom)</td>
+                                        <td>@response.OverallHeight</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.OverallWidth))
+                                {
+                                    <tr>
+                                        <td>Overall Width</td>
+                                        <td>@response.OverallWidth</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.OverallHeightCab))
+                                {
+                                    <tr>
+                                        <td>Overall Height (to top of cab)</td>
+                                        <td>@response.OverallHeightCab</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.GroundClearanceRear))
+                                {
+                                    <tr>
+                                        <td>Ground Clearance of Rear End</td>
+                                        <td>@response.GroundClearanceRear</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.GroundClearance))
+                                {
+                                    <tr>
+                                        <td>Ground Clearance</td>
+                                        <td>@response.GroundClearance</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.TailSwingRadius))
+                                {
+                                    <tr>
+                                        <td>Tail Swing Radius</td>
+                                        <td>@response.TailSwingRadius</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.CenterSwingRearEnd))
+                                {
+                                    <tr>
+                                        <td>Distance From Center of Swing To Rear End</td>
+                                        <td>@response.CenterSwingRearEnd</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.TumblerDistance))
+                                {
+                                    <tr>
+                                        <td>Tumbler Distance</td>
+                                        <td>@response.TumblerDistance</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.CrawlerLength))
+                                {
+                                    <tr>
+                                        <td>Overall Length of Crawler</td>
+                                        <td>@response.CrawlerLength</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.TrackGauge))
+                                {
+                                    <tr>
+                                        <td>Track Gauge</td>
+                                        <td>@response.TrackGauge</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.ShoeWidth))
+                                {
+                                    <tr>
+                                        <td>Shoe Width</td>
+                                        <td>@response.ShoeWidth</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.UpperstructureOverallWidth))
+                                {
+                                    <tr>
+                                        <td>Overall Width of Upperstructure</td>
+                                        <td>@response.UpperstructureOverallWidth</td>
+                                    </tr>
+                                }
+                            </table>
+                        }
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="main-specs">
+                    <div class="col-md-8">
+                        @if (response != null)
+                        {
+                            <h4>PERFORMANCE</h4>
+                            <table class="table table-striped" style="width: 100%;">
+                                @if (!string.IsNullOrEmpty(response.TravelSpeedHigh) && !string.IsNullOrEmpty(response.TravelSpeedLow))
+                                {
+                                    <tr>
+                                        <td style="width:60%;">Travel Speed</td>
+                                        <td style="width:40%;">@response.TravelSpeedHigh / @response.TravelSpeedLow</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.SwingSpeed))
+                                {
+                                    <tr>
+                                        <td style="width:60%;">Swing Speed</td>
+                                        <td style="width:40%;">@response.SwingSpeed</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.SwingTorque))
+                                {
+                                    <tr>
+                                        <td>Swing Torque</td>
+                                        <td>@response.SwingTorque</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.DrawbarPullingForce))
+                                {
+                                    <tr>
+                                        <td>Drawbar Pulling Force</td>
+                                        <td>@response.DrawbarPullingForce</td>
+                                    </tr>
+                                }
+
+                            </table>
+                            <h4>WEIGHT</h4>
+                            <table class="table table-striped" style="width: 100%;">
+                                @if (!string.IsNullOrEmpty(response.MachineMass))
+                                {
+                                    <tr>
+                                        <td style="width: 60%;">Operating Weight</td>
+                                        <td style="width: 40%;">@response.MachineMass</td>
+                                    </tr>
+                                }
+                            </table>
+                            <h4>ENGINE</h4>
+                            <table class="table table-striped" style="width: 100%;">
+                                @if (!string.IsNullOrEmpty(response.EngineManufacturer) && !string.IsNullOrEmpty(response.EngineModel))
+                                {
+                                    <tr>
+                                        <td style="width:60%;">Model</td>
+                                        <td style="width:40%;">@response.EngineManufacturer @response.EngineModel</td>
+                                    </tr>
+                                }
+                                <tr>
+                                        <td>Power Output</td>
+                                        <td>
+                                            @if (!string.IsNullOrEmpty(response.EnginePowerOutputGross))
+                                            {
+                                                @response.EnginePowerOutputGross
+                                            }
+                                            @if (!string.IsNullOrEmpty(response.EnginePowerOutputGross) && !string.IsNullOrEmpty(response.EnginePowerOutputNet))
+                                            { <br />}
+                                            @if (!string.IsNullOrEmpty(response.EnginePowerOutputNet))
+                                            {
+                                                @response.EnginePowerOutputNet
+                                            }
+                                        </td>
+                                    </tr>
+                                @if (!string.IsNullOrEmpty(response.EngineMaxTorque))
+                                {
+                                    <tr>
+                                        <td>Max. Torque</td>
+                                        <td>@response.EngineMaxTorque</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.EngineDisplacement))
+                                {
+                                    <tr>
+                                        <td>Displacement</td>
+                                        <td>@response.EngineDisplacement</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.EngineFuelTank))
+                                {
+                                    <tr>
+                                        <td>Fuel Tank</td>
+                                        <td>@response.EngineFuelTank</td>
+                                    </tr>
+                                }
+                            </table>
+                            <h4>HYDRAULIC SYSTEM</h4>
+                            <table class="table table-striped" style="width:100%;">
+                                @if (!string.IsNullOrEmpty(response.HydroPump))
+                                {
+                                    <tr>
+                                        <td style="width: 60%;">Pump</td>
+                                        @if (response.HydroNumberOfPumps != "1")
+                                        {
+                                            <td style="width: 40%;">
+                                                @response.HydroNumberOfPumps @response.HydroPump
+                                                @if (!string.IsNullOrEmpty(response.HydroPilotPump))
+                                                {
+                                                    <text>+</text> @response.HydroPilotPump
+                                                }
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td style="width: 40%;">
+                                                @response.HydroPump
+                                            </td>
+                                        }
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.HydroMaxDischargeFlowMain))
+                                {
+                                    <tr>
+                                        <td>Max. Discharge Flow</td>
+                                        <td>@response.HydroMaxDischargeFlowMain</td>
+                                    </tr>
+                                }
+                                @if (!string.IsNullOrEmpty(response.DozerBladeDigDepth) || !string.IsNullOrEmpty(response.DozerBladeHeight) || !string.IsNullOrEmpty(response.DozerBladeHeightRaised) || !string.IsNullOrEmpty(response.DozerBladeWidth))
+                                {
+                                    <tr>
+                                        <td>Dozer Blade</td>
+                                        <td>
+                                            @if (!string.IsNullOrEmpty(response.DozerBladeHeight))
+                                            {
+                                                <text>Blade Height:</text> @response.DozerBladeHeight<br />
+                                            }
+                                            @if (!string.IsNullOrEmpty(response.DozerBladeWidth))
+                                            {
+                                                <text>Blade Width:</text> @response.DozerBladeWidth<br />}
+                                            @if (!string.IsNullOrEmpty(response.DozerBladeHeightRaised))
+                                            {
+                                                <text>Max. Raise Height:</text> @response.DozerBladeHeightRaised<br />}
+                                            @if (!string.IsNullOrEmpty(response.DozerBladeDigDepth))
+                                            {
+                                                <text>Dig Depth:</text> @response.DozerBladeDigDepth}
+                                            </td>
+                                    </tr>
+                                }
+                            </table>
+                        }
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="working-ranges">
+                    <div class="col-md-8">
+                        <table class="table table-striped" style="width: 100%;">
+                            @if (!string.IsNullOrEmpty(response.MaxDiggingReach))
+                            {
+                                <tr>
+                                    <td style="width: 60%;">Max. Digging Reach</td>
+                                    <td style="width: 40%;">@response.MaxDiggingReach</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.MaxDiggingReachGroundLevel))
+                            {
+                                <tr>
+                                    <td>Max. Digging Reach At Ground Level</td>
+                                    <td>@response.MaxDiggingReachGroundLevel</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.MaxDiggingDepth))
+                            {
+                                <tr>
+                                    <td>Max. Digging Depth</td>
+                                    <td>@response.MaxDiggingDepth</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.MaxDiggingHeight))
+                            {
+                                <tr>
+                                    <td>Max. Digging Height</td>
+                                    <td>@response.MaxDiggingHeight</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.MaxDumpingClearance))
+                            {
+                                <tr>
+                                    <td>Max. Dumping Clearance</td>
+                                    <td>@response.MaxDumpingClearance</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.MinDumpingClearance))
+                            {
+                                <tr>
+                                    <td>Min. Dumping Clearance</td>
+                                    <td>@response.MinDumpingClearance</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.MaxVerticalWallDiggingDepth))
+                            {
+                                <tr>
+                                    <td>Max. Vertical Wall Digging Depth</td>
+                                    <td>@response.MaxVerticalWallDiggingDepth</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.MinSwingRadius))
+                            {
+                                <tr>
+                                    <td>Min. Swing Radius</td>
+                                    <td>@response.MinSwingRadius</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.HorizontalDiggingStrokeGroundLevel))
+                            {
+                                <tr>
+                                    <td>Horizontal Digging Stroke at Ground Level</td>
+                                    <td>@response.HorizontalDiggingStrokeGroundLevel</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.DiggingDepthEightFtFlatBottom))
+                            {
+                                <tr>
+                                    <td>Digging Depth For 8 Feet Flat Bottom</td>
+                                    <td>@response.DiggingDepthEightFtFlatBottom</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="digging-force">
+                    <div class="col-md-8">
+                        <table class="table table-striped">
+                            @if (!string.IsNullOrEmpty(response.BucketDiggingForce))
+                            {
+                                <tr>
+                                    <td>Bucket Digging Force</td>
+                                    <td>@response.BucketDiggingForce</td>
+                                </tr>
+                            }
+                            @if (!string.IsNullOrEmpty(response.ArmCrowdingForce))
+                            {
+                                <tr>
+                                    <td>Arm Crowding Force</td>
+                                    <td>@response.ArmCrowdingForce</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="compare">
+                    <div class="col-md-12">
+                        <div id="jsEmbed"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </body>
+</html>

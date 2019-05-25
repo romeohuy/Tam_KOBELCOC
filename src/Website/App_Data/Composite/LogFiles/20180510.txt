@@ -1,0 +1,95 @@
+﻿20180510 10:07:15.9249 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory] DROP CONSTRAINT [DF_Kobelco_ExcavatorCategory_Name];ALTER TABLE [Kobelco_ExcavatorCategory] DROP CONSTRAINT [DF_Kobelco_ExcavatorCategory_PublicationStatus];
+20180510 10:07:18.0322 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory] ADD CONSTRAINT [DF_Kobelco_ExcavatorCategory_Name] DEFAULT N'' FOR [Name];
+20180510 10:07:18.4313 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory] ADD CONSTRAINT [DF_Kobelco_ExcavatorCategory_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180510 10:07:18.4363 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory] ADD [Parent]  [UniqueIdentifier]  NULL ;
+20180510 10:07:18.8435 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory_Unpublished] DROP CONSTRAINT [DF_Kobelco_ExcavatorCategory_Unpublished_Name];ALTER TABLE [Kobelco_ExcavatorCategory_Unpublished] DROP CONSTRAINT [DF_Kobelco_ExcavatorCategory_Unpublished_PublicationStatus];
+20180510 10:07:18.8465 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory_Unpublished] ADD CONSTRAINT [DF_Kobelco_ExcavatorCategory_Unpublished_Name] DEFAULT N'' FOR [Name];
+20180510 10:07:18.9495 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory_Unpublished] ADD CONSTRAINT [DF_Kobelco_ExcavatorCategory_Unpublished_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180510 10:07:18.9515 2 36 Information SqlDataProvider  ALTER TABLE [Kobelco_ExcavatorCategory_Unpublished] ADD [Parent]  [UniqueIdentifier]  NULL ;
+20180510 10:28:32.2681 3 38 Information SqlDataProvider  CREATE TABLE dbo.[Kobelco_Model]([Id]  [UniqueIdentifier]  NOT NULL ,[ModelNumber]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_Model_ModelNumber] DEFAULT N'',[Category]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Kobelco_Model_Category] DEFAULT N'00000000-0000-0000-0000-000000000000',[PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_Model_PublicationStatus] DEFAULT N'');ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [PK_Kobelco_Model] PRIMARY KEY CLUSTERED ([Id]);
+20180510 10:28:32.5562 3 38 Information SqlDataProvider  CREATE TABLE dbo.[Kobelco_Model_Unpublished]([Id]  [UniqueIdentifier]  NOT NULL ,[ModelNumber]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelNumber] DEFAULT N'',[Category]  [UniqueIdentifier]  NOT NULL CONSTRAINT [DF_Kobelco_Model_Unpublished_Category] DEFAULT N'00000000-0000-0000-0000-000000000000',[PublicationStatus]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus] DEFAULT N'');ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [PK_Kobelco_Model_Unpublished] PRIMARY KEY CLUSTERED ([Id]);
+20180510 12:19:33.6767 2  1 Critical GlobalInitializerFacade  System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=7647; handshake=5741; [Login] initialization=641; authentication=617; [Post-Login] complete=1007;  ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Composite.Core.Sql.SqlConnectionManager.GetConnection(String connectionString)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.TryLoadDataContextClass(Type dataContextClassType)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.TryLoadDataContext(Boolean& forceCompile)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.InitializeExistingStores()
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.set_Context(DataProviderContext value)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetDataProvider(String providerName)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetSupportedInterfaces(String providerName)
+   at Composite.Data.Foundation.DataProviderRegistryImpl.BuildDictionaries()
+   at Composite.Data.Foundation.DataProviderRegistryImpl.InitializeDataTypes()
+   at Composite.Data.Foundation.DataProviderRegistry.InitializeDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+ClientConnectionId:8f22e801-2bbf-4e25-80cf-1933e645d9de
+Error Number:-2,State:0,Class:11
+20180510 14:40:01.8056 2  1 Critical GlobalInitializerFacade  System.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.Sql.SqlTableInformationStoreImpl.GetColumnsInfo(SqlConnection connection, String tableName)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.Sql.SqlTableInformationStoreImpl.CreateSqlTableInformation(String connectionString, String tableName)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.Sql.SqlTableInformationStoreImpl.GetTableInformation(String connectionString, String tableName)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.Sql.SqlTableInformationStore.GetTableInformation(String connectionString, String tableName)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.ValidateTable(Type interfaceType, String tableName, StringBuilder errors)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.ValidateTables(InitializeStoreResult initializeStoreResult, Boolean isInitialization)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.AddDataTypeStore(InitializeStoreResult initializeStoreResult, Boolean doValidate, Boolean isInitialization)
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.InitializeExistingStores()
+   at Composite.Plugins.Data.DataProviders.MSSqlServerDataProvider.SqlDataProvider.set_Context(DataProviderContext value)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetDataProvider(String providerName)
+   at Composite.Data.Foundation.PluginFacades.DataProviderPluginFacade.GetSupportedInterfaces(String providerName)
+   at Composite.Data.Foundation.DataProviderRegistryImpl.BuildDictionaries()
+   at Composite.Data.Foundation.DataProviderRegistryImpl.InitializeDataTypes()
+   at Composite.Data.Foundation.DataProviderRegistry.InitializeDataTypes()
+   at Composite.GlobalInitializerFacade.DoInitialize()
+   at Composite.GlobalInitializerFacade.InitializeTheSystem()
+ClientConnectionId:8133123b-7c48-4be3-a764-ca5d8e37ab6a
+Error Number:-2,State:0,Class:11
+20180510 16:07:20.3265 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_ModelNumber];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_Category];ALTER TABLE [Kobelco_Model] DROP CONSTRAINT [DF_Kobelco_Model_PublicationStatus];
+20180510 16:07:21.9128 3 60 Information SqlDataProvider  sp_rename 'Kobelco_Model.ModelNumber','ModelName','COLUMN'
+20180510 16:07:28.6953 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ALTER COLUMN [ModelName]  [NVarChar](64)  NOT NULL ;
+20180510 16:07:28.7003 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_ModelName] DEFAULT N'' FOR [ModelName];
+20180510 16:07:28.9760 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180510 16:07:28.9787 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD CONSTRAINT [DF_Kobelco_Model_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180510 16:07:28.9830 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD [MachineType]  [NVarChar](64)  NULL ;
+20180510 16:07:28.9860 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD [STDBucketCapacity]  [NVarChar](64)  NULL ;
+20180510 16:07:28.9880 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD [Engine]  [NVarChar](64)  NULL ;
+20180510 16:07:28.9891 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model] ADD [OperatingWeight]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_Model_OperatingWeight] DEFAULT N'';
+20180510 16:07:29.3266 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelNumber];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_Category];ALTER TABLE [Kobelco_Model_Unpublished] DROP CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus];
+20180510 16:07:29.3306 3 60 Information SqlDataProvider  sp_rename 'Kobelco_Model_Unpublished.ModelNumber','ModelName','COLUMN'
+20180510 16:07:29.3326 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ALTER COLUMN [ModelName]  [NVarChar](64)  NOT NULL ;
+20180510 16:07:29.3346 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_ModelName] DEFAULT N'' FOR [ModelName];
+20180510 16:07:29.3356 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_Category] DEFAULT N'00000000-0000-0000-0000-000000000000' FOR [Category];
+20180510 16:07:29.3366 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD CONSTRAINT [DF_Kobelco_Model_Unpublished_PublicationStatus] DEFAULT N'' FOR [PublicationStatus];
+20180510 16:07:29.3386 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD [MachineType]  [NVarChar](64)  NULL ;
+20180510 16:07:29.3396 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD [STDBucketCapacity]  [NVarChar](64)  NULL ;
+20180510 16:07:29.3406 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD [Engine]  [NVarChar](64)  NULL ;
+20180510 16:07:29.3416 3 60 Information SqlDataProvider  ALTER TABLE [Kobelco_Model_Unpublished] ADD [OperatingWeight]  [NVarChar](64)  NOT NULL CONSTRAINT [DF_Kobelco_Model_Unpublished_OperatingWeight] DEFAULT N'';
+20180510 16:09:05.4228 4 45 Warning ConsoleMessageServiceFacade  Console 'key961850548144898' are requesting messages that are more than 60 seconds old. Console has last known change number 7, server is now at 8. Debug XML dump saved at '~/App_Data/Composite/Cache/Temp'.

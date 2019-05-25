@@ -1,0 +1,171 @@
+﻿@inherits RazorFunction
+
+@functions {
+    public override string FunctionDescription
+    {
+        get { return "Creates a button."; }
+    }
+
+    [FunctionParameter(Label = "Button Text", Help = "What is displayed on the button.", DefaultValue = "")]
+    public string ButtonText { get; set; }
+	
+	[FunctionParameter(Label = "Analytics Event Label (Do not translate)", Help = "This is used for the label in analytics click events. DO NOT TRANSLATE THIS FIELD. It should always be in english.", DefaultValue = "")]
+    public string AnalyticsEventLabel { get; set; }
+
+    [FunctionParameter(Label = "Link", DefaultValue = null, Help = "What page you want to link to.")]
+    public NullableDataReference<IPage> PageLink { get; set; }
+
+    private const string buttonColorMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+    <f:param name=""Options"">
+        <f:function name=""Composite.Utils.String.Split"">
+            <f:param name=""String"" value=""Blue,Yellow,Orange,Grey,Dark Grey,Light Grey,White,Black"" />
+        </f:function>
+    </f:param>
+    <f:param name=""Required"" value=""True"" />
+    <f:param name=""Multiple"" value=""False"" />
+</f:widgetfunction>";
+    [FunctionParameter(Label = "Button Color", DefaultValue = "", WidgetMarkup = buttonColorMarkup)]
+    public string buttonColor { get; set; }
+
+    private const string buttonFontColorMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+    <f:param name=""Options"">
+        <f:function name=""Composite.Utils.String.Split"">
+            <f:param name=""String"" value=""Blue,Yellow,Orange,Grey,Dark Grey,Light Grey,White,Black"" />
+        </f:function>
+    </f:param>
+    <f:param name=""Required"" value=""True"" />
+    <f:param name=""Multiple"" value=""False"" />
+</f:widgetfunction>";
+    [FunctionParameter(Label = "Button Font Color", DefaultValue = "White", WidgetMarkup = buttonFontColorMarkup)]
+    public string buttonFontColor { get; set; }
+
+    private const string buttonShapeMarkup = @"<f:widgetfunction xmlns:f=""http://www.composite.net/ns/function/1.0"" name=""Composite.Widgets.String.Selector"">
+    <f:param name=""Options"">
+        <f:function name=""Composite.Utils.String.Split"">
+            <f:param name=""String"" value=""Square,Rounded,Pill"" />
+        </f:function>
+    </f:param>
+    <f:param name=""Required"" value=""True"" />
+    <f:param name=""Multiple"" value=""False"" />
+</f:widgetfunction>";
+    [FunctionParameter(Label = "Button Shape", DefaultValue = "Square", WidgetMarkup = buttonShapeMarkup)]
+    public string buttonShape { get; set; }
+
+    [FunctionParameter(Label = "Margin", DefaultValue = "")]
+    public string buttonMargin { get; set; }
+
+    [FunctionParameter(Label = "Use Lightbox?", DefaultValue = "False")]
+    public bool useLightbox { get; set; }
+
+    [FunctionParameter(Label = "Lightbox Hosted Media", DefaultValue = null, Help = "Insert a hosted media file.")]
+    public NullableDataReference<IMediaFile> lightboxMedia { get; set; }
+
+    [FunctionParameter(Label = "Lightbox External Media", DefaultValue ="", Help = "Insert YouTube/Vimeo video url here.")]
+    public string lightboxExternalMedia { get; set; }
+}
+
+@{
+    string buttonColorClass = string.Empty;
+    string buttonFontColorClass = string.Empty;
+    string buttonShapeClass = string.Empty;
+
+    //Asign Button Color Class
+    switch (buttonColor)
+    {
+        case "Blue":
+            buttonColorClass = "btn-blue";
+            break;
+        case "Yellow":
+            buttonColorClass = "btn-yellow";
+            break;
+        case "Orange":
+            buttonColorClass = "btn-orange";
+            break;
+        case "Grey":
+            buttonColorClass = "btn-grey";
+            break;
+        case "Dark Grey":
+            buttonColorClass = "btn-grey-dk";
+            break;
+        case "Light Grey":
+            buttonColorClass = "btn-grey-lt";
+            break;
+        case "White":
+            buttonColorClass = "btn-white";
+            break;
+        case "Black":
+            buttonColorClass = "btn-black";
+            break;
+    }
+
+    //Assign Button Font Color Class
+    switch (buttonFontColor)
+    {
+        case "Blue":
+            buttonFontColorClass = "btn-text-blue";
+            break;
+        case "Yellow":
+            buttonFontColorClass = "btn-text-yellow";
+            break;
+        case "Orange":
+            buttonFontColorClass = "btn-text-orange";
+            break;
+        case "Grey":
+            buttonFontColorClass = "btn-text-grey";
+            break;
+        case "Dark Grey":
+            buttonFontColorClass = "btn-text-grey-dk";
+            break;
+        case "Light Grey":
+            buttonFontColorClass = "btn-text-grey-lt";
+            break;
+        case "White":
+            buttonFontColorClass = "btn-text-white";
+            break;
+        case "Black":
+            buttonFontColorClass = "btn-text-black";
+            break;
+    }
+
+    //Assign Button Shape
+    switch (buttonShape)
+    {
+        case "Square":
+            buttonShapeClass = "btn-square";
+            break;
+        case "Rounded":
+            buttonShapeClass = "btn-rounded";
+            break;
+        case "Pill":
+            buttonShapeClass = "btn-pill";
+            break;
+    }
+
+    string btnClasses = buttonFontColorClass + " " + buttonShapeClass + " " + buttonColorClass; 
+
+    }
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+    @if (useLightbox)
+    {
+        if (lightboxMedia != null)
+        {
+            <a data-fancybox="" href="~/media(@lightboxMedia" class="btn @btnClasses" style="@(!String.IsNullOrEmpty(buttonMargin) ? "margin: " + buttonMargin + ";" : "")" onclick="@(!string.IsNullOrEmpty(AnalyticsEventLabel) ? "ga('send','event','buttons-" + Lang + "','click','" + AnalyticsEventLabel + "')" : "")">@ButtonText</a>
+        }
+        if (!String.IsNullOrEmpty(lightboxExternalMedia))
+        {
+            <a data-fancybox="" href="@lightboxExternalMedia" class="btn @btnClasses" style="@(!String.IsNullOrEmpty(buttonMargin) ? "margin: " + buttonMargin + ";" : "")" onclick="@(!string.IsNullOrEmpty(AnalyticsEventLabel) ? "ga('send','event','buttons-" + Lang + "','click','" + AnalyticsEventLabel + "')" : "")">@ButtonText</a>
+        }
+
+    }
+    else
+    {
+
+        <a href="/page(@PageLink)" class="btn @btnClasses" style="@(!String.IsNullOrEmpty(buttonMargin) ? "margin: " + buttonMargin + ";" : "")" onclick="@(!string.IsNullOrEmpty(AnalyticsEventLabel) ? "ga('send','event','buttons-" + Lang + "','click','" + AnalyticsEventLabel + "')" : "")">@ButtonText</a>
+    }
+</body>
+</html>

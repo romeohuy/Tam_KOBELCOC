@@ -1,0 +1,427 @@
+﻿@inherits RazorPageTemplate
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("d54fda5a-e1fb-4367-8589-6aa7b434cadb");
+        TemplateTitle = "Activity Template - Differences";
+        Layout = "MasterLayout.cshtml";
+    }
+    
+    [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <![CDATA[
+    <script type="text/javascript">
+        // Update the 'nojs'/'js' class on the html node
+        document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+
+        // Check that all required assets are uploaded and up-to-date
+        if (typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = { "required": ["museutils.js", "museconfig.js", "jquery.musemenu.js", "jquery.watch.js", "require.js", "what_s-the-difference.css"], "outOfDate": [] };
+    </script>
+    ]]>
+
+    <!-- CSS -->
+    @*<link rel="stylesheet" type="text/css" href="~/Frontend/activitybook/css/site_global.css?crc=224248659" />
+    <link rel="stylesheet" type="text/css" href="~/Frontend/activitybook/css/master_a-master.css?crc=480822789" />*@
+    <link rel="stylesheet" type="text/css" href="~/Frontend/activitybook/css/what_s-the-difference.css?crc=3991684247" id="pagesheet" />
+    <!-- JS includes -->
+    <!--[if lt IE 9]>
+    <script src="scripts/html5shiv.js?crc=4241844378" type="text/javascript"></script>
+    <![endif]-->
+    <!--HTML Widget code-->
+
+    <style>
+
+        .twentytwenty-horizontal .twentytwenty-handle:before, .twentytwenty-horizontal .twentytwenty-handle:after, .twentytwenty-vertical .twentytwenty-handle:before, .twentytwenty-vertical .twentytwenty-handle:after {
+            content: " ";
+            display: block;
+            background: white;
+            position: absolute;
+            z-index: 30;
+            -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+            -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+            box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+        }
+
+        .twentytwenty-horizontal .twentytwenty-handle:before, .twentytwenty-horizontal .twentytwenty-handle:after {
+            width: 3px;
+            height: 9999px;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .twentytwenty-vertical .twentytwenty-handle:before, .twentytwenty-vertical .twentytwenty-handle:after {
+            width: 9999px;
+            height: 3px;
+            top: 50%;
+            margin-top: -1.5px;
+        }
+
+        .twentytwenty-before-label, .twentytwenty-after-label, .twentytwenty-overlay {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .twentytwenty-before-label, .twentytwenty-after-label, .twentytwenty-overlay {
+            -webkit-transition-duration: 0.5s;
+            -moz-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+
+        .twentytwenty-before-label, .twentytwenty-after-label {
+            -webkit-transition-property: opacity;
+            -moz-transition-property: opacity;
+            transition-property: opacity;
+        }
+
+            .twentytwenty-before-label:before, .twentytwenty-after-label:before {
+                color: white;
+                font-size: 13px;
+                letter-spacing: 0.1em;
+            }
+
+            .twentytwenty-before-label:before, .twentytwenty-after-label:before {
+                position: absolute;
+                background: rgba(255, 255, 255, 0.2);
+                line-height: 38px;
+                padding: 0 20px;
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                border-radius: 2px;
+            }
+
+        .twentytwenty-horizontal .twentytwenty-before-label:before, .twentytwenty-horizontal .twentytwenty-after-label:before {
+            top: 50%;
+            margin-top: -19px;
+        }
+
+        .twentytwenty-vertical .twentytwenty-before-label:before, .twentytwenty-vertical .twentytwenty-after-label:before {
+            left: 50%;
+            margin-left: -45px;
+            text-align: center;
+            width: 90px;
+        }
+
+        .twentytwenty-left-arrow, .twentytwenty-right-arrow, .twentytwenty-up-arrow, .twentytwenty-down-arrow {
+            width: 0;
+            height: 0;
+            border: 6px inset transparent;
+            position: absolute;
+        }
+
+        .twentytwenty-left-arrow, .twentytwenty-right-arrow {
+            top: 50%;
+            margin-top: -6px;
+        }
+
+        .twentytwenty-up-arrow, .twentytwenty-down-arrow {
+            left: 50%;
+            margin-left: -6px;
+        }
+
+        .twentytwenty-container {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            overflow: hidden;
+            position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+
+            .twentytwenty-container img {
+                position: absolute;
+                top: 0;
+                display: block;
+            }
+
+            .twentytwenty-container.active .twentytwenty-overlay, .twentytwenty-container.active :hover.twentytwenty-overlay {
+                background: rgba(0, 0, 0, 0);
+            }
+
+                .twentytwenty-container.active .twentytwenty-overlay .twentytwenty-before-label,
+                .twentytwenty-container.active .twentytwenty-overlay .twentytwenty-after-label, .twentytwenty-container.active :hover.twentytwenty-overlay .twentytwenty-before-label,
+                .twentytwenty-container.active :hover.twentytwenty-overlay .twentytwenty-after-label {
+                    opacity: 0;
+                }
+
+            .twentytwenty-container * {
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+            }
+
+        .twentytwenty-before-label {
+            opacity: 0;
+        }
+
+            .twentytwenty-before-label:before {
+                content: "Before";
+            }
+
+        .twentytwenty-after-label {
+            opacity: 0;
+        }
+
+            .twentytwenty-after-label:before {
+                content: "After";
+            }
+
+        .twentytwenty-horizontal .twentytwenty-before-label:before {
+            left: 10px;
+        }
+
+        .twentytwenty-horizontal .twentytwenty-after-label:before {
+            right: 10px;
+        }
+
+        .twentytwenty-vertical .twentytwenty-before-label:before {
+            top: 10px;
+        }
+
+        .twentytwenty-vertical .twentytwenty-after-label:before {
+            bottom: 10px;
+        }
+
+        .twentytwenty-overlay {
+            z-index: 25;
+        }
+
+            .twentytwenty-overlay:hover .twentytwenty-after-label, .twentytwenty-overlay:hover .twentytwenty-before-label {
+                opacity: 1;
+            }
+
+        .twentytwenty-before {
+            z-index: 20;
+        }
+
+        .twentytwenty-after {
+            z-index: 10;
+        }
+
+        .twentytwenty-handle {
+            height: 38px;
+            width: 38px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -22px;
+            margin-top: -22px;
+            border: 3px solid white;
+            -webkit-border-radius: 1000px;
+            -moz-border-radius: 1000px;
+            border-radius: 1000px;
+            -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+            -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+            box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+            z-index: 40;
+            cursor: pointer;
+        }
+
+        .twentytwenty-horizontal .twentytwenty-handle:before {
+            bottom: 50%;
+            margin-bottom: 22px;
+            -webkit-box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            -moz-box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+        }
+
+        .twentytwenty-horizontal .twentytwenty-handle:after {
+            top: 50%;
+            margin-top: 22px;
+            -webkit-box-shadow: 0 -3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            -moz-box-shadow: 0 -3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            box-shadow: 0 -3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+        }
+
+        .twentytwenty-vertical .twentytwenty-handle:before {
+            left: 50%;
+            margin-left: 22px;
+            -webkit-box-shadow: 3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            -moz-box-shadow: 3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            box-shadow: 3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+        }
+
+        .twentytwenty-vertical .twentytwenty-handle:after {
+            right: 50%;
+            margin-right: 22px;
+            -webkit-box-shadow: -3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            -moz-box-shadow: -3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+            box-shadow: -3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+        }
+
+        .twentytwenty-left-arrow {
+            border-right: 6px solid white;
+            left: 50%;
+            margin-left: -17px;
+        }
+
+        .twentytwenty-right-arrow {
+            border-left: 6px solid white;
+            right: 50%;
+            margin-right: -17px;
+        }
+
+        .twentytwenty-up-arrow {
+            border-bottom: 6px solid white;
+            top: 50%;
+            margin-top: -17px;
+        }
+
+        .twentytwenty-down-arrow {
+            border-top: 6px solid white;
+            bottom: 50%;
+            margin-bottom: -17px;
+        }
+
+        .twentytwenty-before-label,
+        .twentytwenty-after-label {
+            display: initial;
+        }
+
+            .twentytwenty-before-label:before {
+                content: "Before";
+            }
+
+            .twentytwenty-after-label:before {
+                content: "After";
+            }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="clearfix borderbox" id="page">
+        <!-- group -->
+        <div class="clearfix grpelem" id="pu965">
+            <!-- group -->
+            <div class="browser_width" id="u965-bw">
+                <div id="u965"><!-- simple frame --></div>
+            </div>
+
+            <div class="browser_width" id="u961-bw">
+                <div id="u961"><!-- simple frame --></div>
+            </div>
+        </div>
+        <div class="clearfix grpelem" id="pu369">
+            <!-- column -->
+            <div class="size_fluid_width colelem" id="u369" data-sizePolicy="fluidWidth" data-pintopage="page_fluidx">
+                <!-- custom html -->
+
+                <div class="twentytwenty-container">
+                    <img src="~/Frontend/activitybook/assets/whatsthediff_960pxwide_bottom.jpg" />
+                    <img src="~/Frontend/activitybook/assets/whatsthediff_960pxwide_top.jpg" />
+                </div>
+
+            </div>
+            <img class="colelem" id="u381-7" alt="How many differences can you find? See if you can spot all 18. Move the split-screen icon to the left and right to start looking! " src="~/Frontend/activitybook/images/u381-7.png?crc=172500462" data-image-width="920" /><!-- rasterized frame -->
+            <div class="clearfix colelem" id="u1403-7">
+                <!-- content -->
+                <!--<p>Click <a class="nonblock" href="difference-answer.html" target="_blank">here</a> to see the answer.</p>-->
+            </div>
+            <div class="colelem" id="u370">
+                <!-- content -->
+                <div class="fluid_height_spacer"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <![CDATA[
+    <!-- JS includes -->
+    <script type="text/javascript">
+        if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+    </script>
+    <script type="text/javascript">
+        window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js?crc=209076791" type="text/javascript">\x3C/script>');
+    </script>
+    <!-- Other scripts -->
+    <script type="text/javascript">
+        // Decide whether to suppress missing file error or not based on preference setting
+        var suppressMissingFileError = false
+    </script>
+    <script type="text/javascript">
+        window.Muse.assets.check = function (c) {
+            if (!window.Muse.assets.checked) {
+                window.Muse.assets.checked = !0; var b = {}, d = function (a, b) { if (window.getComputedStyle) { var c = window.getComputedStyle(a, null); return c && c.getPropertyValue(b) || c && c[b] || "" } if (document.documentElement.currentStyle) return (c = a.currentStyle) && c[b] || a.style && a.style[b] || ""; return "" }, a = function (a) {
+                    if (a.match(/^rgb/)) return a = a.replace(/\s+/g, "").match(/([\d\,]+)/gi)[0].split(","), (parseInt(a[0]) << 16) + (parseInt(a[1]) << 8) + parseInt(a[2]); if (a.match(/^\#/)) return parseInt(a.substr(1),
+                        16); return 0
+                }, f = function (f) {
+                    for (var g = document.getElementsByTagName("link"), j = 0; j < g.length; j++)if ("text/css" == g[j].type) { var l = (g[j].href || "").match(/\/?css\/([\w\-]+\.css)\?crc=(\d+)/); if (!l || !l[1] || !l[2]) break; b[l[1]] = l[2] } g = document.createElement("div"); g.className = "version"; g.style.cssText = "display:none; width:1px; height:1px;"; document.getElementsByTagName("body")[0].appendChild(g); for (j = 0; j < Muse.assets.required.length;) {
+                        var l = Muse.assets.required[j], k = l.match(/([\w\-\.]+)\.(\w+)$/), i = k && k[1] ?
+                            k[1] : null, k = k && k[2] ? k[2] : null; switch (k.toLowerCase()) { case "css": i = i.replace(/\W/gi, "_").replace(/^([^a-z])/gi, "_$1"); g.className += " " + i; i = a(d(g, "color")); k = a(d(g, "backgroundColor")); i != 0 || k != 0 ? (Muse.assets.required.splice(j, 1), "undefined" != typeof b[l] && (i != b[l] >>> 24 || k != (b[l] & 16777215)) && Muse.assets.outOfDate.push(l)) : j++; g.className = "version"; break; case "js": j++; break; default: throw Error("Unsupported file type: " + k); }
+                    } c ? c().jquery != "1.8.3" && Muse.assets.outOfDate.push("jquery-1.8.3.min.js") : Muse.assets.required.push("jquery-1.8.3.min.js");
+                    g.parentNode.removeChild(g); if (Muse.assets.outOfDate.length || Muse.assets.required.length) g = "Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.", f && Muse.assets.outOfDate.length && (g += "\nOut of date: " + Muse.assets.outOfDate.join(",")), f && Muse.assets.required.length && (g += "\nMissing: " + Muse.assets.required.join(",")), suppressMissingFileError ? (g += "\nUse SuppressMissingFileError key in AppPrefs.xml to show missing file error pop up.", console.log(g)) : alert(g)
+                }; location && location.search && location.search.match && location.search.match(/muse_debug/gi) ?
+                    setTimeout(function () { f(!0) }, 5E3) : f()
+            }
+        };
+        var muse_init = function () {
+            require.config({ baseUrl: "/Frontend/activitybook" }); require(["jquery", "museutils", "whatinput", "jquery.musemenu", "jquery.watch"], function (c) {
+                var $ = c; $(document).ready(function () {
+                    try {
+                        window.Muse.assets.check($);/* body */
+                        Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
+                        Muse.Utils.prepHyperlinks(true);/* body */
+                        Muse.Utils.resizeHeight('.browser_width');/* resize height */
+                        Muse.Utils.requestAnimationFrame(function () { $('body').addClass('initialized'); });/* mark body as initialized */
+                        Muse.Utils.makeButtonsVisibleAfterSettingMinWidth();/* body */
+                        Muse.Utils.initWidget('.MenuBar', ['#bp_infinity'], function (elem) { return $(elem).museMenu(); });/* unifiedNavBar */
+                        Muse.Utils.fullPage('#page');/* 100% height page */
+                        Muse.Utils.showWidgetsWhenReady();/* body */
+                        Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
+                    } catch (b) { if (b && "function" == typeof b.notify ? b.notify() : Muse.Assert.fail("Error calling selector function: " + b), false) throw b; }
+                })
+            })
+        };
+
+    </script>
+
+
+    <!-- RequireJS script -->
+    <script src="/Frontend/activitybook/scripts/require.js?crc=7928878" type="text/javascript" async="async" data-main="/Frontend/activitybook/scripts/museconfig.js?crc=310584261" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
+
+    <!--HTML Widget code-->
+
+    <script>
+
+        // jquery.event.move
+        //
+        // 1.3.6
+        //
+        // Stephen Band
+
+        !function (t) { "function" == typeof define && define.amd ? define(["jquery"], t) : t(jQuery) }(function (t, e) { function n(t) { function e(t) { a ? (n(), O(e), i = !0, a = !1) : i = !1 } var n = t, a = !1, i = !1; this.kick = function (t) { a = !0, i || e() }, this.end = function (t) { var e = n; t && (i ? (n = a ? function () { e(), t() } : t, a = !0) : t()) } } function a() { return !0 } function i() { return !1 } function o(t) { t.preventDefault() } function r(t) { z[t.target.tagName.toLowerCase()] || t.preventDefault() } function u(t) { return 1 === t.which && !t.ctrlKey && !t.altKey } function c(t, e) { var n, a; if (t.identifiedTouch) return t.identifiedTouch(e); for (n = -1, a = t.length; ++n < a;)if (t[n].identifier === e) return t[n] } function d(t, e) { var n = c(t.changedTouches, e.identifier); if (n && (n.pageX !== e.pageX || n.pageY !== e.pageY)) return n } function m(t) { var e; u(t) && (e = { target: t.target, startX: t.pageX, startY: t.pageY, timeStamp: t.timeStamp }, K(document, Q.move, f, e), K(document, Q.cancel, s, e)) } function f(t) { var e = t.data; X(t, e, t, v) } function s(t) { v() } function v() { L(document, Q.move, f), L(document, Q.cancel, s) } function p(t) { var e, n; z[t.target.tagName.toLowerCase()] || (e = t.changedTouches[0], n = { target: e.target, startX: e.pageX, startY: e.pageY, timeStamp: t.timeStamp, identifier: e.identifier }, K(document, B.move + "." + e.identifier, g, n), K(document, B.cancel + "." + e.identifier, h, n)) } function g(t) { var e = t.data, n = d(t, e); n && X(t, e, n, l) } function h(t) { var e = t.data, n = c(t.changedTouches, e.identifier); n && l(e.identifier) } function l(t) { L(document, "." + t, g), L(document, "." + t, h) } function X(t, e, n, a) { var i = n.pageX - e.startX, o = n.pageY - e.startY; C * C > i * i + o * o || y(t, e, n, i, o, a) } function Y() { return this._handled = a, !1 } function w(t) { t._handled() } function y(t, e, n, a, i, o) { var r, u; e.target; r = t.targetTouches, u = t.timeStamp - e.timeStamp, e.type = "movestart", e.distX = a, e.distY = i, e.deltaX = a, e.deltaY = i, e.pageX = n.pageX, e.pageY = n.pageY, e.velocityX = a / u, e.velocityY = i / u, e.targetTouches = r, e.finger = r ? r.length : 1, e._handled = Y, e._preventTouchmoveDefault = function () { t.preventDefault() }, N(e.target, e), o(e.identifier) } function T(t) { var e = t.data.timer; t.data.touch = t, t.data.timeStamp = t.timeStamp, e.kick() } function S(t) { var e = t.data.event, n = t.data.timer; k(), F(e, n, function () { setTimeout(function () { L(e.target, "click", i) }, 0) }) } function k(t) { L(document, Q.move, T), L(document, Q.end, S) } function _(t) { var e = t.data.event, n = t.data.timer, a = d(t, e); a && (t.preventDefault(), e.targetTouches = t.targetTouches, t.data.touch = a, t.data.timeStamp = t.timeStamp, n.kick()) } function q(t) { var e = t.data.event, n = t.data.timer, a = c(t.changedTouches, e.identifier); a && (A(e), F(e, n)) } function A(t) { L(document, "." + t.identifier, _), L(document, "." + t.identifier, q) } function D(t, e, n, a) { var i = n - t.timeStamp; t.type = "move", t.distX = e.pageX - t.startX, t.distY = e.pageY - t.startY, t.deltaX = e.pageX - t.pageX, t.deltaY = e.pageY - t.pageY, t.velocityX = .3 * t.velocityX + .7 * t.deltaX / i, t.velocityY = .3 * t.velocityY + .7 * t.deltaY / i, t.pageX = e.pageX, t.pageY = e.pageY } function F(t, e, n) { e.end(function () { return t.type = "moveend", N(t.target, t), n && n() }) } function R(t, e, n) { return K(this, "movestart.move", w), !0 } function x(t) { return L(this, "dragstart drag", o), L(this, "mousedown touchstart", r), L(this, "movestart", w), !0 } function b(t) { "move" !== t.namespace && "moveend" !== t.namespace && (K(this, "dragstart." + t.guid + " drag." + t.guid, o, e, t.selector), K(this, "mousedown." + t.guid, r, e, t.selector)) } function j(t) { "move" !== t.namespace && "moveend" !== t.namespace && (L(this, "dragstart." + t.guid + " drag." + t.guid), L(this, "mousedown." + t.guid)) } var C = 6, K = t.event.add, L = t.event.remove, N = function (e, n, a) { t.event.trigger(n, a, e) }, O = function () { return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (t, e) { return window.setTimeout(function () { t() }, 25) } }(), z = { textarea: !0, input: !0, select: !0, button: !0 }, Q = { move: "mousemove", cancel: "mouseup dragstart", end: "mouseup" }, B = { move: "touchmove", cancel: "touchend", end: "touchend" }; t.event.special.movestart = { setup: R, teardown: x, add: b, remove: j, _default: function (t) { function a(e) { D(o, r.touch, r.timeStamp), N(t.target, o) } var o, r; t._handled() && (o = { target: t.target, startX: t.startX, startY: t.startY, pageX: t.pageX, pageY: t.pageY, distX: t.distX, distY: t.distY, deltaX: t.deltaX, deltaY: t.deltaY, velocityX: t.velocityX, velocityY: t.velocityY, timeStamp: t.timeStamp, identifier: t.identifier, targetTouches: t.targetTouches, finger: t.finger }, r = { event: o, timer: new n(a), touch: e, timeStamp: e }, t.identifier === e ? (K(t.target, "click", i), K(document, Q.move, T, r), K(document, Q.end, S, r)) : (t._preventTouchmoveDefault(), K(document, B.move + "." + t.identifier, _, r), K(document, B.end + "." + t.identifier, q, r))) } }, t.event.special.move = { setup: function () { K(this, "movestart.move", t.noop) }, teardown: function () { L(this, "movestart.move", t.noop) } }, t.event.special.moveend = { setup: function () { K(this, "movestart.moveend", t.noop) }, teardown: function () { L(this, "movestart.moveend", t.noop) } }, K(document, "mousedown.move", m), K(document, "touchstart.move", p), "function" == typeof Array.prototype.indexOf && !function (t, e) { for (var n = ["changedTouches", "targetTouches"], a = n.length; a--;)-1 === t.event.props.indexOf(n[a]) && t.event.props.push(n[a]) }(t) });
+
+    </script>
+
+    <script>
+
+        !function (t) { t.fn.twentytwenty = function (e) { var e = t.extend({ default_offset_pct: .5, orientation: "horizontal" }, e); return this.each(function () { var n = e.default_offset_pct, i = t(this), a = e.orientation, s = "vertical" === a ? "down" : "left", d = "vertical" === a ? "up" : "right"; i.wrap("<div class='twentytwenty-wrapper twentytwenty-" + a + "'></div>"), i.append("<div class='twentytwenty-overlay'></div>"); var r = i.find("img:first"), w = i.find("img:last"); i.append("<div class='twentytwenty-handle'></div>"); var c = i.find(".twentytwenty-handle"); c.append("<span class='twentytwenty-" + s + "-arrow'></span>"), c.append("<span class='twentytwenty-" + d + "-arrow'></span>"), i.addClass("twentytwenty-container"), r.addClass("twentytwenty-before"), w.addClass("twentytwenty-after"); var o = i.find(".twentytwenty-overlay"); o.append("<div class='twentytwenty-before-label'></div>"), o.append("<div class='twentytwenty-after-label'></div>"); var f = function (t) { var e = r.width(), n = r.height(); return { w: e + "px", h: n + "px", cw: t * e + "px", ch: t * n + "px" } }, l = function (t) { "vertical" === a ? r.css("clip", "rect(0," + t.w + "," + t.ch + ",0)") : r.css("clip", "rect(0," + t.cw + "," + t.h + ",0)"), i.css("height", t.h) }, v = function (t) { var e = f(t); c.css("vertical" === a ? "top" : "left", "vertical" === a ? e.ch : e.cw), l(e) }; t(window).on("resize.twentytwenty", function (t) { v(n) }); var p = 0, y = 0; c.on("movestart", function (t) { (t.distX > t.distY && t.distX < -t.distY || t.distX < t.distY && t.distX > -t.distY) && "vertical" !== a ? t.preventDefault() : (t.distX < t.distY && t.distX < -t.distY || t.distX > t.distY && t.distX > -t.distY) && "vertical" === a && t.preventDefault(), i.addClass("active"), p = i.offset().left, offsetY = i.offset().top, y = r.width(), imgHeight = r.height() }), c.on("moveend", function (t) { i.removeClass("active") }), c.on("move", function (t) { i.hasClass("active") && (n = "vertical" === a ? (t.pageY - offsetY) / imgHeight : (t.pageX - p) / y, 0 > n && (n = 0), n > 1 && (n = 1), v(n)) }), i.find("img").on("mousedown", function (t) { t.preventDefault() }), t(window).trigger("resize.twentytwenty") }) } }(jQuery);
+
+    </script>
+
+    <script>
+
+        console.log("Before / After Image Slider - Version 1.2 - MuseThemes.com");
+
+        $(window).load(function () {
+            $(".twentytwenty-container").twentytwenty({
+                orientation: 'horizontal'
+            });
+        });
+    </script>
+    ]]>
+
+    @Markup(Content)
+
+
+</body>
+</html>

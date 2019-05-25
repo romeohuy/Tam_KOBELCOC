@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageInfo name="Composite.Navigation.Sitemap.Razor" groupName="Composite.Navigation" version="3.0.0" author="Composite" website="http://composite.net" description="Razor based sitemap builderRazor based sitemap builder" installDate="2018-05-08T11:59:01.0371149-05:00" installedBy="kobelcoadmin" isLocalInstalled="true" canBeUninstalled="true" flushOnCompletion="false" reloadConsoleOnCompletion="false" systemLocking="none" xmlns="http://www.composite.net/ns/management/packageinstaller/1.0" />

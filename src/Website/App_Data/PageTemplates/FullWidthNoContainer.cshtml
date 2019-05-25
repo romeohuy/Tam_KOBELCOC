@@ -1,0 +1,73 @@
+﻿@inherits RazorPageTemplate
+@functions {
+    public override void Configure()
+    {
+        TemplateId = new Guid("0526ad34-c540-418e-8c23-0eec2a8da2ce");
+        TemplateTitle = "Full Width, No Container";
+        Layout = "MasterLayout.cshtml";
+    }
+    [Placeholder(Id = "header", Title = "Header Content")]
+    public XhtmlDocument HeaderContent { get; set; }
+
+    [Placeholder(Id = "content", Title = "Content", IsDefault = true)]
+    public XhtmlDocument Content { get; set; }
+}
+@{
+    var headerMedia = Data.Get<Kobelco.HeaderMedia>().Where(m => m.PageId == CurrentPageNode.Id).FirstOrDefault();
+
+    string[] fileParts = headerMedia.File.Split(new[] { ':' });
+    string fileMediaStore = fileParts[0];
+    Guid fileMediaId = new Guid(fileParts[1]);
+    IMediaFile media = Data.Get<IMediaFile>().Where(m => m.Id == fileMediaId).FirstOrDefault();
+    var backgroundImageUrl = "/Renderers/ShowMedia.ashx?id=" + fileMediaId.ToString();
+
+
+    var posterImageUrl = string.Empty;
+
+    if(headerMedia.Poster != null)
+    {
+        string[] posterParts = headerMedia.Poster.Split(new[] { ':' });
+        string posterMediaStore = posterParts[0];
+        Guid posterMediaId = new Guid(posterParts[1]);
+        posterImageUrl = "/Renderers/ShowMedia.ashx?id=" + posterMediaId.ToString();
+    }
+    }
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @*you can add template specific head elements here*@
+
+</head>
+<body>
+    @if (headerMedia != null)
+    {
+    <div class="outer-header-wrapper">
+
+        @if (media.MimeType == "video/mp4")
+        {
+        <div class="header-wrapper" style="background-image: url(@posterImageUrl);background-repeat:no-repeat;background-size:cover;background-position:center center;">
+            <div class="video-contain">
+                <video id="header-video" autoplay="autoplay" preload="auto" poster="~/media(@headerMedia.Poster)" src="~/media(@headerMedia.File)">
+                    Sorry, your browser doesn't support embedded videos.
+                </video>
+            </div>
+        </div>
+        }
+        else
+        {
+            <div class="header-wrapper" style="background-image: url(@backgroundImageUrl);background-repeat:no-repeat;background-size:cover;background-position:center center;"></div>
+
+        }
+        <div class="header-content-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        @Markup(HeaderContent)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    @Markup(Content)
+</body>
+</html>
