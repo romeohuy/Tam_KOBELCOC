@@ -160,3 +160,5 @@ glob:*.user
 *.hg
 src/packages/*
 /publish-debug
+/src/Website/App_Data/Composite/Cache
+/src/Website/App_Data/Composite/LogFiles

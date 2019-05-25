@@ -1,14 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.1
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website", "{2220ECEF-A952-40FF-9431-0C1E217557D9}"
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{2220ECEF-A952-40FF-9431-0C1E217557D9}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "SAK"
 		SccAuxPath = "SAK"
 		SccLocalPath = "SAK"
 		SccProvider = "SAK"
+		Frontpage = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
 		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/Website"
@@ -27,7 +26,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website", "{2220
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "10005"
 		VWDVirtualPath = "/"
-		SlnRelativePath = "Website\"
 	EndProjectSection
 EndProject
 Global
@@ -46,16 +44,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AE4CE35-BA8B-4433-A27E-226F6CED991B}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://inquest.visualstudio.com/
-		SccLocalPath0 = .
-		SccWebProject1 = true
-		SccProjectUniqueName1 = Website
-		SccProjectName1 = Website
-		SccLocalPath1 = Website
-		SccProjectEnlistmentChoice1 = 2
 	EndGlobalSection
 EndGlobal
