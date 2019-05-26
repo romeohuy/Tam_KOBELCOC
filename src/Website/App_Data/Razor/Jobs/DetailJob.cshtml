@@ -64,7 +64,11 @@
             margin: 8px 0;
             box-sizing: border-box;
         }
+        .invalid-feedback {
+            color: red;
+        }
     </style>
+    
 </head>
 <body>
     <div>
@@ -98,9 +102,9 @@
                 <h4 class="modal-title">@TitleFormApplyJob</h4>
             </div>
             <div class="modal-body">
-               <div class="form-job-content">
+                <div class="form-job-content">
                     <p>Job title: @job.Title</p>
-                    <form class="form-horizontal" action="#">
+                    <form id="form-submit-job" class="form-horizontal" action="../">
                         <div class="form-group-job">
                             <input type="text" class="form-job" id="first-name" placeholder="First name"/>
                         </div>
@@ -113,7 +117,7 @@
                         <div class="form-group-job">
                             <input type="email" class="form-job" id="email" placeholder="Email address"/>
                         </div>
-                        <button type="submit" class="btn btn-aqua">Submit Application</button>
+                        <button type="button" class="btn btn-aqua">Submit Application</button>
                     </form>
                 </div> 
             </div>
@@ -121,5 +125,16 @@
 
     </div>
 </div>
+
+<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+<script>
+    var _isValid = true;
+    //bootstrapValidate('#email', 'email', function(isValid) {
+    //    _isValid = isValid;
+    //    }
+    //);
+    bootstrapValidate('#email', 'required: Please input email');
+</script>
+
 </body>
 </html>
