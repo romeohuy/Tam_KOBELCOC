@@ -1,0 +1,30 @@
+﻿@inherits RazorFunction
+
+@functions {
+	public override string FunctionDescription
+	{
+		get { return "List jobs"; }
+	}
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://www.composite.net/ns/function/1.0">
+<head>
+</head>
+<body>
+	@{
+	    var allJob = from job in Data.Get<Kobelco.Job>()
+	        orderby job.DatePosted descending
+	        select job;
+	    foreach (var job in allJob)
+	    {
+	        <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-4">@job.Title</div>
+                    <div class="col-md-4">@job.DatePosted.ToString("MM/dd/yyyy")</div>
+                    <div class="col-md-4"><a href="@this.CurrentPageNode.Url">View job description</a></div>
+                </div>
+            </div>
+	    }
+	}
+</body>
+</html>

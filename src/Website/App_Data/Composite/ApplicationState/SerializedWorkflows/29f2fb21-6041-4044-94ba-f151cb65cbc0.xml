@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FormData>
+  <ContainerLabel value="MainMenu" />
+  <FormDefinition value="&lt;cms:formdefinition xmlns:cms=&quot;http://www.composite.net/ns/management/bindingforms/1.0&quot; xmlns=&quot;http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0&quot; xmlns:ff=&quot;http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0&quot; xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot;&gt;&#xD;&#xA;  &lt;cms:bindings&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Id&quot; type=&quot;System.Guid&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Title&quot; type=&quot;System.String&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Page&quot; type=&quot;System.Nullable`1[System.Guid]&quot; optional=&quot;true&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;CustomLink&quot; type=&quot;System.String&quot; optional=&quot;true&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;TargetOptions&quot; type=&quot;System.String&quot; optional=&quot;true&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Placeholder&quot; type=&quot;System.Boolean&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;MobileOnly&quot; type=&quot;System.Boolean&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;PublicationStatus&quot; type=&quot;System.String&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;LocalOrdering&quot; type=&quot;System.Int32&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;SourceCultureName&quot; type=&quot;System.String&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;PublicationStatusOptions&quot; type=&quot;System.Object&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;PublishDate&quot; type=&quot;System.DateTime&quot; optional=&quot;true&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;UnpublishDate&quot; type=&quot;System.DateTime&quot; optional=&quot;true&quot; /&gt;&#xD;&#xA;  &lt;/cms:bindings&gt;&#xD;&#xA;  &lt;cms:layout iconhandle=&quot;generated-type-data-add&quot;&gt;&#xD;&#xA;    &lt;cms:layout.label&gt;&#xD;&#xA;      &lt;cms:read source=&quot;Title&quot; /&gt;&#xD;&#xA;    &lt;/cms:layout.label&gt;&#xD;&#xA;    &lt;PlaceHolder&gt;&#xD;&#xA;      &lt;FieldGroup Label=&quot;Main Menu&quot;&gt;&#xD;&#xA;        &lt;TextBox Label=&quot;Link Title&quot; Help=&quot;&quot; SpellCheck=&quot;true&quot;&gt;&#xD;&#xA;          &lt;TextBox.Text&gt;&#xD;&#xA;            &lt;cms:bind source=&quot;Title&quot; /&gt;&#xD;&#xA;          &lt;/TextBox.Text&gt;&#xD;&#xA;        &lt;/TextBox&gt;&#xD;&#xA;        &lt;DataReferenceTreeSelector Label=&quot;Page Link&quot; Help=&quot;&quot; Handle=&quot;Composite.Management.PageIdSelectorDialog&quot; DataType=&quot;Composite.Data.Types.IPage,Composite&quot; NullValueAllowed=&quot;true&quot;&gt;&#xD;&#xA;          &lt;DataReferenceTreeSelector.Selected&gt;&#xD;&#xA;            &lt;cms:bind source=&quot;Page&quot; /&gt;&#xD;&#xA;          &lt;/DataReferenceTreeSelector.Selected&gt;&#xD;&#xA;        &lt;/DataReferenceTreeSelector&gt;&#xD;&#xA;        &lt;TextBox Label=&quot;Custom Link&quot; Help=&quot;Use this instead of Page Link if you are trying to navigate to a custom link or external website.&quot; SpellCheck=&quot;true&quot;&gt;&#xD;&#xA;          &lt;TextBox.Text&gt;&#xD;&#xA;            &lt;cms:bind source=&quot;CustomLink&quot; /&gt;&#xD;&#xA;          &lt;/TextBox.Text&gt;&#xD;&#xA;        &lt;/TextBox&gt;&#xD;&#xA;        &lt;KeySelector Label=&quot;Target&quot; Help=&quot;If nothing is selected, it will default to open in the current frame.&quot; OptionsKeyField=&quot;Key&quot; OptionsLabelField=&quot;Label&quot; Required=&quot;false&quot;&gt;&#xD;&#xA;          &lt;KeySelector.Selected&gt;&#xD;&#xA;            &lt;cms:bind source=&quot;TargetOptions&quot; /&gt;&#xD;&#xA;          &lt;/KeySelector.Selected&gt;&#xD;&#xA;          &lt;KeySelector.Options&gt;&#xD;&#xA;            &lt;ff:StaticMethodCall Type=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.String.SelectorWidgetFunction,Composite&quot; Method=&quot;GetOptions&quot; Parameters=&quot;&amp;lt;SelectorOptionsSource KeyFieldName=&amp;quot;&amp;quot; LabelFieldName=&amp;quot;&amp;quot;&amp;gt;&amp;#xD;&amp;#xA;  &amp;lt;TreeNode&amp;gt;&amp;#xD;&amp;#xA;    &amp;lt;f:param xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Options&amp;quot;&amp;gt;&amp;#xD;&amp;#xA;      &amp;lt;f:function xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Utils.String.Split&amp;quot;&amp;gt;&amp;#xD;&amp;#xA;        &amp;lt;f:param name=&amp;quot;String&amp;quot; value=&amp;quot;New Window,Parent Frame,Full Body of The Window&amp;quot; /&amp;gt;&amp;#xD;&amp;#xA;      &amp;lt;/f:function&amp;gt;&amp;#xD;&amp;#xA;    &amp;lt;/f:param&amp;gt;&amp;#xD;&amp;#xA;  &amp;lt;/TreeNode&amp;gt;&amp;#xD;&amp;#xA;&amp;lt;/SelectorOptionsSource&amp;gt;&quot; /&gt;&#xD;&#xA;          &lt;/KeySelector.Options&gt;&#xD;&#xA;        &lt;/KeySelector&gt;&#xD;&#xA;        &lt;CheckBox Label=&quot;Use as a placeholder?&quot; Help=&quot;Check this if you want to show something in the navigation but without a link. This CAN house links under it though.&quot;&gt;&#xD;&#xA;          &lt;CheckBox.Checked&gt;&#xD;&#xA;            &lt;cms:bind source=&quot;Placeholder&quot; /&gt;&#xD;&#xA;          &lt;/CheckBox.Checked&gt;&#xD;&#xA;        &lt;/CheckBox&gt;&#xD;&#xA;        &lt;CheckBox Label=&quot;Displayed on mobile only?&quot; Help=&quot;&quot;&gt;&#xD;&#xA;          &lt;CheckBox.Checked&gt;&#xD;&#xA;            &lt;cms:bind source=&quot;MobileOnly&quot; /&gt;&#xD;&#xA;          &lt;/CheckBox.Checked&gt;&#xD;&#xA;        &lt;/CheckBox&gt;&#xD;&#xA;      &lt;/FieldGroup&gt;&#xD;&#xA;      &lt;FieldGroup Label=&quot;Publication settings&quot;&gt;&#xD;&#xA;        &lt;KeySelector OptionsKeyField=&quot;Key&quot; OptionsLabelField=&quot;Value&quot; Label=&quot;Status&quot; Help=&quot;Send the data to another publication status.&quot;&gt;&#xD;&#xA;          &lt;KeySelector.Selected&gt;&#xD;&#xA;            &lt;cms:bind source=&quot;PublicationStatus&quot; /&gt;&#xD;&#xA;          &lt;/KeySelector.Selected&gt;&#xD;&#xA;          &lt;KeySelector.Options&gt;&#xD;&#xA;            &lt;cms:read source=&quot;PublicationStatusOptions&quot; /&gt;&#xD;&#xA;          &lt;/KeySelector.Options&gt;&#xD;&#xA;        &lt;/KeySelector&gt;&#xD;&#xA;        &lt;DateTimeSelector Label=&quot;Publish date&quot; Help=&quot;Specify at which date and time you want the data to be published automatically.&quot;&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;PublishDate&quot; /&gt;&#xD;&#xA;        &lt;/DateTimeSelector&gt;&#xD;&#xA;        &lt;DateTimeSelector Label=&quot;Unpublish date&quot; Help=&quot;Specify at which date and time you want the data to be unpublished automatically.&quot;&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;UnpublishDate&quot; /&gt;&#xD;&#xA;        &lt;/DateTimeSelector&gt;&#xD;&#xA;      &lt;/FieldGroup&gt;&#xD;&#xA;    &lt;/PlaceHolder&gt;&#xD;&#xA;  &lt;/cms:layout&gt;&#xD;&#xA;&lt;/cms:formdefinition&gt;" />
+  <ContainerType>
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Actions\.StandardUiContainerTypesSerializerHandler,Composite'SerializedObject='Document'" />
+  </ContainerType>
+  <Bindings>
+    <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Id" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="fa514747-8b1b-4d65-83ff-9b410f11a5ec" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Title" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Jobs" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Page" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="5e14c11b-542c-45f7-ae98-397105881523" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="CustomLink" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="TargetOptions" />
+        </Key>
+        <Value>
+          <Null />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Placeholder" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="false" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="MobileOnly" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="false" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="PublicationStatus" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="draft" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="LocalOrdering" />
+        </Key>
+        <Value>
+          <Value type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="0" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SourceCultureName" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="en-US" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="PublicationStatusOptions" />
+        </Key>
+        <Value>
+          <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="draft" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Draft" />
+              </Value>
+            </KeyPair>
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="awaitingApproval" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Awaiting Approval" />
+              </Value>
+            </KeyPair>
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="awaitingPublication" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Awaiting Publication" />
+              </Value>
+            </KeyPair>
+          </Dictionary>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="NewData" />
+        </Key>
+        <Value>
+          <SerializerHandler value="SerializerHandlerType='Composite\.Data\.DataSerializerHandler,Composite'SerializedObject='_IsNew_=\'False\'_DataSourceId_=\'\\\{&quot;DataId&quot;:\\\{&quot;\\\$type&quot;:&quot;CompositeGenerated\\\.DynamicSqlDataProvider\\\.Kobelco_MainMenuDataId,\\\ Composite\\\.Generated&quot;,&quot;Id&quot;:&quot;fa514747-8b1b-4d65-83ff-9b410f11a5ec&quot;},&quot;InterfaceType&quot;:&quot;Kobelco\\\.MainMenu,\\\ Composite\\\.Generated&quot;,&quot;DataScopeIdentifier&quot;:\\\{&quot;Name&quot;:&quot;administrated&quot;},&quot;localeScope&quot;:&quot;en-US&quot;}\'Id=\'fa514747-8b1b-4d65-83ff-9b410f11a5ec\'Title=\'Jobs\'Page=\'5e14c11b-542c-45f7-ae98-397105881523\'CustomLink=\'\'TargetOptions=nullPlaceholder=\'False\'MobileOnly=\'False\'CompositeC1Contrib-Sorting-IGenericSortable\.LocalOrdering=\'0\'Composite-Data-ProcessControlled-IPublishControlled\.PublicationStatus=\'draft\'Composite-Data-ProcessControlled-ILocalizedControlled\.SourceCultureName=\'en-US\''" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="PublishDate" />
+        </Key>
+        <Value>
+          <Null />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="UnpublishDate" />
+        </Key>
+        <Value>
+          <Null />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="DataAdded" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="true" />
+        </Value>
+      </KeyPair>
+    </Dictionary>
+  </Bindings>
+  <BindingsValidationRules>
+    <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;    &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;  &lt;/t&gt;&#xD;&#xA;&lt;/t&gt;">
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Id" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Title" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <SerializerHandler value="SerializerHandlerType='Composite\.Data\.Validation\.ClientValidationRuleSerializerHandler,Composite'SerializedObject='AAEAAAD/////AQAAAAAAAAAMAgAAAEdDb21wb3NpdGUsIFZlcnNpb249Ni41LjY3NTQuMjUxMTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAS0NvbXBvc2l0ZS5EYXRhLlZhbGlkYXRpb24uQ2xpZW50VmFsaWRhdGlvblJ1bGVzLk5vdE51bGxDbGllbnRWYWxpZGF0aW9uUnVsZQAAAAACAAAACw=='" />
+          </List>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Page" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="CustomLink" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="TargetOptions" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Placeholder" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="MobileOnly" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="PublicationStatus" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="LocalOrdering" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SourceCultureName" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <SerializerHandler value="SerializerHandlerType='Composite\.Data\.Validation\.ClientValidationRuleSerializerHandler,Composite'SerializedObject='AAEAAAD/////AQAAAAAAAAAMAgAAAEdDb21wb3NpdGUsIFZlcnNpb249Ni41LjY3NTQuMjUxMTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAS0NvbXBvc2l0ZS5EYXRhLlZhbGlkYXRpb24uQ2xpZW50VmFsaWRhdGlvblJ1bGVzLk5vdE51bGxDbGllbnRWYWxpZGF0aW9uUnVsZQAAAAACAAAACw=='" />
+          </List>
+        </Value>
+      </KeyPair>
+    </Dictionary>
+  </BindingsValidationRules>
+  <ExcludedEvents>
+    <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+  </ExcludedEvents>
+</FormData>
