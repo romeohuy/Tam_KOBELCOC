@@ -1,3 +1,4 @@
+@using Kobelco
 @inherits RazorPageTemplate
 
 @functions {
@@ -15,22 +16,24 @@
     public XhtmlDocument Content { get; set; }
 }
 
-@{ 
-    var headerMedia = Data.Get<Kobelco.HeaderMedia>().Where(m => m.PageId == CurrentPageNode.Id).FirstOrDefault();
-	string[] parts = headerMedia.File.Split(new[] { ':' });
-	string mediaStore = parts[0];
-	Guid mediaId = new Guid(parts[1]);
-	var backgroundImageUrl = "/Renderers/ShowMedia.ashx?id=" + mediaId.ToString();
-}
+
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         @*you can add template specific head elements here*@
     </head>
-    <body>
-        @if (headerMedia != null)
-        {
+<body>
+@{ 
+    var headerMedia = Data.Get<HeaderMedia>().FirstOrDefault(m => m.PageId == CurrentPageNode.Id);
+    
+    if (headerMedia != null && string.IsNullOrEmpty(headerMedia.File) == false)
+    {
+        string[] parts = headerMedia.File.Split(new[] { ':' });
+        string mediaStore = parts[0];
+        Guid mediaId = new Guid(parts[1]);
+        var backgroundImageUrl = "/Renderers/ShowMedia.ashx?id=" + mediaId.ToString();
+
         <div class="outer-header-wrapper">
-            <div class="header-wrapper" style="background-image: url(@backgroundImageUrl);background-repeat:no-repeat;background-size:cover;background-position:center center;">
+            <div class="header-wrapper" style="background-image: url(@backgroundImageUrl); background-repeat: no-repeat; background-size: cover; background-position: center center;">
             </div>
             <div class="header-content-wrapper">
                 <div class="container">
@@ -42,9 +45,21 @@
                 </div>
             </div>
         </div>
-        }
+    }
+    else
+    {
         <div class="container">
-            @Markup(Content)
+            <div class="row">
+                <div class="col-md-12">
+                    @Markup(HeaderContent)
+                </div>
+            </div>
         </div>
-    </body>
+    }
+}
+
+<div class="container">
+    @Markup(Content)
+</div>
+</body>
 </html>

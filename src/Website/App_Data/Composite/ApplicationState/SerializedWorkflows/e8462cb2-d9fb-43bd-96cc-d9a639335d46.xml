@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FormData>
+  <ContainerLabel value="Jobs" />
+  <FormDefinition value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;cms:formdefinition xmlns=&quot;http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0&quot; xmlns:internal=&quot;http://www.composite.net/ns/management/bindingforms/internal.ui.controls.lib/1.0&quot; xmlns:f=&quot;http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0&quot; xmlns:cms=&quot;http://www.composite.net/ns/management/bindingforms/1.0&quot;&gt;&#xD;&#xA;&#x9;&lt;cms:bindings&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;SelectedPage&quot; type=&quot;Composite.Data.Types.IPage&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;SelectablePageTypeIds&quot; type=&quot;System.Collections.IEnumerable&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;SelectableTemplateIds&quot; type=&quot;System.Collections.IEnumerable&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;StateOptions&quot; type=&quot;System.Object&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;NamedXhtmlFragments&quot; type=&quot;System.Object&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;PreviewEventHandler&quot; type=&quot;System.EventHandler&quot; optional=&quot;true&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;CustomEvent01Handler&quot; type=&quot;System.EventHandler&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;UrlTitleIsRequired&quot; type=&quot;System.Boolean&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;IsRootPage&quot; type=&quot;System.Boolean&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:binding name=&quot;Tooltip&quot; type=&quot;System.String&quot; optional=&quot;true&quot; /&gt;&#xD;&#xA;&#x9;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaFile&quot; type=&quot;System.String&quot; optional=&quot;true&quot; /&gt;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaPoster&quot; type=&quot;System.String&quot; optional=&quot;true&quot; /&gt;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaPublicationStatus&quot; type=&quot;System.String&quot; /&gt;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaSourceCultureName&quot; type=&quot;System.String&quot; /&gt;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaFieldName&quot; type=&quot;System.String&quot; /&gt;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaId&quot; type=&quot;System.Guid&quot; /&gt;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaPageId&quot; type=&quot;System.Guid&quot; /&gt;&lt;cms:binding name=&quot;HeaderMedia:Kobelco_HeaderMediaVersionId&quot; type=&quot;System.Guid&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsTitle&quot; type=&quot;System.String&quot; optional=&quot;true&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsDescription&quot; type=&quot;System.String&quot; optional=&quot;true&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsShowTitlePrefix&quot; type=&quot;System.Boolean&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsShowTitleSuffix&quot; type=&quot;System.Boolean&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsPublicationStatus&quot; type=&quot;System.String&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsSourceCultureName&quot; type=&quot;System.String&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsFieldName&quot; type=&quot;System.String&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsId&quot; type=&quot;System.Guid&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsPageId&quot; type=&quot;System.Guid&quot; /&gt;&lt;cms:binding name=&quot;SeoSettings:Kobelco_SeoSettingsVersionId&quot; type=&quot;System.Guid&quot; /&gt;&lt;/cms:bindings&gt;&#xD;&#xA;&#x9;&lt;cms:layout iconhandle=&quot;page-edit-page&quot;&gt;&#xD;&#xA;&#x9;&#x9;&lt;cms:layout.tooltip&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;cms:read source=&quot;Tooltip&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&lt;/cms:layout.tooltip&gt;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&lt;TabPanels PreSelectedIndex=&quot;1&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;TabPanels.Label&gt;&#xD;&#xA;        &lt;f:BooleanCheck&gt;&#xD;&#xA;          &lt;f:BooleanCheck.CheckValue&gt;&#xD;&#xA;            &lt;cms:read source=&quot;IsRootPage&quot; /&gt;&#xD;&#xA;          &lt;/f:BooleanCheck.CheckValue&gt;&#xD;&#xA;          &lt;f:BooleanCheck.WhenTrue&gt;&#xD;&#xA;            &lt;cms:read source=&quot;SelectedPage.Title&quot; /&gt;&#xD;&#xA;          &lt;/f:BooleanCheck.WhenTrue&gt;&#xD;&#xA;          &lt;f:BooleanCheck.WhenFalse&gt;&#xD;&#xA;            &lt;f:NullCheck&gt;&#xD;&#xA;              &lt;f:NullCheck.CheckValue&gt;&#xD;&#xA;                &lt;cms:read source=&quot;SelectedPage.MenuTitle&quot; /&gt;&#xD;&#xA;              &lt;/f:NullCheck.CheckValue&gt;&#xD;&#xA;              &lt;f:NullCheck.WhenNull&gt;&#xD;&#xA;                &lt;cms:read source=&quot;SelectedPage.Title&quot; /&gt;&#xD;&#xA;              &lt;/f:NullCheck.WhenNull&gt;&#xD;&#xA;              &lt;f:NullCheck.WhenNotNull&gt;&#xD;&#xA;                &lt;cms:read source=&quot;SelectedPage.MenuTitle&quot; /&gt;&#xD;&#xA;              &lt;/f:NullCheck.WhenNotNull&gt;&#xD;&#xA;            &lt;/f:NullCheck&gt;&#xD;&#xA;          &lt;/f:BooleanCheck.WhenFalse&gt;&#xD;&#xA;        &lt;/f:BooleanCheck&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/TabPanels.Label&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;PlaceHolder Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelPaneSettings}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;FieldGroup Label=&quot;${Composite.Plugins.PageElementProvider, GeneralSettings.FieldGroupLabel}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelPageTitle}&quot; Help=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelPageTitleHelp}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:bind source=&quot;SelectedPage.Title&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextArea Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelAbstract}&quot; Help=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelAbstractHelp}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextArea.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:bind source=&quot;SelectedPage.Description&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextArea.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextArea&gt;&#xD;&#xA;&#xD;&#xA;          &lt;KeySelector OptionsKeyField=&quot;Key&quot; OptionsLabelField=&quot;Value&quot; Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.PageTypeSelectorLabel}&quot; Help=&quot;${Composite.Plugins.PageElementProvider, EditPage.PageTypeSelectorHelp}&quot;&gt;&#xD;&#xA;            &lt;KeySelector.SelectedIndexChangedEventHandler&gt;&#xD;&#xA;              &lt;cms:read source=&quot;CustomEvent01Handler&quot; /&gt;&#xD;&#xA;            &lt;/KeySelector.SelectedIndexChangedEventHandler&gt;&#xD;&#xA;            &lt;KeySelector.Options&gt;&#xD;&#xA;              &lt;cms:read source=&quot;SelectablePageTypeIds&quot; /&gt;&#xD;&#xA;            &lt;/KeySelector.Options&gt;&#xD;&#xA;            &lt;KeySelector.Selected&gt;&#xD;&#xA;              &lt;cms:bind source=&quot;SelectedPage.PageTypeId&quot; /&gt;&#xD;&#xA;            &lt;/KeySelector.Selected&gt;&#xD;&#xA;          &lt;/KeySelector&gt;&#xD;&#xA;          &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/FieldGroup&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;FieldGroup Label=&quot;${Composite.Plugins.PageElementProvider, AdvancedSettings.FieldGroupLabel}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelMenuTitle}&quot; Help=&quot;${Composite.Plugins.PageElementProvider, EditPage.HelpMenuTitle}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:bind source=&quot;SelectedPage.MenuTitle&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelUrlTitle}&quot; Help=&quot;${Composite.Plugins.PageElementProvider, EditPage.HelpUrlTitle}&quot; SpellCheck=&quot;false&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox.Required&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:read source=&quot;UrlTitleIsRequired&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox.Required&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:bind source=&quot;SelectedPage.UrlTitle&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelFriendlyUrl}&quot; Help=&quot;${Composite.Plugins.PageElementProvider, EditPage.HelpFriendlyUrl}&quot; SpellCheck=&quot;false&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:bind source=&quot;SelectedPage.FriendlyUrl&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox.Text&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/TextBox&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/FieldGroup&gt;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;FieldGroup Label=&quot;${Composite.Plugins.PageElementProvider, PublicationSettings.FieldGroupLabel}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;KeySelector OptionsKeyField=&quot;Key&quot; OptionsLabelField=&quot;Value&quot; Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelPublicationState}&quot; Help=&quot;${Composite.Plugins.PageElementProvider, EditPage.HelpPublicationState}&quot; Required=&quot;true&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;KeySelector.Selected&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:bind source=&quot;SelectedPage.PublicationStatus&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/KeySelector.Selected&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;KeySelector.Options&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:read source=&quot;StateOptions&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/KeySelector.Options&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/KeySelector&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/FieldGroup&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/PlaceHolder&gt;&#xD;&#xA;      &#xD;&#xA;&#x9;&#x9;&#x9;&lt;internal:PageContentEditor Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelContent}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;internal:PageContentEditor.PageId&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:bind source=&quot;SelectedPage.Id&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/internal:PageContentEditor.PageId&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;internal:PageContentEditor.TemplateId&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;SelectedPage.TemplateId&quot; /&gt;&#xD;&#xA;        &lt;/internal:PageContentEditor.TemplateId&gt;&#xD;&#xA;        &lt;internal:PageContentEditor.SelectableTemplateIds&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;SelectableTemplateIds&quot; /&gt;&#xD;&#xA;        &lt;/internal:PageContentEditor.SelectableTemplateIds&gt;&#xD;&#xA;        &lt;internal:PageContentEditor.NamedXhtmlFragments&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;NamedXhtmlFragments&quot; /&gt;&#xD;&#xA;        &lt;/internal:PageContentEditor.NamedXhtmlFragments&gt;&#xD;&#xA;        &lt;internal:PageContentEditor.PageTypeId&gt;&#xD;&#xA;          &lt;cms:read source=&quot;SelectedPage.PageTypeId&quot; /&gt;&#xD;&#xA;        &lt;/internal:PageContentEditor.PageTypeId&gt;&#xD;&#xA;&#xD;&#xA;      &lt;/internal:PageContentEditor&gt;&#xD;&#xA;      &#xD;&#xA;&#x9;&#x9;&#x9;&lt;PlaceHolder Label=&quot;Metadata&quot;&gt;&lt;FieldGroup Label=&quot;Header Media&quot;&gt;&lt;DataReferenceTreeSelector Label=&quot;Media File&quot; Help=&quot;Can be a video or an image.&quot; Handle=&quot;Composite.Management.EmbeddableMediaSelectorDialog&quot; SearchToken=&quot;{&amp;quot;$type&amp;quot;:&amp;quot;Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken, Composite&amp;quot;,&amp;quot;MimeTypes&amp;quot;:null,&amp;quot;Extensions&amp;quot;:null,&amp;quot;Folder&amp;quot;:null,&amp;quot;HideSubfolders&amp;quot;:false,&amp;quot;Keyword&amp;quot;:null}&quot; DataType=&quot;Composite.Data.Types.IMediaFile,Composite&quot; NullValueAllowed=&quot;true&quot;&gt;&lt;DataReferenceTreeSelector.Selected&gt;&lt;cms:bind source=&quot;HeaderMedia:Kobelco_HeaderMediaFile&quot; /&gt;&lt;/DataReferenceTreeSelector.Selected&gt;&lt;/DataReferenceTreeSelector&gt;&lt;DataReferenceTreeSelector Label=&quot;Poster&quot; Help=&quot;&quot; Handle=&quot;Composite.Management.ImageSelectorDialog&quot; SearchToken=&quot;{&amp;quot;$type&amp;quot;:&amp;quot;Composite.Plugins.Elements.ElementProviders.MediaFileProviderElementProvider.MediaFileSearchToken, Composite&amp;quot;,&amp;quot;MimeTypes&amp;quot;:[&amp;quot;image/gif&amp;quot;,&amp;quot;image/jpeg&amp;quot;,&amp;quot;image/png&amp;quot;,&amp;quot;image/bmp&amp;quot;,&amp;quot;image/svg+xml&amp;quot;],&amp;quot;Extensions&amp;quot;:null,&amp;quot;Folder&amp;quot;:null,&amp;quot;HideSubfolders&amp;quot;:false,&amp;quot;Keyword&amp;quot;:null}&quot; DataType=&quot;Composite.Data.Types.IImageFile,Composite&quot; NullValueAllowed=&quot;true&quot;&gt;&lt;DataReferenceTreeSelector.Selected&gt;&lt;cms:bind source=&quot;HeaderMedia:Kobelco_HeaderMediaPoster&quot; /&gt;&lt;/DataReferenceTreeSelector.Selected&gt;&lt;/DataReferenceTreeSelector&gt;&lt;/FieldGroup&gt;&lt;FieldGroup Label=&quot;SEO Settings&quot;&gt;&lt;TextBox Label=&quot;Title&quot; Help=&quot;Title that is displayed in the browser tab as well as search engine results.&quot; SpellCheck=&quot;true&quot;&gt;&lt;TextBox.Text&gt;&lt;cms:bind source=&quot;SeoSettings:Kobelco_SeoSettingsTitle&quot; /&gt;&lt;/TextBox.Text&gt;&lt;/TextBox&gt;&lt;TextBox Label=&quot;Description&quot; Help=&quot;Description of the page that is displayed in search results as well as when shared on social sites.&quot; SpellCheck=&quot;true&quot;&gt;&lt;TextBox.Text&gt;&lt;cms:bind source=&quot;SeoSettings:Kobelco_SeoSettingsDescription&quot; /&gt;&lt;/TextBox.Text&gt;&lt;/TextBox&gt;&lt;CheckBox Label=&quot;Show Title Prefix?&quot; Help=&quot;Check here to display the title prefix that is set in the Options. Default is FALSE.&quot;&gt;&lt;CheckBox.Checked&gt;&lt;cms:bind source=&quot;SeoSettings:Kobelco_SeoSettingsShowTitlePrefix&quot; /&gt;&lt;/CheckBox.Checked&gt;&lt;/CheckBox&gt;&lt;CheckBox Label=&quot;Show Title Suffix?&quot; Help=&quot;Check here to display the title suffix that is set in the Options. Default is TRUE.&quot;&gt;&lt;CheckBox.Checked&gt;&lt;cms:bind source=&quot;SeoSettings:Kobelco_SeoSettingsShowTitleSuffix&quot; /&gt;&lt;/CheckBox.Checked&gt;&lt;/CheckBox&gt;&lt;/FieldGroup&gt;&lt;/PlaceHolder&gt;&lt;f:NullCheck&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;f:NullCheck.CheckValue&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:read source=&quot;PreviewEventHandler&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/f:NullCheck.CheckValue&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;f:NullCheck.WhenNotNull&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;internal:PreviewPanel Label=&quot;${Composite.Plugins.PageElementProvider, EditPage.LabelPreview}&quot;&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;internal:PreviewPanel.ClickEventHandler&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;cms:read source=&quot;PreviewEventHandler&quot; /&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/internal:PreviewPanel.ClickEventHandler&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;/internal:PreviewPanel&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;/f:NullCheck.WhenNotNull&gt;&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/f:NullCheck&gt;&#xD;&#xA;&#x9;&#x9;&lt;/TabPanels&gt;&#xD;&#xA;&#x9;&lt;/cms:layout&gt;&#xD;&#xA;&lt;/cms:formdefinition&gt;" />
+  <ContainerType>
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Actions\.StandardUiContainerTypesSerializerHandler,Composite'SerializedObject='Document'" />
+  </ContainerType>
+  <Bindings>
+    <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SelectedPage" />
+        </Key>
+        <Value>
+          <SerializerHandler value="SerializerHandlerType='Composite\.Data\.DataSerializerHandler,Composite'SerializedObject='_IsNew_=\'False\'_DataSourceId_=\'\\\{&quot;DataId&quot;:\\\{&quot;\\\$type&quot;:&quot;CompositeGenerated\\\.DynamicSqlDataProvider\\\.Composite_Data_Types_IPageDataId,\\\ Composite\\\.Generated&quot;,&quot;Id&quot;:&quot;5e14c11b-542c-45f7-ae98-397105881523&quot;,&quot;VersionId&quot;:&quot;704e4200-16eb-4584-ad69-e5d03a50f687&quot;},&quot;InterfaceType&quot;:&quot;Composite\\\.Data\\\.Types\\\.IPage,\\\ Composite&quot;,&quot;DataScopeIdentifier&quot;:\\\{&quot;Name&quot;:&quot;administrated&quot;},&quot;localeScope&quot;:&quot;en-US&quot;}\'Id=\'5e14c11b-542c-45f7-ae98-397105881523\'TemplateId=\'a4d67bc3-1aea-49a8-92ec-3c0285ae6529\'PageTypeId=\'f7869eb2-7369-4eb2-af47-e3be261e92c7\'Title=\'Jobs\'MenuTitle=\'Jobs\'UrlTitle=\'Jobs\'FriendlyUrl=\'\'Description=\'List\\\ jobs\'Composite-Data-IChangeHistory\.ChangeDate=\'05/26/2019\\\ 15:33:26\'Composite-Data-IChangeHistory\.ChangedBy=\'iquser\'Composite-Data-ICreationHistory\.CreationDate=\'05/26/2019\\\ 11:48:12\'Composite-Data-ICreationHistory\.CreatedBy=\'iquser\'Composite-Data-ProcessControlled-IPublishControlled\.PublicationStatus=\'draft\'Composite-Data-ProcessControlled-ILocalizedControlled\.SourceCultureName=\'en-US\'Composite-Data-Types-IVersioned\.VersionId=\'704e4200-16eb-4584-ad69-e5d03a50f687\''" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="UrlTitleIsRequired" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="true" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="IsRootPage" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="false" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaFile" />
+        </Key>
+        <Value>
+          <Null />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaPoster" />
+        </Key>
+        <Value>
+          <Null />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaPublicationStatus" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="published" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaSourceCultureName" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="en-US" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaFieldName" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaId" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="d8b59f84-a97e-4f48-8f08-610260f01d25" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaPageId" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="5e14c11b-542c-45f7-ae98-397105881523" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaVersionId" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="704e4200-16eb-4584-ad69-e5d03a50f687" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsTitle" />
+        </Key>
+        <Value>
+          <Null />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsDescription" />
+        </Key>
+        <Value>
+          <Null />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsShowTitlePrefix" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="false" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsShowTitleSuffix" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="true" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsPublicationStatus" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="published" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsSourceCultureName" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="en-US" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsFieldName" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsId" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="8972361e-3c4f-420d-9c96-f312059fefbd" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsPageId" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="5e14c11b-542c-45f7-ae98-397105881523" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsVersionId" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="704e4200-16eb-4584-ad69-e5d03a50f687" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SelectablePageTypeIds" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;    &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;    &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;/t&gt;&#xD;&#xA;&lt;/t&gt;">
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="f7869eb2-7369-4eb2-af47-e3be261e92c7" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Page" />
+              </Value>
+            </KeyValuePair>
+          </List>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SelectableTemplateIds" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;    &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;    &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;/t&gt;&#xD;&#xA;&lt;/t&gt;">
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="9f096519-d21c-435e-b334-62224fde2ab3" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="2 columns, content and aside" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="e3851f7a-3f4b-4eda-9708-07c3b6020e08" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="2 columns, navigation and content" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="ea2ca748-efbf-4d94-8e2a-11ce49b71cd5" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="3 columns" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="d54fda5a-e1fb-4367-8589-6aa7b434cadb" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Activity Template - Differences" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="050e168a-458e-4689-aada-8107510bc5f9" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Activity Template - Dots" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="f043bfa0-8dde-43cd-88a2-c3276776ea1b" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Activity Template - Iframe" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="b190b5bd-f003-4230-8c39-92487f1468be" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Contact Page" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="c31bd261-c986-4095-96c2-0c83224da203" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Dealer Locator" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="a270f819-0b5c-4f7e-9194-4b554043e4ab" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Front page" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="a4d67bc3-1aea-49a8-92ec-3c0285ae6529" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Full Width, Container" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="a932f404-b144-49ec-ba54-bca45d49dcf9" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Full Width, Container, No Header" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="0526ad34-c540-418e-8c23-0eec2a8da2ce" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Full Width, No Container" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="5c1a7373-8342-413b-aa71-67640b1a6397" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Full Width, No Container, No Header" />
+              </Value>
+            </KeyValuePair>
+            <KeyValuePair type="&lt;t n=&quot;System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+              <Key>
+                <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="5fe487e5-b101-4b1e-b1b4-741e7d0504be" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Machine Template" />
+              </Value>
+            </KeyValuePair>
+          </List>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="NamedXhtmlFragments" />
+        </Key>
+        <Value>
+          <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="content" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA;&#x9;&lt;head&gt;&lt;/head&gt;&#xA;&#x9;&lt;body&gt;&#xA;&#xA;&lt;f:function name=&quot;Jobs.ListJobs&quot; xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; /&gt;&#xA;&#xA;&#x9;&lt;/body&gt;&#xA;&lt;/html&gt;" />
+              </Value>
+            </KeyPair>
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="header" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA;&#x9;&lt;head&gt;&#xA;&#x9;&#x9;&lt;style&gt;&#xA;&#x9;&#x9;&#x9;.header-job{&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;.title-header-job {&#xA;&#x9;&#x9;&#x9;&#x9;margin-top:20px;&#xA;&#x9;&#x9;&#x9;&#x9;text-transform: uppercase;&#xA;&#x9;&#x9;&#x9;&#x9;padding-bottom: 30px;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&lt;/style&gt;&#xA;&#x9;&lt;/head&gt;&#xA;&#x9;&lt;body&gt;&#xA;&#xA;&lt;div class=&quot;header-job&quot;&gt;&#xA;&lt;h1 class=&quot;title-header-job&quot;&gt;CAREER OPPORTUNITIES&lt;/h1&gt;&#xA;&#xA;&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&#x9;&lt;/body&gt;&#xA;&lt;/html&gt;" />
+              </Value>
+            </KeyPair>
+          </Dictionary>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="StateOptions" />
+        </Key>
+        <Value>
+          <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="draft" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Draft" />
+              </Value>
+            </KeyPair>
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="awaitingApproval" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Awaiting Approval" />
+              </Value>
+            </KeyPair>
+            <KeyPair>
+              <Key>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="awaitingPublication" />
+              </Key>
+              <Value>
+                <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Awaiting Publication" />
+              </Value>
+            </KeyPair>
+          </Dictionary>
+        </Value>
+      </KeyPair>
+    </Dictionary>
+  </Bindings>
+  <BindingsValidationRules>
+    <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;    &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;  &lt;/t&gt;&#xD;&#xA;&lt;/t&gt;">
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaFile" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaPoster" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaPublicationStatus" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaSourceCultureName" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <SerializerHandler value="SerializerHandlerType='Composite\.Data\.Validation\.ClientValidationRuleSerializerHandler,Composite'SerializedObject='AAEAAAD/////AQAAAAAAAAAMAgAAAEdDb21wb3NpdGUsIFZlcnNpb249Ni41LjY3NTQuMjUxMTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAS0NvbXBvc2l0ZS5EYXRhLlZhbGlkYXRpb24uQ2xpZW50VmFsaWRhdGlvblJ1bGVzLk5vdE51bGxDbGllbnRWYWxpZGF0aW9uUnVsZQAAAAACAAAACw=='" />
+          </List>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaFieldName" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaId" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaPageId" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="HeaderMedia:Kobelco_HeaderMediaVersionId" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsTitle" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsDescription" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsShowTitlePrefix" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsShowTitleSuffix" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsPublicationStatus" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsSourceCultureName" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <SerializerHandler value="SerializerHandlerType='Composite\.Data\.Validation\.ClientValidationRuleSerializerHandler,Composite'SerializedObject='AAEAAAD/////AQAAAAAAAAAMAgAAAEdDb21wb3NpdGUsIFZlcnNpb249Ni41LjY3NTQuMjUxMTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAS0NvbXBvc2l0ZS5EYXRhLlZhbGlkYXRpb24uQ2xpZW50VmFsaWRhdGlvblJ1bGVzLk5vdE51bGxDbGllbnRWYWxpZGF0aW9uUnVsZQAAAAACAAAACw=='" />
+          </List>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsFieldName" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsId" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsPageId" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SeoSettings:Kobelco_SeoSettingsVersionId" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+    </Dictionary>
+  </BindingsValidationRules>
+  <ExcludedEvents>
+    <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+  </ExcludedEvents>
+</FormData>

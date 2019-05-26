@@ -26,5 +26,8 @@
       <FormRenderingProfile label="Descriptions" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.XhtmlDocument.VisualXhtmlEditor&quot; /&gt;" />
       <ValidationFunctionMarkups />
     </DataFieldDescriptor>
+    <DataFieldDescriptor id="eee63995-50d7-4b67-810e-81f7bed0fa96" name="Location" isNullable="false" position="3" groupByPriority="0" inherited="false" instanceType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" storeType="PhysicalStoreType='LargeString'" isReadOnly="false" defaultValue="ValueType='String'Value=''">
+      <FormRenderingProfile label="Location" helpText="" widgetFunctionMarkup="&lt;f:widgetfunction xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Widgets.String.Selector&quot;&gt;&lt;f:param xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Options&quot;&gt;&lt;f:function xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot; name=&quot;Composite.Utils.String.Split&quot;&gt;&lt;f:param name=&quot;String&quot; value=&quot;Houston,Texas,Moore,South Carolina&quot; /&gt;&lt;/f:function&gt;&lt;/f:param&gt;&lt;/f:widgetfunction&gt;" />
+    </DataFieldDescriptor>
   </Fields>
 </DataTypeDescriptor>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FormData>
+  <ContainerLabel value="Job" />
+  <FormDefinition value="&lt;cms:formdefinition xmlns:cms=&quot;http://www.composite.net/ns/management/bindingforms/1.0&quot; xmlns=&quot;http://www.composite.net/ns/management/bindingforms/std.ui.controls.lib/1.0&quot; xmlns:ff=&quot;http://www.composite.net/ns/management/bindingforms/std.function.lib/1.0&quot; xmlns:f=&quot;http://www.composite.net/ns/function/1.0&quot;&gt;&#xD;&#xA;  &lt;cms:bindings&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Id&quot; type=&quot;System.Guid&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Title&quot; type=&quot;System.String&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;DatePosted&quot; type=&quot;System.DateTime&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Descriptions&quot; type=&quot;System.String&quot; /&gt;&#xD;&#xA;    &lt;cms:binding name=&quot;Location&quot; type=&quot;System.String&quot; /&gt;&#xD;&#xA;  &lt;/cms:bindings&gt;&#xD;&#xA;  &lt;cms:layout iconhandle=&quot;generated-type-data-add&quot;&gt;&#xD;&#xA;    &lt;cms:layout.label&gt;&#xD;&#xA;      &lt;cms:read source=&quot;Title&quot; /&gt;&#xD;&#xA;    &lt;/cms:layout.label&gt;&#xD;&#xA;    &lt;FieldGroup Label=&quot;Jobs&quot;&gt;&#xD;&#xA;      &lt;TextBox Label=&quot;Title&quot; Help=&quot;&quot; SpellCheck=&quot;true&quot;&gt;&#xD;&#xA;        &lt;TextBox.Text&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;Title&quot; /&gt;&#xD;&#xA;        &lt;/TextBox.Text&gt;&#xD;&#xA;      &lt;/TextBox&gt;&#xD;&#xA;      &lt;DateSelector Label=&quot;DatePosted&quot; Help=&quot;&quot;&gt;&#xD;&#xA;        &lt;DateSelector.Date&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;DatePosted&quot; /&gt;&#xD;&#xA;        &lt;/DateSelector.Date&gt;&#xD;&#xA;      &lt;/DateSelector&gt;&#xD;&#xA;      &lt;InlineXhtmlEditor Label=&quot;Descriptions&quot; Help=&quot;&quot; ClassConfigurationName=&quot;common&quot;&gt;&#xD;&#xA;        &lt;InlineXhtmlEditor.Xhtml&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;Descriptions&quot; /&gt;&#xD;&#xA;        &lt;/InlineXhtmlEditor.Xhtml&gt;&#xD;&#xA;      &lt;/InlineXhtmlEditor&gt;&#xD;&#xA;      &lt;KeySelector Label=&quot;Location&quot; Help=&quot;&quot; OptionsKeyField=&quot;Key&quot; OptionsLabelField=&quot;Label&quot; Required=&quot;true&quot;&gt;&#xD;&#xA;        &lt;KeySelector.Selected&gt;&#xD;&#xA;          &lt;cms:bind source=&quot;Location&quot; /&gt;&#xD;&#xA;        &lt;/KeySelector.Selected&gt;&#xD;&#xA;        &lt;KeySelector.Options&gt;&#xD;&#xA;          &lt;ff:StaticMethodCall Type=&quot;Composite.Plugins.Functions.WidgetFunctionProviders.StandardWidgetFunctionProvider.String.SelectorWidgetFunction,Composite&quot; Method=&quot;GetOptions&quot; Parameters=&quot;&amp;lt;SelectorOptionsSource KeyFieldName=&amp;quot;&amp;quot; LabelFieldName=&amp;quot;&amp;quot;&amp;gt;&amp;#xD;&amp;#xA;  &amp;lt;TreeNode&amp;gt;&amp;#xD;&amp;#xA;    &amp;lt;f:param xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Options&amp;quot;&amp;gt;&amp;#xD;&amp;#xA;      &amp;lt;f:function xmlns:f=&amp;quot;http://www.composite.net/ns/function/1.0&amp;quot; name=&amp;quot;Composite.Utils.String.Split&amp;quot;&amp;gt;&amp;#xD;&amp;#xA;        &amp;lt;f:param name=&amp;quot;String&amp;quot; value=&amp;quot;Houston,Texas,Moore,South Carolina&amp;quot; /&amp;gt;&amp;#xD;&amp;#xA;      &amp;lt;/f:function&amp;gt;&amp;#xD;&amp;#xA;    &amp;lt;/f:param&amp;gt;&amp;#xD;&amp;#xA;  &amp;lt;/TreeNode&amp;gt;&amp;#xD;&amp;#xA;&amp;lt;/SelectorOptionsSource&amp;gt;&quot; /&gt;&#xD;&#xA;        &lt;/KeySelector.Options&gt;&#xD;&#xA;      &lt;/KeySelector&gt;&#xD;&#xA;    &lt;/FieldGroup&gt;&#xD;&#xA;  &lt;/cms:layout&gt;&#xD;&#xA;&lt;/cms:formdefinition&gt;" />
+  <ContainerType>
+    <SerializerHandler value="SerializerHandlerType='Composite\.C1Console\.Actions\.StandardUiContainerTypesSerializerHandler,Composite'SerializedObject='Document'" />
+  </ContainerType>
+  <Bindings>
+    <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Id" />
+        </Key>
+        <Value>
+          <Value type="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="4a353205-2618-4404-a701-784aeb030913" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Title" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Job title 2" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="DatePosted" />
+        </Key>
+        <Value>
+          <Value type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="2019-05-30T00:00:00+07:00" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Descriptions" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA;&#x9;&lt;head&gt;&lt;/head&gt;&#xA;&#x9;&lt;body&gt;&#xA;&#xA;test&#xA;&#xA;&#xA;&#xA;&#x9;&lt;/body&gt;&#xA;&lt;/html&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Location" />
+        </Key>
+        <Value>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Texas" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="NewData" />
+        </Key>
+        <Value>
+          <SerializerHandler value="SerializerHandlerType='Composite\.Data\.DataSerializerHandler,Composite'SerializedObject='_IsNew_=\'False\'_DataSourceId_=\'\\\{&quot;DataId&quot;:\\\{&quot;\\\$type&quot;:&quot;CompositeGenerated\\\.DynamicSqlDataProvider\\\.Kobelco_JobDataId,\\\ Composite\\\.Generated&quot;,&quot;Id&quot;:&quot;4a353205-2618-4404-a701-784aeb030913&quot;},&quot;InterfaceType&quot;:&quot;Kobelco\\\.Job,\\\ Composite\\\.Generated&quot;,&quot;DataScopeIdentifier&quot;:\\\{&quot;Name&quot;:&quot;public&quot;},&quot;localeScope&quot;:&quot;&quot;}\'Id=\'4a353205-2618-4404-a701-784aeb030913\'Title=\'Job\\\ title\\\ 2\'DatePosted=\'2019-05-30\'Descriptions=\'&lt;html\\\ xmlns=&quot;http://www\\\.w3\\\.org/1999/xhtml&quot;&gt;\\n\\t&lt;head&gt;&lt;/head&gt;\\n\\t&lt;body&gt;\\n\\ntest\\n\\n\\n\\n\\t&lt;/body&gt;\\n&lt;/html&gt;\'Location=\'Texas\''" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="DataAdded" />
+        </Key>
+        <Value>
+          <Value type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="true" />
+        </Value>
+      </KeyPair>
+    </Dictionary>
+  </Bindings>
+  <BindingsValidationRules>
+    <Dictionary type="&lt;t n=&quot;System.Collections.Generic.Dictionary`2, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;  &lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;    &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;  &lt;/t&gt;&#xD;&#xA;&lt;/t&gt;">
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Id" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Title" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <SerializerHandler value="SerializerHandlerType='Composite\.Data\.Validation\.ClientValidationRuleSerializerHandler,Composite'SerializedObject='AAEAAAD/////AQAAAAAAAAAMAgAAAEdDb21wb3NpdGUsIFZlcnNpb249Ni41LjY3NTQuMjUxMTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAS0NvbXBvc2l0ZS5EYXRhLlZhbGlkYXRpb24uQ2xpZW50VmFsaWRhdGlvblJ1bGVzLk5vdE51bGxDbGllbnRWYWxpZGF0aW9uUnVsZQAAAAACAAAACw=='" />
+          </List>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="DatePosted" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;" />
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Descriptions" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <SerializerHandler value="SerializerHandlerType='Composite\.Data\.Validation\.ClientValidationRuleSerializerHandler,Composite'SerializedObject='AAEAAAD/////AQAAAAAAAAAMAgAAAEdDb21wb3NpdGUsIFZlcnNpb249Ni41LjY3NTQuMjUxMTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAS0NvbXBvc2l0ZS5EYXRhLlZhbGlkYXRpb24uQ2xpZW50VmFsaWRhdGlvblJ1bGVzLk5vdE51bGxDbGllbnRWYWxpZGF0aW9uUnVsZQAAAAACAAAACw=='" />
+          </List>
+        </Value>
+      </KeyPair>
+      <KeyPair>
+        <Key>
+          <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="Location" />
+        </Key>
+        <Value>
+          <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;Composite.Data.Validation.ClientValidationRules.ClientValidationRule,Composite&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+            <SerializerHandler value="SerializerHandlerType='Composite\.Data\.Validation\.ClientValidationRuleSerializerHandler,Composite'SerializedObject='AAEAAAD/////AQAAAAAAAAAMAgAAAEdDb21wb3NpdGUsIFZlcnNpb249Ni41LjY3NTQuMjUxMTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAS0NvbXBvc2l0ZS5EYXRhLlZhbGlkYXRpb24uQ2xpZW50VmFsaWRhdGlvblJ1bGVzLk5vdE51bGxDbGllbnRWYWxpZGF0aW9uUnVsZQAAAAACAAAACw=='" />
+          </List>
+        </Value>
+      </KeyPair>
+    </Dictionary>
+  </BindingsValidationRules>
+  <ExcludedEvents>
+    <List type="&lt;t n=&quot;System.Collections.Generic.List`1, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;&gt;&#xD;&#xA;  &lt;t n=&quot;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; /&gt;&#xD;&#xA;&lt;/t&gt;">
+      <Value type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" value="SaveAndPublish" />
+    </List>
+  </ExcludedEvents>
+</FormData>
